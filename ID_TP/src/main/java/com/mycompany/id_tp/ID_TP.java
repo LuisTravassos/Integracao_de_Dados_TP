@@ -1,13 +1,8 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- */
-
 package com.mycompany.id_tp;
 
-/**
- *
- * @author luist
- */
+import java.io.*;
+
+
 public class ID_TP {
 
     public static void main(String[] args) {
