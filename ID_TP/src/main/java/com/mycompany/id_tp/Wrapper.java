@@ -34,7 +34,29 @@ public class Wrapper {
         return null;
     }
     
-    public static void autor_dataNascimento(String isbn) throws IOException{
+    public static String autor_dataNascimento(String nomeAutor) throws IOException{
+        String link = "https://pt.wikipedia.org/wiki/";
+        nomeAutor = nomeAutor.replace(" ", "_");
+        HttpRequestFunctions.httpRequest1(link, nomeAutor, "wiki.html");
+        
+        Scanner ler;
+        ler = new Scanner(Files.newInputStream(Path.of("wiki.html")));
+        String er = "<a\\shref=\"[^\"]*?\"\\stitle=\"\\d+\\sde\\s\\w+\">(\\d+\\sde\\s\\w+)</a>(\\sde\\s)<a\\shref=\"[^\"]*?\"\\stitle=\"\\d+\">(\\d+)</a>";
+        Pattern p = Pattern.compile(er);
+        Matcher m;
+        String linha;
+        
+        while(ler.hasNextLine()){
+            linha = ler.nextLine();
+            m = p.matcher(linha);
+            if(m.find()){
+                ler.close();
+                return m.group(1)+m.group(2)+m.group(3);
+                
+            }
+        }
+        
+        return null;
     
     }
     

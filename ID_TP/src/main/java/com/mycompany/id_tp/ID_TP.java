@@ -16,7 +16,9 @@ public class ID_TP {
             word = palavra.nextLine();
 
             String res = Wrapper.autor_nome(word);
+            String data = Wrapper.autor_dataNascimento(word);
             System.out.println(res + "\n");
+            System.out.println(data + "\n");
 
         } catch (IOException ex) {
             Logger.getLogger(ID_TP.class.getName()).log(Level.SEVERE, null, ex);
