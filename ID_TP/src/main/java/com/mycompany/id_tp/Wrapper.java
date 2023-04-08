@@ -11,13 +11,16 @@ import java.util.regex.Pattern;
 public class Wrapper {
     
     public static String autor_nome(String nomeAutor) throws IOException{
+        
         String link = "https://pt.wikipedia.org/wiki/";
         nomeAutor = nomeAutor.replace(" ", "_");
         HttpRequestFunctions.httpRequest1(link, nomeAutor, "wiki.html");
         
         Scanner ler;
         ler = new Scanner(Files.newInputStream(Path.of("wiki.html")));
+        
         String er = "<h1\\sid=\"firstHeading\"\\sclass=\"firstHeading\\smw-first-heading\"><span class=\"mw-page-title-main\">([^<]+)</span></h1>";
+        
         Pattern p = Pattern.compile(er);
         Matcher m;
         String linha;
@@ -32,17 +35,20 @@ public class Wrapper {
         }
         
         return null;
+        
     }
     
-    public static String autor_dataNascimento(String nomeAutor) throws IOException{
+    public static String autor_DataMorte(String nomeAutor) throws IOException{
+        
         String link = "https://pt.wikipedia.org/wiki/";
         nomeAutor = nomeAutor.replace(" ", "_");
         HttpRequestFunctions.httpRequest1(link, nomeAutor, "wiki.html");
         
         Scanner ler;
         ler = new Scanner(Files.newInputStream(Path.of("wiki.html")));
-        String er = "<a\\shref=\"[^\"]*?\"\\stitle=\"\\d+\\sde\\s\\w+\">(\\d+\\sde\\s\\w+)</a>(\\sde\\s)<a\\shref=\"[^\"]*?\"\\stitle=\"\\d+\">(\\d+)</a>";
-        Pattern p = Pattern.compile(er);
+        String er = "<td\\sscope=\"row\"\\sstyle=\"vertical-align:\\stop;\\stext-align:\\sleft;\\sfont-weight:bold;\">([^\\n]+)\\n*</td>";
+       
+        Pattern p = Pattern.compile(er, Pattern.DOTALL);
         Matcher m;
         String linha;
         
@@ -51,60 +57,59 @@ public class Wrapper {
             m = p.matcher(linha);
             if(m.find()){
                 ler.close();
-                return m.group(1)+m.group(2)+m.group(3);
-                
+                return m.group(1);
             }
         }
         
         return null;
+        
+    }
+    
+    public static void autor_dataNascimento(String nomeAutor) throws IOException{
     
     }
     
-    public static void autor_DataMorte(String isbn) throws IOException{
+    public static void autor_nacionalidade(String nomeAutor) throws IOException{
     
     }
     
-    public static void autor_nacionalidade(String isbn) throws IOException{
+    public static void autor_fotografia(String nomeAutor) throws IOException{
     
     }
     
-    public static void autor_fotografia(String isbn) throws IOException{
+    public static void autor_generoLiterario(String nomeAutor) throws IOException{
     
     }
     
-    public static void autor_generoLiterario(String isbn) throws IOException{
+    public static void autor_ocupacoes(String nomeAutor) throws IOException{
     
     }
     
-    public static void autor_ocupacoes(String isbn) throws IOException{
+    public static void autor_premios(String nomeAutor) throws IOException{
     
     }
     
-    public static void autor_premios(String isbn) throws IOException{
+    public static void obras_ISBN(String nomeAutor) throws IOException{
     
     }
     
-    public static void obras_ISBN(String isbn) throws IOException{
+    public static void obras_nomeAutor(String nomeAutor) throws IOException{
     
     }
     
-    public static void obras_nomeAutor(String isbn) throws IOException{
+    public static void obras_titulo(String nomeAutor) throws IOException{
     
     }
     
-    public static void obras_titulo(String isbn) throws IOException{
+    public static void obras_preco(String nomeAutor) throws IOException{
     
     }
     
-    public static void obras_preco(String isbn) throws IOException{
+    public static void obras_editora(String nomeAutor) throws IOException{
     
     }
     
-    public static void obras_editora(String isbn) throws IOException{
-    
-    }
-    
-    public static void obras_fotoCapa(String isbn) throws IOException{
+    public static void obras_fotoCapa(String nomeAutor) throws IOException{
     
     }
     

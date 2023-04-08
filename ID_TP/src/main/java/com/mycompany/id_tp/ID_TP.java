@@ -15,10 +15,11 @@ public class ID_TP {
             System.out.println("Autor a procurar: ");
             word = palavra.nextLine();
 
-            String res = Wrapper.autor_nome(word);
-            String data = Wrapper.autor_dataNascimento(word);
-            System.out.println(res + "\n");
-            System.out.println(data + "\n");
+            String res = "\n" + Wrapper.autor_nome(word) + "\n"
+                    //+ Wrapper.autor_dataNascimento(word) + "\n"
+                    + Wrapper.autor_DataMorte(word);
+            
+            System.out.println(res );
 
         } catch (IOException ex) {
             Logger.getLogger(ID_TP.class.getName()).log(Level.SEVERE, null, ex);
