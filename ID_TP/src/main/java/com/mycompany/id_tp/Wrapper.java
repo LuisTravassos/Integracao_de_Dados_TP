@@ -46,18 +46,30 @@ public class Wrapper {
         
         Scanner ler;
         ler = new Scanner(Files.newInputStream(Path.of("wiki.html")));
-        String er = "<td\\sscope=\"row\"\\sstyle=\"vertical-align:\\stop;\\stext-align:\\sleft;\\sfont-weight:bold;\">([^\\n]+)\\n*</td>";
-       
-        Pattern p = Pattern.compile(er, Pattern.DOTALL);
+        String er1 = "<td[^>]+>Morte";
+        String er2 = "<a\\shref=\"[^\"]+\"\\stitle=\"[^\"]+\">([^<]+)</a>([^<]+)<a\\shref=\"[^\"]+\"\\stitle=\"[^\"]+\">([^<]+)</a>";
+        
+        Pattern p = Pattern.compile(er1, Pattern.DOTALL);
         Matcher m;
         String linha;
         
         while(ler.hasNextLine()){
             linha = ler.nextLine();
             m = p.matcher(linha);
+            
             if(m.find()){
-                ler.close();
-                return m.group(1);
+                p = Pattern.compile(er2, Pattern.DOTALL);
+                
+                while(ler.hasNextLine()){
+                    linha = ler.nextLine();
+                    m = p.matcher(linha);
+                    
+                    if(m.find()){
+                        ler.close();
+                        String resultado = m.group(1) + m.group(2) + m.group(3);
+                        return resultado;
+                    }
+                }
             }
         }
         
