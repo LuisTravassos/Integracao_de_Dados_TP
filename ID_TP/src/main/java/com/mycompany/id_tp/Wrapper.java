@@ -77,7 +77,51 @@ public class Wrapper {
         
     }
     
-    public static void autor_dataNascimento(String nomeAutor) throws IOException{
+    public static String autor_dataNascimento(String nomeAutor) throws IOException{
+        
+        String link = "https://pt.wikipedia.org/wiki/";
+        nomeAutor = nomeAutor.replace(" ", "_");
+        HttpRequestFunctions.httpRequest1(link, nomeAutor, "wiki.html");
+        
+        Scanner ler;
+        ler = new Scanner(Files.newInputStream(Path.of("wiki.html")));
+        String er1 = "<td[^>]+>Nascimento";
+        String er2 = "<a\\shref=\"[^\\\"]+\"\\stitle=\"[^\"]+\">([^<]+)</a>([^<]+)<a\\shref=\"[^\"]+\"\\stitle=\"[^\"]+\">([^<]+)</a>"; //dia
+        String er3 = "<a\\shref=\"[^\"]+\"\\stitle=\"[^\"]+\">([^<]+)</a>"; //ano       
+        Pattern p = Pattern.compile(er1, Pattern.DOTALL);
+        Pattern p2 = Pattern.compile(er2, Pattern.DOTALL);
+        Matcher m, m2;
+        String linha;
+        
+        while(ler.hasNextLine()){
+            linha = ler.nextLine();
+            m = p.matcher(linha);
+            
+            if(m.find()){
+                p = Pattern.compile(er2, Pattern.DOTALL);
+                p2 = Pattern.compile(er3, Pattern.DOTALL);
+                
+                while(ler.hasNextLine()){
+                    linha = ler.nextLine();
+                    m = p.matcher(linha);
+                    m2 = p2.matcher(linha);
+                    
+                    if(m.find()){
+                        ler.close();
+                        String resultado = m.group(1) + m.group(2) + m.group(3);
+                        return resultado;
+                        
+                    }else if(m2.find()){
+                        ler.close();
+                        String resultado = m2.group(1);
+                        return resultado;
+                    }
+                    
+                }
+            }
+        }
+        
+        return null;
     
     }
     

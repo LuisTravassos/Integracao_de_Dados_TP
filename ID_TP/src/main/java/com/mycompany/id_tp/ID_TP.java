@@ -16,7 +16,7 @@ public class ID_TP {
             word = palavra.nextLine();
 
             String res = "\n" + Wrapper.autor_nome(word) + "\n"
-                    //+ Wrapper.autor_dataNascimento(word) + "\n"
+                    + Wrapper.autor_dataNascimento(word) + "\n"
                     + Wrapper.autor_DataMorte(word);
             
             System.out.println(res );
