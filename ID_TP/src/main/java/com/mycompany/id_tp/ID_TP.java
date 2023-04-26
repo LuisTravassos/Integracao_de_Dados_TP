@@ -17,7 +17,8 @@ public class ID_TP {
 
             String res = "\n" + Wrapper.autor_nome(word) + "\n"
                     + Wrapper.autor_dataNascimento(word) + "\n"
-                    + Wrapper.autor_DataMorte(word);
+                    + Wrapper.autor_DataMorte(word) + "\n"
+                    + Wrapper.autor_nacionalidade(word) + "\n";
             
             System.out.println(res );
 

@@ -125,7 +125,42 @@ public class Wrapper {
     
     }
     
-    public static void autor_nacionalidade(String nomeAutor) throws IOException{
+    public static String autor_nacionalidade(String nomeAutor) throws IOException{
+        
+        String link = "https://pt.wikipedia.org/wiki/";
+        nomeAutor = nomeAutor.replace(" ", "_");
+        HttpRequestFunctions.httpRequest1(link, nomeAutor, "wiki.html");
+        
+        Scanner ler;
+        ler = new Scanner(Files.newInputStream(Path.of("wiki.html")));
+        String er1 = "<td[^>]+>Nacionalidade";
+        String er2 = "<a\\shref=\"[^\"]+\"\\stitle=\"[^\"]+\">([^<]+)</a>";
+                        
+        Pattern p = Pattern.compile(er1, Pattern.DOTALL);
+        Matcher m;
+        String linha;
+        String res = "Nao definido";
+        while(ler.hasNextLine()){
+            linha = ler.nextLine();
+            m = p.matcher(linha);
+            
+            if(m.find()){
+                p = Pattern.compile(er2, Pattern.DOTALL);
+                
+                while(ler.hasNextLine()){
+                    linha = ler.nextLine();
+                    m = p.matcher(linha);
+                    
+                    if(m.find()){
+                        ler.close();
+                        String resultado = m.group(1);
+                        return resultado;
+                    }
+                }
+            }
+        }
+        
+        return res;
     
     }
     
