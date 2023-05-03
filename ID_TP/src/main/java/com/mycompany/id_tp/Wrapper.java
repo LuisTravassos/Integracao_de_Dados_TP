@@ -302,42 +302,76 @@ public class Wrapper {
         String link = "https://www.bertrand.pt/pesquisa/";
         String nome = nomeAutor.replace(" ", "+");
         HttpRequestFunctions.httpRequest1(link, nome, "bert.html");
-        System.out.println("NOME1-> " +nomeAutor);
-        Scanner ler;
-        ler = new Scanner(Files.newInputStream(Path.of("bert.html")));
         
-        String er = "data-title=\"([^\"]+)+\" ";
-        String er2 = "<p>de <a href=\"/autor/[^\"]\">([^<]+)</a> (e <a href=\"/autor/[^\"]\">([^<]+)</a>)*&nbsp;</p>";
-        Pattern p = Pattern.compile(er);
-        Matcher m;
-        String linha;
+        String fileContent = Files.readString(Path.of("bert.html"));
+        Scanner ler1 = new Scanner(fileContent);
+        Scanner ler2 = new Scanner(fileContent);
         
-        while(ler.hasNextLine()){
-            linha = ler.nextLine();
-            m = p.matcher(linha);
-            if(m.find()){
-                String res = m.group(1);
-                System.out.print(res);
-                p = Pattern.compile(er2, Pattern.DOTALL);
+        String er = "<div class=\"cover\">";
+        String er2 = "/autor[^\"]+\">" + nomeAutor + "<";
+        String er3 = "data-title=\"([^\"]+)\"";
+        
+        Pattern p1 = Pattern.compile(er), p2, p3;
+        Matcher m1, m2, m3;
+        String linha, resultado = "";
+        
+        int next, counter = 0;
+        
+        while(ler1.hasNextLine()){
+            next = 0;
+                    
+            linha = ler1.nextLine();
+            m1 = p1.matcher(linha);
+            
+            if(m1.find()){
+                //System.out.println("-----------------------------------------1");
+                String linhaAtual = ler1.nextLine();
+                ler2 = new Scanner(fileContent.substring(fileContent.indexOf(linhaAtual) + linhaAtual.length()));
+            
+                p2 = Pattern.compile(er2, Pattern.DOTALL);
                 
-                while(ler.hasNextLine()){
-                    linha = ler.nextLine();
-                    m = p.matcher(linha);
+                while(ler2.hasNextLine() && next == 0){
+                    //System.out.println(linha);
+                    linha = ler2.nextLine();
+                    m2 = p2.matcher(linha);
+                    m1 = p1.matcher(linha);
                    
-                    if(m.find()){
-                        ler.close();
-                        System.out.print(m.group(1));
-                        System.out.println("NOME-> " +nomeAutor);
-                        if(nomeAutor.equals(m.group(1))|| nomeAutor.equals(m.group(3))){
-                            return res;
+                    if(m2.find()){
+                        //System.out.println("-----------------------------------------2");
+                        
+                        p3 = Pattern.compile(er3, Pattern.DOTALL);
+                                
+                        while(ler1.hasNextLine() && next == 0){
+                            //System.out.println(linha);
+                            
+                            linha = ler1.nextLine();
+                            m3 = p3.matcher(linha);
+                            
+                            if (m3.find()) {
+                                //System.out.println("-----------------------------------------3");
+                                resultado += m3.group(1) + "\n";
+                                
+                                if(counter == 2){
+                                    ler1.close();
+                                    ler2.close();
+                                    return resultado;
+                                    
+                                }else{
+                                    counter++;
+                                    next = 1;
+                                    
+                                }
+                            }
                         }
                         
+                    }else if(m1.find()){
+                        next = 1;
                     }
                 }
             }
         }
         
-        return null;
+        return "Nao definido";
                         
     }
 
