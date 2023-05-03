@@ -241,7 +241,52 @@ public class Wrapper {
 
     }
 
-    public static void autor_ocupacoes(String nomeAutor) throws IOException {
+    public static String autor_ocupacoes(String nomeAutor) throws IOException {
+        String link = "https://pt.wikipedia.org/wiki/";
+        nomeAutor = nomeAutor.replace(" ", "_");
+        HttpRequestFunctions.httpRequest1(link, nomeAutor, "wiki.html");
+
+        Scanner ler;
+        ler = new Scanner(Files.newInputStream(Path.of("wiki.html")));
+        String er1 = ">Ocupação";
+        String er2 = "(\\se\\s){0,1}<a href=\"/wiki/[^\"]+\"(\\sclass=\"[^\"]+\"){0,1}\\stitle=\"[^\"]+\">([^<]+)</a>";
+
+        Pattern p = Pattern.compile(er1, Pattern.DOTALL);
+        Matcher m;
+        String linha;
+        String resultado = "";
+
+        while (ler.hasNextLine()) {
+            linha = ler.nextLine();
+            m = p.matcher(linha);
+
+            if (m.find()) {
+                p = Pattern.compile(er2, Pattern.DOTALL);
+
+                while (ler.hasNextLine()) {
+                    linha = ler.nextLine();
+                    m = p.matcher(linha);
+
+                    if (m.find()) {
+                        String[] temp = linha.split(",");
+
+                        for (int i = 0; i < temp.length ; i++) {
+                            m = p.matcher(temp[i]);
+                            
+                            if (m.find()) {
+                                resultado += m.group(3) + " ";
+                            }
+                        }
+                        
+                        ler.close();
+                        return resultado;
+                    }
+                }
+            }
+        }
+
+        return "Nao definido";
+
 
     }
 

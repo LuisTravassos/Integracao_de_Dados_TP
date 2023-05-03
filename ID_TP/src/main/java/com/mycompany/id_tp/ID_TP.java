@@ -13,14 +13,15 @@ public class ID_TP {
             Scanner palavra = new Scanner(System.in, "ISO-8859-1");
             String word;
             System.out.println("Autor a procurar: ");
-            word = "J. K. Rowling"; //palavra.nextLine();
+            word = "Eça de Queiroz"; //palavra.nextLine();
 
             String res = "\n" + Wrapper.autor_nome(word) + "\n"
                     + Wrapper.autor_dataNascimento(word) + "\n"
                     + Wrapper.autor_DataMorte(word) + "\n"
                     + Wrapper.autor_nacionalidade(word) + "\n"
                     + Wrapper.autor_fotografia(word) + "\n"
-                    + Wrapper.autor_generoLiterario(word) + "\n";
+                    + Wrapper.autor_generoLiterario(word) + "\n"
+                    + Wrapper.autor_ocupacoes(word) + "\n";
             
             System.out.println(res );
 
