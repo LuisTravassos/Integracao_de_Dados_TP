@@ -184,8 +184,47 @@ public class Wrapper {
     
     }
     
-    public static void obras_nomeAutor(String nomeAutor) throws IOException{
-    
+    public static String obras_nomeAutor(String nomeAutor) throws IOException{
+        String link = "https://www.bertrand.pt/pesquisa/";
+        String nome = nomeAutor.replace(" ", "+");
+        HttpRequestFunctions.httpRequest1(link, nome, "bert.html");
+        System.out.println("NOME1-> " +nomeAutor);
+        Scanner ler;
+        ler = new Scanner(Files.newInputStream(Path.of("bert.html")));
+        
+        String er = "data-title=\"([^\"]+)+\" ";
+        String er2 = "<p>de <a href=\"/autor/[^\"]\">([^<]+)</a> (e <a href=\"/autor/[^\"]\">([^<]+)</a>)*&nbsp;</p>";
+        Pattern p = Pattern.compile(er);
+        Matcher m;
+        String linha;
+        
+        while(ler.hasNextLine()){
+            linha = ler.nextLine();
+            m = p.matcher(linha);
+            if(m.find()){
+                String res = m.group(1);
+                System.out.print(res);
+                p = Pattern.compile(er2, Pattern.DOTALL);
+                
+                while(ler.hasNextLine()){
+                    linha = ler.nextLine();
+                    m = p.matcher(linha);
+                   
+                    if(m.find()){
+                        ler.close();
+                        System.out.print(m.group(1));
+                        System.out.println("NOME-> " +nomeAutor);
+                        if(nomeAutor.equals(m.group(1))|| nomeAutor.equals(m.group(3))){
+                            return res;
+                        }
+                        
+                    }
+                }
+            }
+        }
+        
+        return null;
+                        
     }
     
     public static void obras_titulo(String nomeAutor) throws IOException{
