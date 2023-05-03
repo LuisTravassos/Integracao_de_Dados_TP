@@ -7,64 +7,63 @@ import java.util.Scanner;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-
 public class Wrapper {
-    
-    public static String autor_nome(String nomeAutor) throws IOException{
-        
+
+    public static String autor_nome(String nomeAutor) throws IOException {
+
         String link = "https://pt.wikipedia.org/wiki/";
         nomeAutor = nomeAutor.replace(" ", "_");
         HttpRequestFunctions.httpRequest1(link, nomeAutor, "wiki.html");
-        
+
         Scanner ler;
         ler = new Scanner(Files.newInputStream(Path.of("wiki.html")));
-        
+
         String er = "<h1\\sid=\"firstHeading\"\\sclass=\"firstHeading\\smw-first-heading\"><span class=\"mw-page-title-main\">([^<]+)</span></h1>";
-        
+
         Pattern p = Pattern.compile(er);
         Matcher m;
         String linha;
-        
-        while(ler.hasNextLine()){
+
+        while (ler.hasNextLine()) {
             linha = ler.nextLine();
             m = p.matcher(linha);
-            if(m.find()){
+            if (m.find()) {
                 ler.close();
                 return m.group(1);
             }
         }
-        
-        return null;
-        
+
+        return "Nao definido";
+
     }
-    
-    public static String autor_DataMorte(String nomeAutor) throws IOException{
-        
+
+    public static String autor_DataMorte(String nomeAutor) throws IOException {
+
         String link = "https://pt.wikipedia.org/wiki/";
         nomeAutor = nomeAutor.replace(" ", "_");
         HttpRequestFunctions.httpRequest1(link, nomeAutor, "wiki.html");
-        
+
         Scanner ler;
         ler = new Scanner(Files.newInputStream(Path.of("wiki.html")));
         String er1 = "<td[^>]+>Morte";
         String er2 = "<a\\shref=\"[^\"]+\"\\stitle=\"[^\"]+\">([^<]+)</a>([^<]+)<a\\shref=\"[^\"]+\"\\stitle=\"[^\"]+\">([^<]+)</a>";
-        
+
         Pattern p = Pattern.compile(er1, Pattern.DOTALL);
         Matcher m;
         String linha;
-        
-        while(ler.hasNextLine()){
+
+        while (ler.hasNextLine()) {
             linha = ler.nextLine();
             m = p.matcher(linha);
-            
-            if(m.find()){
+
+            if (m.find()) {
                 p = Pattern.compile(er2, Pattern.DOTALL);
-                
-                while(ler.hasNextLine()){
+
+                while (ler.hasNextLine()) {
                     linha = ler.nextLine();
                     m = p.matcher(linha);
-                    
-                    if(m.find()){
+
+                    if (m.find()) {
                         ler.close();
                         String resultado = m.group(1) + m.group(2) + m.group(3);
                         return resultado;
@@ -72,17 +71,17 @@ public class Wrapper {
                 }
             }
         }
-        
-        return null;
-        
+
+        return "Nao definido";
+
     }
-    
-    public static String autor_dataNascimento(String nomeAutor) throws IOException{
-        
+
+    public static String autor_dataNascimento(String nomeAutor) throws IOException {
+
         String link = "https://pt.wikipedia.org/wiki/";
         nomeAutor = nomeAutor.replace(" ", "_");
         HttpRequestFunctions.httpRequest1(link, nomeAutor, "wiki.html");
-        
+
         Scanner ler;
         ler = new Scanner(Files.newInputStream(Path.of("wiki.html")));
         String er1 = "<td[^>]+>Nascimento";
@@ -92,66 +91,66 @@ public class Wrapper {
         Pattern p2 = Pattern.compile(er2, Pattern.DOTALL);
         Matcher m, m2;
         String linha;
-        
-        while(ler.hasNextLine()){
+
+        while (ler.hasNextLine()) {
             linha = ler.nextLine();
             m = p.matcher(linha);
-            
-            if(m.find()){
+
+            if (m.find()) {
                 p = Pattern.compile(er2, Pattern.DOTALL);
                 p2 = Pattern.compile(er3, Pattern.DOTALL);
-                
-                while(ler.hasNextLine()){
+
+                while (ler.hasNextLine()) {
                     linha = ler.nextLine();
                     m = p.matcher(linha);
                     m2 = p2.matcher(linha);
-                    
-                    if(m.find()){
+
+                    if (m.find()) {
                         ler.close();
                         String resultado = m.group(1) + m.group(2) + m.group(3);
                         return resultado;
-                        
-                    }else if(m2.find()){
+
+                    } else if (m2.find()) {
                         ler.close();
                         String resultado = m2.group(1);
                         return resultado;
                     }
-                    
+
                 }
             }
         }
-        
-        return null;
-    
+
+        return "Nao definido";
+
     }
-    
-    public static String autor_nacionalidade(String nomeAutor) throws IOException{
-        
+
+    public static String autor_nacionalidade(String nomeAutor) throws IOException {
+
         String link = "https://pt.wikipedia.org/wiki/";
         nomeAutor = nomeAutor.replace(" ", "_");
         HttpRequestFunctions.httpRequest1(link, nomeAutor, "wiki.html");
-        
+
         Scanner ler;
         ler = new Scanner(Files.newInputStream(Path.of("wiki.html")));
         String er1 = "<td[^>]+>Nacionalidade";
         String er2 = "<a\\shref=\"[^\"]+\"\\stitle=\"[^\"]+\">([^<]+)</a>";
-                        
+
         Pattern p = Pattern.compile(er1, Pattern.DOTALL);
         Matcher m;
         String linha;
-        String res = "Nao definido";
-        while(ler.hasNextLine()){
+
+        while (ler.hasNextLine()) {
             linha = ler.nextLine();
             m = p.matcher(linha);
-            
-            if(m.find()){
+
+            if (m.find()) {
                 p = Pattern.compile(er2, Pattern.DOTALL);
-                
-                while(ler.hasNextLine()){
+
+                while (ler.hasNextLine()) {
                     linha = ler.nextLine();
                     m = p.matcher(linha);
-                    
-                    if(m.find()){
+
+                    if (m.find()) {
                         ler.close();
                         String resultado = m.group(1);
                         return resultado;
@@ -159,29 +158,99 @@ public class Wrapper {
                 }
             }
         }
+
+        return "Nao definido";
+
+    }
+
+    public static String autor_fotografia(String nomeAutor) throws IOException {
+
+        String link = "https://pt.wikipedia.org/wiki/";
+        String nomeAutor2 = nomeAutor.replace(" ", "_");
+        HttpRequestFunctions.httpRequest1(link, nomeAutor2, "wiki.html");
+
+        Scanner ler;
+        ler = new Scanner(Files.newInputStream(Path.of("wiki.html")));
+        String er1 = "class=\"image\"\\stitle=\"" + nomeAutor + "\"><img alt=\"\"\\ssrc=\"([^\"]+)\"";
+
+        Pattern p = Pattern.compile(er1, Pattern.DOTALL);
+        Matcher m;
+        String linha;
         
-        return res;
-    
+        while (ler.hasNextLine()) {
+            linha = ler.nextLine();
+            m = p.matcher(linha);
+
+            if (m.find()) {
+                ler.close();
+                String resultado = m.group(1);
+                return resultado;
+            }
+        }
+
+        return "Nao definido";
+
     }
-    
-    public static void autor_fotografia(String nomeAutor) throws IOException{
-    
+
+    public static String autor_generoLiterario(String nomeAutor) throws IOException {
+
+        String link = "https://pt.wikipedia.org/wiki/";
+        nomeAutor = nomeAutor.replace(" ", "_");
+        HttpRequestFunctions.httpRequest1(link, nomeAutor, "wiki.html");
+
+        Scanner ler;
+        ler = new Scanner(Files.newInputStream(Path.of("wiki.html")));
+        String er1 = ">Gênero literário";
+        String er2 = "<a\\shref=\"[^\"]+\"\\stitle=\"[^\"]+\">([^<]+)</a>";
+
+        Pattern p = Pattern.compile(er1, Pattern.DOTALL);
+        Matcher m;
+        String linha;
+        String resultado = "";
+
+        while (ler.hasNextLine()) {
+            linha = ler.nextLine();
+            m = p.matcher(linha);
+
+            if (m.find()) {
+                p = Pattern.compile(er2, Pattern.DOTALL);
+
+                while (ler.hasNextLine()) {
+                    linha = ler.nextLine();
+                    m = p.matcher(linha);
+
+                    if (m.find()) {
+                        String[] temp = linha.split(",");
+
+                        for (int i = 0; i < temp.length ; i++) {
+                            m = p.matcher(temp[i]);
+                            
+                            if (m.find()) {
+                                resultado += m.group(1) + " ";
+                            }
+                        }
+                        
+                        ler.close();
+                        return resultado;
+                    }
+                }
+            }
+        }
+
+        return "Nao definido";
+
     }
-    
-    public static void autor_generoLiterario(String nomeAutor) throws IOException{
-    
+
+    public static void autor_ocupacoes(String nomeAutor) throws IOException {
+
     }
-    
-    public static void autor_ocupacoes(String nomeAutor) throws IOException{
-    
+
+    public static void autor_premios(String nomeAutor) throws IOException {
+
     }
-    
-    public static void autor_premios(String nomeAutor) throws IOException{
-    
-    }
-    
-    public static void obras_ISBN(String nomeAutor) throws IOException{
-    
+
+    public static void obras_ISBN(String nomeAutor) throws IOException {
+
     }
     
     public static String obras_nomeAutor(String nomeAutor) throws IOException{
@@ -226,21 +295,17 @@ public class Wrapper {
         return null;
                         
     }
-    
-    public static void obras_titulo(String nomeAutor) throws IOException{
-    
+
+    public static void obras_preco(String nomeAutor) throws IOException {
+
     }
-    
-    public static void obras_preco(String nomeAutor) throws IOException{
-    
+
+    public static void obras_editora(String nomeAutor) throws IOException {
+
     }
-    
-    public static void obras_editora(String nomeAutor) throws IOException{
-    
+
+    public static void obras_fotoCapa(String nomeAutor) throws IOException {
+
     }
-    
-    public static void obras_fotoCapa(String nomeAutor) throws IOException{
-    
-    }
-    
+
 }
