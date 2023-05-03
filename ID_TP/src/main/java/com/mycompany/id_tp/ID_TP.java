@@ -13,7 +13,7 @@ public class ID_TP {
             Scanner palavra = new Scanner(System.in, "ISO-8859-1");
             String word;
             System.out.println("Autor a procurar: ");
-            word = "William Shakespeare"; //palavra.nextLine();
+            word = "José Saramago"; //palavra.nextLine();
 
             String res = "\n" + Wrapper.autor_nome(word) + "\n"
                     + Wrapper.autor_dataNascimento(word) + "\n"
