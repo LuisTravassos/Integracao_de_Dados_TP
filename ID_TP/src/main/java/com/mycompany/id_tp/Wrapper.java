@@ -226,7 +226,7 @@ public class Wrapper {
                             m = p.matcher(temp[i]);
 
                             if (m.find()) {
-                                resultado += m.group(1) + " ";
+                                resultado += m.group(1) + "#";
                             }
                         }
 
@@ -275,7 +275,7 @@ public class Wrapper {
                             m = p.matcher(temp[i]);
 
                             if (m.find()) {
-                                resultado += m.group(1) + " ";
+                                resultado += m.group(1) + "#";
                             }
                         }
 
@@ -356,7 +356,7 @@ public class Wrapper {
                                     linha = ler3.nextLine();
                                     m4 = p4.matcher(linha);
                                     if(m4.find()){
-                                        resultado += m4.group(1) + "\n";
+                                        resultado += m4.group(1) + "#";
                                     }
                                 }
 
@@ -436,16 +436,18 @@ public class Wrapper {
 
                             if (m3.find()) {
                                 //System.out.println("-----------------------------------------3");
-
+                                
                                 String[] temp = linha.split("=");
 
                                 for (int i = 0; i < temp.length; i++) {
                                     m3 = p3.matcher(temp[i]);
 
                                     if (m3.find()) {
-                                        resultado += m3.group(1) + "\n";
+                                        resultado += m3.group(1) + "/";
                                     }
                                 }
+                                
+                                resultado += "#";
 
                                 //resultado += m3.group(1) + "\n";
 
@@ -526,7 +528,7 @@ public class Wrapper {
                             if (m3.find()) {
                                 //System.out.println("-----------------------------------------3");
 
-                                resultado += m3.group(1) + "\n";
+                                resultado += m3.group(1) + "#";
 
                                 if (counter == 2) {
                                     ler1.close();
@@ -605,7 +607,7 @@ public class Wrapper {
                             if (m3.find()) {
                                 //System.out.println("-----------------------------------------3");
 
-                                resultado += m3.group(1) + "\n";
+                                resultado += m3.group(1) + "#";
 
                                 if (counter == 2) {
                                     ler1.close();
@@ -684,7 +686,7 @@ public class Wrapper {
                             if (m3.find()) {
                                 //System.out.println("-----------------------------------------3");
 
-                                resultado += m3.group(1) + "\n";
+                                resultado += m3.group(1) + "#";
 
                                 if (counter == 2) {
                                     ler1.close();
@@ -777,7 +779,7 @@ public class Wrapper {
                                     linha = ler3.nextLine();
                                     m4 = p4.matcher(linha);
                                     if(m4.find()){
-                                        resultado += m4.group(1) + "\n";
+                                        resultado += m4.group(1) + "#";
                                         next = 1;
                                     }
                                 }
@@ -804,6 +806,33 @@ public class Wrapper {
 
         return "Nao definido";
 
+    }
+    
+    public static Autor criaAutor (String nomeAutor) throws IOException{
+        
+        String nome = Wrapper.autor_nome(nomeAutor);
+        String dataNasc = Wrapper.autor_dataNascimento(nomeAutor);
+        String dataMort =  Wrapper.autor_DataMorte(nomeAutor);
+        String nacional = Wrapper.autor_nacionalidade(nomeAutor);
+        String fotografia = Wrapper.autor_fotografia(nomeAutor);
+        String generoLiter = Wrapper.autor_generoLiterario(nomeAutor);
+        String ocupacoes = Wrapper.autor_ocupacoes(nomeAutor);
+        
+        Autor x = new Autor(nome, dataNasc, dataMort, nacional, fotografia, generoLiter, ocupacoes);
+        return x;
+    }
+    
+    public static Livro criaLivro (String nomeAutor, int idAutor) throws IOException{
+        
+        String isbn = Wrapper.obras_ISBN(nomeAutor);
+        String nomeAu = Wrapper.obras_nomeAutor(nomeAutor);
+        String titulo = Wrapper.obras_titulo(nomeAutor);
+        String editora = Wrapper.obras_editora(nomeAutor);
+        String preco = Wrapper.obras_preco(nomeAutor);
+        String fotoCapa = Wrapper.obras_fotoCapa(nomeAutor);
+        
+        Livro x = new Livro(idAutor, isbn, nomeAu, titulo, editora, preco, fotoCapa);
+        return x;
     }
 
 }
