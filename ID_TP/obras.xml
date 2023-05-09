@@ -139,4 +139,61 @@
           <preco>18.80</preco>
           <fotoCapa>https://img.bertrand.pt/images/os-melhores-contos-de-howard-phillips-lovecraft-4-vol-howard-phillips-lovecraft/NDV8MjA1MDk1N3wxODExNTY4fDEzODM1Nzg1NTkwMDA=/300x"</fotoCapa>
      </livro>
+     <livro isbn="978-972-37-2081-5" idAutor="1">
+          <nomesAutores>
+               <nomeAutor>Luís de Camões</nomeAutor>
+          </nomesAutores>
+          <titulo xmlns="Sonetos de Luís de Camões" />
+          <editora>Assírio &amp; Alvim</editora>
+          <preco>14.40</preco>
+          <fotoCapa>https://img.bertrand.pt/images/sonetos-de-luis-de-camoes-luis-de-camoes/NDV8MjM4MzA5OTF8MTk4NDgzNTB8MTU4MjIwMDkzMzAwMA==/300x"</fotoCapa>
+     </livro>
+     <livro isbn="9789895365746" idAutor="1">
+          <nomesAutores>
+               <nomeAutor>Luís de Camões</nomeAutor>
+               <nomeAutor>Thomas Earle</nomeAutor>
+               <nomeAutor>Hélder Macedo</nomeAutor>
+          </nomesAutores>
+          <titulo xmlns="Camões - A Global Poet for Today" />
+          <editora>Dilúvio</editora>
+          <preco>17.01</preco>
+          <fotoCapa>https://img.bertrand.pt/images/camoes-a-global-poet-for-today-luis-de-camoes/NDV8Mjg0MjcwNDd8MjQ3OTU3OTh8MTY4MDE4MDcyMzAwMA==/300x"</fotoCapa>
+     </livro>
+     <livro isbn="9789895427499" idAutor="1">
+          <nomesAutores>
+               <nomeAutor>Luís de Camões</nomeAutor>
+               <nomeAutor>Felipe de Saavedra</nomeAutor>
+          </nomesAutores>
+          <titulo xmlns="Epistolário Magno de Luís de Camões - Volume I" />
+          <editora>Canto Redondo</editora>
+          <preco>22.05</preco>
+          <fotoCapa>https://img.bertrand.pt/images/epistolario-magno-de-luis-de-camoes-volume-i-luis-de-camoes/NDV8MjcyMzI0MjB8MjM1NjUxMjV8MTY1OTYxODA1MDAwMA==/300x"</fotoCapa>
+     </livro>
+     <livro isbn="9789897849534" idAutor="2">
+          <nomesAutores>
+               <nomeAutor>William Shakespeare</nomeAutor>
+          </nomesAutores>
+          <titulo xmlns="Macbeth" />
+          <editora>Penguin Clássicos</editora>
+          <preco>11.66</preco>
+          <fotoCapa>https://img.bertrand.pt/images/macbeth-william-shakespeare/NDV8MjgzODE5MzV8MjQ3NDUzMjJ8MTY3ODcyMzMyOTAwMA==/300x"</fotoCapa>
+     </livro>
+     <livro isbn="978-972-37-1913-0" idAutor="2">
+          <nomesAutores>
+               <nomeAutor>William Shakespeare</nomeAutor>
+          </nomesAutores>
+          <titulo xmlns="Muito barulho por nada" />
+          <editora>Assírio &amp; Alvim</editora>
+          <preco>13.95</preco>
+          <fotoCapa>https://img.bertrand.pt/images/muito-barulho-por-nada-william-shakespeare/NDV8MTc5NTQ4MTJ8MjQ1NDY5NTV8MTY3NzUxMTk1MzAwMA==/300x"</fotoCapa>
+     </livro>
+     <livro isbn="978-972-37-1862-1" idAutor="2">
+          <nomesAutores>
+               <nomeAutor>William Shakespeare</nomeAutor>
+          </nomesAutores>
+          <titulo xmlns="Hamlet" />
+          <editora>Assírio &amp; Alvim</editora>
+          <preco>14.99</preco>
+          <fotoCapa>https://img.bertrand.pt/images/hamlet-william-shakespeare/NDV8MTY5MzUxNTV8MjE4ODExNDF8MTYzOTA1OTkzOTAwMA==/300x"</fotoCapa>
+     </livro>
 </livros>

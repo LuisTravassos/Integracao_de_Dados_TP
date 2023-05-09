@@ -51,6 +51,14 @@ public class ModeloXML {
             subPai.addContent(x);
         }
         pai.addContent(subPai);
+        
+        subPai = new Element("premios");
+        //temp = aut.getOcupacoes().split("#");
+        //for (int i = 0; i < temp.length; i++) {
+            x = new Element("premio");
+            subPai.addContent(x);
+        //}
+        pai.addContent(subPai);
 
         raiz.addContent(pai);
         return doc;

@@ -99,4 +99,57 @@
                <ocupacao>Escritor</ocupacao>
           </ocupacoes>
      </autor>
+     <autor nome="Luís de Camões" id="1">
+          <dataNascimento>1524</dataNascimento>
+          <dataMorte>10 de junho de 1579</dataMorte>
+          <nacionalidade>português</nacionalidade>
+          <fotografia>//upload.wikimedia.org/wikipedia/commons/thumb/f/f3/Cam%C3%B5es%2C_por_Fern%C3%A3o_Gomes.jpg/200px-Cam%C3%B5es%2C_por_Fern%C3%A3o_Gomes.jpg</fotografia>
+          <generosLiterarios>
+               <generoLiterario>Nao definido</generoLiterario>
+          </generosLiterarios>
+          <ocupacoes>
+               <ocupacao>poeta</ocupacao>
+               <ocupacao>soldado</ocupacao>
+          </ocupacoes>
+          <premios>
+               <premio />
+          </premios>
+     </autor>
+     <autor nome="Luís de Camões" id="1">
+          <dataNascimento>1524</dataNascimento>
+          <dataMorte>10 de junho de 1579</dataMorte>
+          <nacionalidade>português</nacionalidade>
+          <fotografia>//upload.wikimedia.org/wikipedia/commons/thumb/f/f3/Cam%C3%B5es%2C_por_Fern%C3%A3o_Gomes.jpg/200px-Cam%C3%B5es%2C_por_Fern%C3%A3o_Gomes.jpg</fotografia>
+          <generosLiterarios>
+               <generoLiterario>Nao definido</generoLiterario>
+          </generosLiterarios>
+          <ocupacoes>
+               <ocupacao>poeta</ocupacao>
+               <ocupacao>soldado</ocupacao>
+          </ocupacoes>
+          <premios>
+               <premio />
+          </premios>
+     </autor>
+     <autor nome="William Shakespeare" id="2">
+          <dataNascimento>23 de abril de 1564</dataNascimento>
+          <dataMorte>23 de abril de 1616</dataMorte>
+          <nacionalidade>Nao definido</nacionalidade>
+          <fotografia>//upload.wikimedia.org/wikipedia/commons/thumb/a/a2/Shakespeare.jpg/300px-Shakespeare.jpg</fotografia>
+          <generosLiterarios>
+               <generoLiterario>Tragédia</generoLiterario>
+               <generoLiterario>drama</generoLiterario>
+               <generoLiterario>comédia</generoLiterario>
+               <generoLiterario>poesia</generoLiterario>
+               <generoLiterario>romance</generoLiterario>
+          </generosLiterarios>
+          <ocupacoes>
+               <ocupacao>Dramaturgo</ocupacao>
+               <ocupacao>poeta</ocupacao>
+               <ocupacao>ator</ocupacao>
+          </ocupacoes>
+          <premios>
+               <premio />
+          </premios>
+     </autor>
 </autores>
