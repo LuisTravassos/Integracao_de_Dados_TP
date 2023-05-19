@@ -1,6 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <livros>
-     <livro isbn="978-972-37-2081-5" idAutor="1">
+     <livro isbn="9789897849534" idAutor="1">
+          <nomesAutores>
+               <nomeAutor>William Shakespeare</nomeAutor>
+          </nomesAutores>
+          <titulo xmlns="Macbeth" />
+          <editora>Penguin Clássicos</editora>
+          <preco>11.66</preco>
+          <fotoCapa>https://img.bertrand.pt/images/macbeth-william-shakespeare/NDV8MjgzODE5MzV8MjQ3NDUzMjJ8MTY3ODcyMzMyOTAwMA==/300x"</fotoCapa>
+     </livro>
+     <livro isbn="978-972-37-2081-5" idAutor="2">
           <nomesAutores>
                <nomeAutor>Luís de Camões</nomeAutor>
           </nomesAutores>
@@ -9,7 +18,17 @@
           <preco>14.40</preco>
           <fotoCapa>https://img.bertrand.pt/images/sonetos-de-luis-de-camoes-luis-de-camoes/NDV8MjM4MzA5OTF8MTk4NDgzNTB8MTU4MjIwMDkzMzAwMA==/300x"</fotoCapa>
      </livro>
-     <livro isbn="9789895365746" idAutor="1">
+     <livro isbn="9789895427499" idAutor="2">
+          <nomesAutores>
+               <nomeAutor>Luís de Camões</nomeAutor>
+               <nomeAutor>Felipe de Saavedra</nomeAutor>
+          </nomesAutores>
+          <titulo xmlns="Epistolário Magno de Luís de Camões - Volume I" />
+          <editora>Canto Redondo</editora>
+          <preco>22.05</preco>
+          <fotoCapa>https://img.bertrand.pt/images/epistolario-magno-de-luis-de-camoes-volume-i-luis-de-camoes/NDV8MjcyMzI0MjB8MjM1NjUxMjV8MTY1OTYxODA1MDAwMA==/300x"</fotoCapa>
+     </livro>
+     <livro isbn="9789895365746" idAutor="2">
           <nomesAutores>
                <nomeAutor>Luís de Camões</nomeAutor>
                <nomeAutor>Thomas Earle</nomeAutor>
@@ -20,44 +39,7 @@
           <preco>17.01</preco>
           <fotoCapa>https://img.bertrand.pt/images/camoes-a-global-poet-for-today-luis-de-camoes/NDV8Mjg0MjcwNDd8MjQ3OTU3OTh8MTY4MDE4MDcyMzAwMA==/300x"</fotoCapa>
      </livro>
-     <livro isbn="9789895427499" idAutor="1">
-          <nomesAutores>
-               <nomeAutor>Luís de Camões</nomeAutor>
-               <nomeAutor>Felipe de Saavedra</nomeAutor>
-          </nomesAutores>
-          <titulo xmlns="Epistolário Magno de Luís de Camões - Volume I" />
-          <editora>Canto Redondo</editora>
-          <preco>22.05</preco>
-          <fotoCapa>https://img.bertrand.pt/images/epistolario-magno-de-luis-de-camoes-volume-i-luis-de-camoes/NDV8MjcyMzI0MjB8MjM1NjUxMjV8MTY1OTYxODA1MDAwMA==/300x"</fotoCapa>
-     </livro>
-     <livro isbn="9789897849534" idAutor="2">
-          <nomesAutores>
-               <nomeAutor>William Shakespeare</nomeAutor>
-          </nomesAutores>
-          <titulo xmlns="Macbeth" />
-          <editora>Penguin Clássicos</editora>
-          <preco>11.66</preco>
-          <fotoCapa>https://img.bertrand.pt/images/macbeth-william-shakespeare/NDV8MjgzODE5MzV8MjQ3NDUzMjJ8MTY3ODcyMzMyOTAwMA==/300x"</fotoCapa>
-     </livro>
-     <livro isbn="978-972-37-1913-0" idAutor="2">
-          <nomesAutores>
-               <nomeAutor>William Shakespeare</nomeAutor>
-          </nomesAutores>
-          <titulo xmlns="Muito barulho por nada" />
-          <editora>Assírio &amp; Alvim</editora>
-          <preco>13.95</preco>
-          <fotoCapa>https://img.bertrand.pt/images/muito-barulho-por-nada-william-shakespeare/NDV8MTc5NTQ4MTJ8MjQ1NDY5NTV8MTY3NzUxMTk1MzAwMA==/300x"</fotoCapa>
-     </livro>
-     <livro isbn="978-972-37-1862-1" idAutor="2">
-          <nomesAutores>
-               <nomeAutor>William Shakespeare</nomeAutor>
-          </nomesAutores>
-          <titulo xmlns="Hamlet" />
-          <editora>Assírio &amp; Alvim</editora>
-          <preco>14.99</preco>
-          <fotoCapa>https://img.bertrand.pt/images/hamlet-william-shakespeare/NDV8MTY5MzUxNTV8MjE4ODExNDF8MTYzOTA1OTkzOTAwMA==/300x"</fotoCapa>
-     </livro>
-     <livro isbn="978-989-711-194-5" idAutor="3">
+     <livro isbn="978-989-711-194-5" idAutor="1">
           <nomesAutores>
                <nomeAutor>Eça de Queiroz</nomeAutor>
           </nomesAutores>
@@ -66,7 +48,7 @@
           <preco>10.98</preco>
           <fotoCapa>https://img.bertrand.pt/images/a-capital-eca-de-queiroz/NDV8Mjc0MzIzNDB8MjM4MDIzMjd8MTY4MjA5MTIwNTAwMA==/300x"</fotoCapa>
      </livro>
-     <livro isbn="978-989-711-020-7" idAutor="3">
+     <livro isbn="978-989-711-020-7" idAutor="1">
           <nomesAutores>
                <nomeAutor>Eça de Queiroz</nomeAutor>
           </nomesAutores>
@@ -75,125 +57,22 @@
           <preco>9.99</preco>
           <fotoCapa>https://img.bertrand.pt/images/os-maias-eca-de-queiroz/NDV8MTUzMjgzNDZ8MjE4MDQ2ODl8MTYzNzg1ODEwMDAwMA==/300x"</fotoCapa>
      </livro>
-     <livro isbn="978-989-711-090-0" idAutor="3">
+     <livro isbn="9789722113410" idAutor="1">
           <nomesAutores>
                <nomeAutor>Eça de Queiroz</nomeAutor>
           </nomesAutores>
-          <titulo xmlns="O Crime do Padre Amaro" />
-          <editora>Livros do Brasil</editora>
-          <preco>11.10</preco>
-          <fotoCapa>https://img.bertrand.pt/images/o-crime-do-padre-amaro-eca-de-queiroz/NDV8MTUzMjc4NzZ8MTk4NzM3NTN8MTU5MzU5OTM3NjAwMA==/300x"</fotoCapa>
+          <titulo xmlns="Eça De Queiroz Entre Os Seus" />
+          <editora>Editorial Caminho</editora>
+          <preco>13.99</preco>
+          <fotoCapa>https://img.bertrand.pt/images/suplemento-ao-dicionario-de-eca-de-queiroz-a-campos-matos/NDV8NTkxMTR8ODkxODF8MTY4MzY0MTc2NTAwMA==/300x"</fotoCapa>
      </livro>
-     <livro isbn="9789722365598" idAutor="4">
+     <livro isbn="9789896892388" idAutor="1">
           <nomesAutores>
-               <nomeAutor>J. K. Rowling</nomeAutor>
+               <nomeAutor>Eça de Queiroz</nomeAutor>
           </nomesAutores>
-          <titulo xmlns="Harry Potter e a Pedra Filosofal" />
-          <editora>Editorial Presença</editora>
-          <preco>16.90</preco>
-          <fotoCapa>https://img.bertrand.pt/images/harry-potter-e-a-pedra-filosofal-j-k-rowling/NDV8MjQwNjY3OTh8MjAxMjQ0MzF8MTU5MDU5MzU3OTAwMA==/300x"</fotoCapa>
-     </livro>
-     <livro isbn="9789722365635" idAutor="4">
-          <nomesAutores>
-               <nomeAutor>J. K. Rowling</nomeAutor>
-          </nomesAutores>
-          <titulo xmlns="Harry Potter e a Ordem da Fénix" />
-          <editora>Editorial Presença</editora>
-          <preco>22.90</preco>
-          <fotoCapa>https://img.bertrand.pt/images/harry-potter-e-a-ordem-da-fenix-j-k-rowling/NDV8MjQwNjY4MDJ8MjAxMjQ0MzV8MTU5MDU5MzU4OTAwMA==/300x"</fotoCapa>
-     </livro>
-     <livro isbn="9789722365604" idAutor="4">
-          <nomesAutores>
-               <nomeAutor>J. K. Rowling</nomeAutor>
-          </nomesAutores>
-          <titulo xmlns="Harry Potter e a Câmara dos Segredos" />
-          <editora>Editorial Presença</editora>
-          <preco>16.90</preco>
-          <fotoCapa>https://img.bertrand.pt/images/harry-potter-e-a-camara-dos-segredos-j-k-rowling/NDV8MjQwNjY3OTl8MjAxMjQ0MzJ8MTU5MDU5MzU4MTAwMA==/300x"</fotoCapa>
-     </livro>
-     <livro isbn="9789728839703" idAutor="5">
-          <nomesAutores>
-               <nomeAutor>Fernando Ribeiro</nomeAutor>
-               <nomeAutor>Howard Phillips Lovecraft</nomeAutor>
-          </nomesAutores>
-          <titulo xmlns="Os Melhores Contos de Howard Phillips Lovecraft - 2º Vol." />
-          <editora>Saída de Emergência</editora>
-          <preco>18.80</preco>
-          <fotoCapa>https://img.bertrand.pt/images/os-melhores-contos-de-howard-phillips-lovecraft-2-vol-fernando-ribeiro/NDV8MTk0ODc5fDI0NTk3MnwxMzgzNTc3MDM4MDAw/300x"</fotoCapa>
-     </livro>
-     <livro isbn="9789896370411" idAutor="5">
-          <nomesAutores>
-               <nomeAutor>Howard Phillips Lovecraft</nomeAutor>
-          </nomesAutores>
-          <titulo xmlns="Os Melhores Contos de Howard Phillips Lovecraft - 3º Vol." />
-          <editora>Saída de Emergência</editora>
-          <preco>18.80</preco>
-          <fotoCapa>https://img.bertrand.pt/images/os-melhores-contos-de-howard-phillips-lovecraft-3-vol-howard-phillips-lovecraft/NDV8MjE3OTAyfDMzMzQ4MHwxMzgzNTc3MDU2MDAw/300x"</fotoCapa>
-     </livro>
-     <livro isbn="9789896371487" idAutor="5">
-          <nomesAutores>
-               <nomeAutor>Howard Phillips Lovecraft</nomeAutor>
-          </nomesAutores>
-          <titulo xmlns="Os Melhores Contos de Howard Phillips Lovecraft - 4º Vol." />
-          <editora>Saída de Emergência</editora>
-          <preco>18.80</preco>
-          <fotoCapa>https://img.bertrand.pt/images/os-melhores-contos-de-howard-phillips-lovecraft-4-vol-howard-phillips-lovecraft/NDV8MjA1MDk1N3wxODExNTY4fDEzODM1Nzg1NTkwMDA=/300x"</fotoCapa>
-     </livro>
-     <livro isbn="978-972-37-2081-5" idAutor="1">
-          <nomesAutores>
-               <nomeAutor>Luís de Camões</nomeAutor>
-          </nomesAutores>
-          <titulo xmlns="Sonetos de Luís de Camões" />
-          <editora>Assírio &amp; Alvim</editora>
-          <preco>14.40</preco>
-          <fotoCapa>https://img.bertrand.pt/images/sonetos-de-luis-de-camoes-luis-de-camoes/NDV8MjM4MzA5OTF8MTk4NDgzNTB8MTU4MjIwMDkzMzAwMA==/300x"</fotoCapa>
-     </livro>
-     <livro isbn="9789895365746" idAutor="1">
-          <nomesAutores>
-               <nomeAutor>Luís de Camões</nomeAutor>
-               <nomeAutor>Thomas Earle</nomeAutor>
-               <nomeAutor>Hélder Macedo</nomeAutor>
-          </nomesAutores>
-          <titulo xmlns="Camões - A Global Poet for Today" />
-          <editora>Dilúvio</editora>
-          <preco>17.01</preco>
-          <fotoCapa>https://img.bertrand.pt/images/camoes-a-global-poet-for-today-luis-de-camoes/NDV8Mjg0MjcwNDd8MjQ3OTU3OTh8MTY4MDE4MDcyMzAwMA==/300x"</fotoCapa>
-     </livro>
-     <livro isbn="9789895427499" idAutor="1">
-          <nomesAutores>
-               <nomeAutor>Luís de Camões</nomeAutor>
-               <nomeAutor>Felipe de Saavedra</nomeAutor>
-          </nomesAutores>
-          <titulo xmlns="Epistolário Magno de Luís de Camões - Volume I" />
-          <editora>Canto Redondo</editora>
-          <preco>22.05</preco>
-          <fotoCapa>https://img.bertrand.pt/images/epistolario-magno-de-luis-de-camoes-volume-i-luis-de-camoes/NDV8MjcyMzI0MjB8MjM1NjUxMjV8MTY1OTYxODA1MDAwMA==/300x"</fotoCapa>
-     </livro>
-     <livro isbn="9789897849534" idAutor="2">
-          <nomesAutores>
-               <nomeAutor>William Shakespeare</nomeAutor>
-          </nomesAutores>
-          <titulo xmlns="Macbeth" />
-          <editora>Penguin Clássicos</editora>
-          <preco>11.66</preco>
-          <fotoCapa>https://img.bertrand.pt/images/macbeth-william-shakespeare/NDV8MjgzODE5MzV8MjQ3NDUzMjJ8MTY3ODcyMzMyOTAwMA==/300x"</fotoCapa>
-     </livro>
-     <livro isbn="978-972-37-1913-0" idAutor="2">
-          <nomesAutores>
-               <nomeAutor>William Shakespeare</nomeAutor>
-          </nomesAutores>
-          <titulo xmlns="Muito barulho por nada" />
-          <editora>Assírio &amp; Alvim</editora>
-          <preco>13.95</preco>
-          <fotoCapa>https://img.bertrand.pt/images/muito-barulho-por-nada-william-shakespeare/NDV8MTc5NTQ4MTJ8MjQ1NDY5NTV8MTY3NzUxMTk1MzAwMA==/300x"</fotoCapa>
-     </livro>
-     <livro isbn="978-972-37-1862-1" idAutor="2">
-          <nomesAutores>
-               <nomeAutor>William Shakespeare</nomeAutor>
-          </nomesAutores>
-          <titulo xmlns="Hamlet" />
-          <editora>Assírio &amp; Alvim</editora>
-          <preco>14.99</preco>
-          <fotoCapa>https://img.bertrand.pt/images/hamlet-william-shakespeare/NDV8MTY5MzUxNTV8MjE4ODExNDF8MTYzOTA1OTkzOTAwMA==/300x"</fotoCapa>
+          <titulo xmlns="Eça De Queiroz" />
+          <editora>Viseu</editora>
+          <preco>6.49</preco>
+          <fotoCapa>https://img.bertrand.pt/images/eca-de-queiroz-a-campos-matos/NDV8MTQzMTc3Mzl8OTgzODE3MXwxMzgzNTgxMzI1MDAw/300x"</fotoCapa>
      </livro>
 </livros>

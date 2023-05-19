@@ -1,45 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <autores>
-     <autor nome="Luís de Camões" id="1">
-          <dataNascimento>1524</dataNascimento>
-          <dataMorte>10 de junho de 1579</dataMorte>
-          <nacionalidade>português</nacionalidade>
-          <fotografia>//upload.wikimedia.org/wikipedia/commons/thumb/f/f3/Cam%C3%B5es%2C_por_Fern%C3%A3o_Gomes.jpg/200px-Cam%C3%B5es%2C_por_Fern%C3%A3o_Gomes.jpg</fotografia>
-          <generosLiterarios>
-               <generoLiterario>Nao definido</generoLiterario>
-          </generosLiterarios>
-          <ocupacoes>
-               <ocupacao>poeta</ocupacao>
-               <ocupacao>soldado</ocupacao>
-          </ocupacoes>
-     </autor>
-     <autor nome="Luís de Camões" id="1">
-          <dataNascimento>1524</dataNascimento>
-          <dataMorte>10 de junho de 1579</dataMorte>
-          <nacionalidade>português</nacionalidade>
-          <fotografia>//upload.wikimedia.org/wikipedia/commons/thumb/f/f3/Cam%C3%B5es%2C_por_Fern%C3%A3o_Gomes.jpg/200px-Cam%C3%B5es%2C_por_Fern%C3%A3o_Gomes.jpg</fotografia>
-          <generosLiterarios>
-               <generoLiterario>Nao definido</generoLiterario>
-          </generosLiterarios>
-          <ocupacoes>
-               <ocupacao>poeta</ocupacao>
-               <ocupacao>soldado</ocupacao>
-          </ocupacoes>
-     </autor>
-     <autor nome="Luís de Camões" id="1">
-          <dataNascimento>1524</dataNascimento>
-          <dataMorte>10 de junho de 1579</dataMorte>
-          <nacionalidade>português</nacionalidade>
-          <fotografia>//upload.wikimedia.org/wikipedia/commons/thumb/f/f3/Cam%C3%B5es%2C_por_Fern%C3%A3o_Gomes.jpg/200px-Cam%C3%B5es%2C_por_Fern%C3%A3o_Gomes.jpg</fotografia>
-          <generosLiterarios>
-               <generoLiterario>Nao definido</generoLiterario>
-          </generosLiterarios>
-          <ocupacoes>
-               <ocupacao>poeta</ocupacao>
-               <ocupacao>soldado</ocupacao>
-          </ocupacoes>
-     </autor>
-     <autor nome="William Shakespeare" id="2">
+     <autor nome="William Shakespeare" id="1">
           <dataNascimento>23 de abril de 1564</dataNascimento>
           <dataMorte>23 de abril de 1616</dataMorte>
           <nacionalidade>Nao definido</nacionalidade>
@@ -56,8 +17,27 @@
                <ocupacao>poeta</ocupacao>
                <ocupacao>ator</ocupacao>
           </ocupacoes>
+          <premios>
+               <premio />
+          </premios>
      </autor>
-     <autor nome="Eça de Queiroz" id="3">
+     <autor nome="Luís de Camões" id="2">
+          <dataNascimento>1524</dataNascimento>
+          <dataMorte>10 de junho de 1579</dataMorte>
+          <nacionalidade>português</nacionalidade>
+          <fotografia>//upload.wikimedia.org/wikipedia/commons/thumb/f/f3/Cam%C3%B5es%2C_por_Fern%C3%A3o_Gomes.jpg/200px-Cam%C3%B5es%2C_por_Fern%C3%A3o_Gomes.jpg</fotografia>
+          <generosLiterarios>
+               <generoLiterario>Nao definido</generoLiterario>
+          </generosLiterarios>
+          <ocupacoes>
+               <ocupacao>poeta</ocupacao>
+               <ocupacao>soldado</ocupacao>
+          </ocupacoes>
+          <premios>
+               <premio />
+          </premios>
+     </autor>
+     <autor nome="Eça de Queiroz" id="1">
           <dataNascimento>25 de novembro de 1845</dataNascimento>
           <dataMorte>16 de agosto de 1900</dataMorte>
           <nacionalidade>Português</nacionalidade>
@@ -69,84 +49,6 @@
                <ocupacao>diplomata</ocupacao>
                <ocupacao>romancista</ocupacao>
                <ocupacao>contista</ocupacao>
-          </ocupacoes>
-     </autor>
-     <autor nome="J. K. Rowling" id="4">
-          <dataNascimento>31 de julho de 1965</dataNascimento>
-          <dataMorte>Nao definido</dataMorte>
-          <nacionalidade>britânica</nacionalidade>
-          <fotografia>//upload.wikimedia.org/wikipedia/commons/thumb/5/5d/J._K._Rowling_2010.jpg/225px-J._K._Rowling_2010.jpg</fotografia>
-          <generosLiterarios>
-               <generoLiterario>Fantasia</generoLiterario>
-               <generoLiterario>drama</generoLiterario>
-               <generoLiterario>tragicomédia</generoLiterario>
-               <generoLiterario>romance policial</generoLiterario>
-          </generosLiterarios>
-          <ocupacoes>
-               <ocupacao>escritora</ocupacao>
-          </ocupacoes>
-     </autor>
-     <autor nome="H. P. Lovecraft" id="5">
-          <dataNascimento>20 de agosto de 1890</dataNascimento>
-          <dataMorte>15 de março de 1937</dataMorte>
-          <nacionalidade>Escritor</nacionalidade>
-          <fotografia>Nao definido</fotografia>
-          <generosLiterarios>
-               <generoLiterario>Terror</generoLiterario>
-               <generoLiterario>ficção científica</generoLiterario>
-          </generosLiterarios>
-          <ocupacoes>
-               <ocupacao>Escritor</ocupacao>
-          </ocupacoes>
-     </autor>
-     <autor nome="Luís de Camões" id="1">
-          <dataNascimento>1524</dataNascimento>
-          <dataMorte>10 de junho de 1579</dataMorte>
-          <nacionalidade>português</nacionalidade>
-          <fotografia>//upload.wikimedia.org/wikipedia/commons/thumb/f/f3/Cam%C3%B5es%2C_por_Fern%C3%A3o_Gomes.jpg/200px-Cam%C3%B5es%2C_por_Fern%C3%A3o_Gomes.jpg</fotografia>
-          <generosLiterarios>
-               <generoLiterario>Nao definido</generoLiterario>
-          </generosLiterarios>
-          <ocupacoes>
-               <ocupacao>poeta</ocupacao>
-               <ocupacao>soldado</ocupacao>
-          </ocupacoes>
-          <premios>
-               <premio />
-          </premios>
-     </autor>
-     <autor nome="Luís de Camões" id="1">
-          <dataNascimento>1524</dataNascimento>
-          <dataMorte>10 de junho de 1579</dataMorte>
-          <nacionalidade>português</nacionalidade>
-          <fotografia>//upload.wikimedia.org/wikipedia/commons/thumb/f/f3/Cam%C3%B5es%2C_por_Fern%C3%A3o_Gomes.jpg/200px-Cam%C3%B5es%2C_por_Fern%C3%A3o_Gomes.jpg</fotografia>
-          <generosLiterarios>
-               <generoLiterario>Nao definido</generoLiterario>
-          </generosLiterarios>
-          <ocupacoes>
-               <ocupacao>poeta</ocupacao>
-               <ocupacao>soldado</ocupacao>
-          </ocupacoes>
-          <premios>
-               <premio />
-          </premios>
-     </autor>
-     <autor nome="William Shakespeare" id="2">
-          <dataNascimento>23 de abril de 1564</dataNascimento>
-          <dataMorte>23 de abril de 1616</dataMorte>
-          <nacionalidade>Nao definido</nacionalidade>
-          <fotografia>//upload.wikimedia.org/wikipedia/commons/thumb/a/a2/Shakespeare.jpg/300px-Shakespeare.jpg</fotografia>
-          <generosLiterarios>
-               <generoLiterario>Tragédia</generoLiterario>
-               <generoLiterario>drama</generoLiterario>
-               <generoLiterario>comédia</generoLiterario>
-               <generoLiterario>poesia</generoLiterario>
-               <generoLiterario>romance</generoLiterario>
-          </generosLiterarios>
-          <ocupacoes>
-               <ocupacao>Dramaturgo</ocupacao>
-               <ocupacao>poeta</ocupacao>
-               <ocupacao>ator</ocupacao>
           </ocupacoes>
           <premios>
                <premio />

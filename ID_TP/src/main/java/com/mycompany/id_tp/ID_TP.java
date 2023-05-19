@@ -5,24 +5,25 @@ import java.util.Properties;
 import java.util.Scanner;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import net.sf.saxon.s9api.SaxonApiException;
 import org.jdom2.Document;
 
 public class ID_TP {
 
-    public static void main(String[] args) {
-        try {
+    public static void main(String[] args) throws SaxonApiException {
+        //try {
             /*Scanner palavra = new Scanner(System.in, "ISO-8859-1");
             String word;
             System.out.println("Autor a procurar: ");
             word = "José Saramago"; //palavra.nextLine();*/
             
-            String lista = "Luís de Camões,William Shakespeare,Eça de Queiroz,J. K. Rowling,Howard Phillips Lovecraft";
+            /*String lista = "Luís de Camões,William Shakespeare,Eça de Queiroz,J. K. Rowling,Howard Phillips Lovecraft";
             String[] word = lista.split(",");
             
             
             
             for (int i = 0; i < 5; i++) {
-                /*
+                
                 String res = "\n\tINFORMAÇÃO DO AUTOR:\n"
                         + Wrapper.autor_nome(word[i]) + "\n"
                         + Wrapper.autor_dataNascimento(word[i]) + "\n"
@@ -32,15 +33,15 @@ public class ID_TP {
                         + Wrapper.autor_generoLiterario(word[i]) + "\n"
                         + Wrapper.autor_ocupacoes(word[i]) + "\n"
                         + "\n\tINFORMAÇÃO DOS LIVROS:\n"
-                        + Wrapper.obras_nomeAutor(word[i]) + "\n"
-                        + Wrapper.obras_titulo(word[i]) + "\n"
-                        + Wrapper.obras_ISBN(word[i]) + "\n"
-                        + Wrapper.obras_preco(word[i]) + "\n"
-                        + Wrapper.obras_editora(word[i]) + "\n"
-                        + Wrapper.obras_fotoCapa(word[i]) + "\n";
+                        + Wrapper.obras_nomeAutor(word[i], 3) + "\n"
+                        + Wrapper.obras_titulo(word[i], 3) + "\n"
+                        + Wrapper.obras_ISBN(word[i], 3) + "\n"
+                        + Wrapper.obras_preco(word[i], 3) + "\n"
+                        + Wrapper.obras_editora(word[i], 3) + "\n"
+                        + Wrapper.obras_fotoCapa(word[i], 3) + "\n";
 
                 System.out.println(res);
-                */
+                
                 
                 //------------Autores----------------//
                 Autor aut = Wrapper.criaAutor(word[i]);
@@ -57,7 +58,7 @@ public class ID_TP {
                 }
                 
                 //------------------Obras-------------------//
-                Livro liv = Wrapper.criaLivro(word[i], aut.getId());
+                Livro liv = Wrapper.criaLivro(word[i], aut.getId(), 3);
                 doc = XMLJDomFunctions.lerDocumentoXML("obras.xml");
                 
                 //Chama a função para adicionar o livro ao XML 
@@ -69,10 +70,14 @@ public class ID_TP {
                 }else{
                     System.out.println("Erro com documento Obras");
                 }
-            }
-
-        } catch (IOException ex) {
+            }*/
+            
+            Frame app = new Frame();
+            app.setVisible(true);
+            
+            
+        /*} catch (IOException ex) {
             Logger.getLogger(ID_TP.class.getName()).log(Level.SEVERE, null, ex);
-        }
+        }*/
     }
 }

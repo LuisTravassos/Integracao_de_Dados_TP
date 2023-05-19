@@ -6,6 +6,8 @@ import java.nio.file.Path;
 import java.util.Scanner;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
+import net.sf.saxon.s9api.SaxonApiException;
+import net.sf.saxon.s9api.XdmValue;
 
 public class Wrapper {
 
@@ -290,7 +292,7 @@ public class Wrapper {
 
     }
 
-    public static String obras_ISBN(String nomeAutor) throws IOException {
+    public static String obras_ISBN(String nomeAutor, int quant) throws IOException {
         
         String link = "https://www.bertrand.pt/pesquisa/";
         String nome = nomeAutor.replace(" ", "+");
@@ -303,7 +305,7 @@ public class Wrapper {
         String er = "<div class=\"cover\">";
         String er2 = "/autor[^\"]+\">" + nomeAutor + "<";
         String er3 = "href=\"(/livro/[^\"]+)\"";
-        String er4 = "ISBN:[^>]+>([^<]+)</span>";
+        String er4 = ",\"isbn\":\"([^\"]+)\",";
 
         Pattern p1 = Pattern.compile(er), p2, p3, p4;
         Matcher m1, m2, m3, m4;
@@ -344,7 +346,7 @@ public class Wrapper {
                             if (m3.find()) {
                                 //System.out.println("-----------------------------------------3");
 
-                                String link2 = "https://www.bertrand.pt/" + m3.group(1);
+                                String link2 = "https://www.bertrand.pt" + m3.group(1);
                                 HttpRequestFunctions.httpRequest1(link2, "", "bertBook.html");
 
                                 String fileContent2 = Files.readString(Path.of("bertBook.html"));
@@ -360,7 +362,7 @@ public class Wrapper {
                                     }
                                 }
 
-                                if (counter == 2) {
+                                if (counter == quant) {
                                     ler1.close();
                                     ler2.close();
                                     return resultado;
@@ -385,7 +387,7 @@ public class Wrapper {
         
     }
 
-    public static String obras_nomeAutor(String nomeAutor) throws IOException {
+    public static String obras_nomeAutor(String nomeAutor, int quant) throws IOException {
         String link = "https://www.bertrand.pt/pesquisa/";
         String nome = nomeAutor.replace(" ", "+");
         HttpRequestFunctions.httpRequest1(link, nome, "bert.html");
@@ -451,7 +453,7 @@ public class Wrapper {
 
                                 //resultado += m3.group(1) + "\n";
 
-                                if (counter == 2) {
+                                if (counter == quant) {
                                     ler1.close();
                                     ler2.close();
                                     return resultado;
@@ -475,7 +477,7 @@ public class Wrapper {
 
     }
 
-    public static String obras_titulo(String nomeAutor) throws IOException {
+    public static String obras_titulo(String nomeAutor, int quant) throws IOException {
         
         String link = "https://www.bertrand.pt/pesquisa/";
         String nome = nomeAutor.replace(" ", "+");
@@ -530,7 +532,7 @@ public class Wrapper {
 
                                 resultado += m3.group(1) + "#";
 
-                                if (counter == 2) {
+                                if (counter == quant) {
                                     ler1.close();
                                     ler2.close();
                                     return resultado;
@@ -554,7 +556,7 @@ public class Wrapper {
 
     }
     
-    public static String obras_preco(String nomeAutor) throws IOException {
+    public static String obras_preco(String nomeAutor, int quant) throws IOException {
             
         String link = "https://www.bertrand.pt/pesquisa/";
         String nome = nomeAutor.replace(" ", "+");
@@ -609,7 +611,7 @@ public class Wrapper {
 
                                 resultado += m3.group(1) + "#";
 
-                                if (counter == 2) {
+                                if (counter == quant) {
                                     ler1.close();
                                     ler2.close();
                                     return resultado;
@@ -633,7 +635,7 @@ public class Wrapper {
 
     }
 
-    public static String obras_editora(String nomeAutor) throws IOException {
+    public static String obras_editora(String nomeAutor, int quant) throws IOException {
         
         String link = "https://www.bertrand.pt/pesquisa/";
         String nome = nomeAutor.replace(" ", "+");
@@ -688,7 +690,7 @@ public class Wrapper {
 
                                 resultado += m3.group(1) + "#";
 
-                                if (counter == 2) {
+                                if (counter == quant) {
                                     ler1.close();
                                     ler2.close();
                                     return resultado;
@@ -712,7 +714,7 @@ public class Wrapper {
         
     }
 
-    public static String obras_fotoCapa(String nomeAutor) throws IOException {
+    public static String obras_fotoCapa(String nomeAutor, int quant) throws IOException {
         
               
         String link = "https://www.bertrand.pt/pesquisa/";
@@ -784,7 +786,7 @@ public class Wrapper {
                                     }
                                 }
 
-                                if (counter == 2) {
+                                if (counter == quant) {
                                     ler1.close();
                                     ler2.close();
                                     return resultado;
@@ -808,29 +810,34 @@ public class Wrapper {
 
     }
     
-    public static Autor criaAutor (String nomeAutor) throws IOException{
+    public static Autor criaAutor (String nomeAutor) throws IOException, SaxonApiException{
+        String xp = "//autor[@nome='" + nomeAutor + "']";
+        XdmValue res = null;
+        res = XPathFunctions.executaXpath(xp, "escritores.xml");
         
-        String nome = Wrapper.autor_nome(nomeAutor);
-        String dataNasc = Wrapper.autor_dataNascimento(nomeAutor);
-        String dataMort =  Wrapper.autor_DataMorte(nomeAutor);
-        String nacional = Wrapper.autor_nacionalidade(nomeAutor);
-        String fotografia = Wrapper.autor_fotografia(nomeAutor);
-        String generoLiter = Wrapper.autor_generoLiterario(nomeAutor);
-        String ocupacoes = Wrapper.autor_ocupacoes(nomeAutor);
-        
-        Autor x = new Autor(nome, dataNasc, dataMort, nacional, fotografia, generoLiter, ocupacoes);
-        return x;
+        if (res == null || res.size() == 0) { //Livro não existe
+            String nome = Wrapper.autor_nome(nomeAutor);
+            String dataNasc = Wrapper.autor_dataNascimento(nomeAutor);
+            String dataMort =  Wrapper.autor_DataMorte(nomeAutor);
+            String nacional = Wrapper.autor_nacionalidade(nomeAutor);
+            String fotografia = Wrapper.autor_fotografia(nomeAutor);
+            String generoLiter = Wrapper.autor_generoLiterario(nomeAutor);
+            String ocupacoes = Wrapper.autor_ocupacoes(nomeAutor);
+
+            Autor x = new Autor(nome, dataNasc, dataMort, nacional, fotografia, generoLiter, ocupacoes);
+            return x;
+        }
+        return null;
     }
     
-    public static Livro criaLivro (String nomeAutor, int idAutor) throws IOException{
-        
-        String isbn = Wrapper.obras_ISBN(nomeAutor);
-        String nomeAu = Wrapper.obras_nomeAutor(nomeAutor);
-        String titulo = Wrapper.obras_titulo(nomeAutor);
-        String editora = Wrapper.obras_editora(nomeAutor);
-        String preco = Wrapper.obras_preco(nomeAutor);
-        String fotoCapa = Wrapper.obras_fotoCapa(nomeAutor);
-        
+    public static Livro criaLivro (String nomeAutor, int idAutor, int quant) throws IOException{
+        String isbn = Wrapper.obras_ISBN(nomeAutor, quant);
+        String nomeAu = Wrapper.obras_nomeAutor(nomeAutor, quant);
+        String titulo = Wrapper.obras_titulo(nomeAutor, quant);
+        String editora = Wrapper.obras_editora(nomeAutor, quant);
+        String preco = Wrapper.obras_preco(nomeAutor, quant);
+        String fotoCapa = Wrapper.obras_fotoCapa(nomeAutor, quant);
+
         Livro x = new Livro(idAutor, isbn, nomeAu, titulo, editora, preco, fotoCapa);
         return x;
     }
