@@ -2,11 +2,11 @@ package com.mycompany.id_tp;
 
 public class Autor {
     
-    private static int id = 0;
+    private int id;
     private String nome, dataNasc, dataMort, nacional, fotografia, generoLiter, ocupacoes;
 
-    public Autor(String nome, String dataNasc, String dataMort, String nacional, String fotografia, String generoLiter, String ocupacoes) {
-        this.id += 1;
+    public Autor(int id, String nome, String dataNasc, String dataMort, String nacional, String fotografia, String generoLiter, String ocupacoes) {
+        this.id = id;
         this.nome = nome;
         this.dataNasc = dataNasc;
         this.dataMort = dataMort;

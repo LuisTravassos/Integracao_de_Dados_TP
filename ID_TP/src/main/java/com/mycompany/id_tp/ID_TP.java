@@ -1,4 +1,4 @@
-package com.mycompany.id_tp;
+package com.mycompany.id_tp; 
 
 import java.io.*;
 import java.util.Properties;

@@ -1,11 +1,13 @@
 package com.mycompany.id_tp;
 
 import java.io.IOException;
+import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JOptionPane;
 import net.sf.saxon.s9api.SaxonApiException;
 import org.jdom2.Document;
+import org.jdom2.Element;
 
 public class Frame extends javax.swing.JFrame {
 
@@ -28,7 +30,18 @@ public class Frame extends javax.swing.JFrame {
         NomeEscritorRemover = new javax.swing.JTextField();
         LabelJanela2 = new javax.swing.JLabel();
         AlterarDadosJanela = new javax.swing.JDialog();
-        jMenuItem1 = new javax.swing.JMenuItem();
+        LabelJanela3 = new javax.swing.JLabel();
+        LabelJanela3_2 = new javax.swing.JLabel();
+        LabelJanela3_3 = new javax.swing.JLabel();
+        nModificacoesJanela3 = new javax.swing.JComboBox<>();
+        nCamposJanela3 = new javax.swing.JComboBox<>();
+        EscritorModificarJanela3 = new javax.swing.JTextField();
+        BotaoJanela3 = new javax.swing.JButton();
+        LabelJanela3_4 = new javax.swing.JLabel();
+        ValorModificarJanela3 = new javax.swing.JTextField();
+        LabelJanela3_5 = new javax.swing.JLabel();
+        AlterarValorJanela3 = new javax.swing.JTextField();
+        LabelJanela3_6 = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
         XMLcodeArea = new javax.swing.JTextArea();
         jMenuBar1 = new javax.swing.JMenuBar();
@@ -88,7 +101,14 @@ public class Frame extends javax.swing.JFrame {
                 .addContainerGap(141, Short.MAX_VALUE))
         );
 
+        RemoverEscritorJanela.setPreferredSize(new java.awt.Dimension(400, 215));
+
         BotaoJanela2.setText("OK");
+        BotaoJanela2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BotaoJanela2ActionPerformed(evt);
+            }
+        });
 
         LabelJanela2.setText("Nome do escritor a remover:");
 
@@ -97,40 +117,117 @@ public class Frame extends javax.swing.JFrame {
         RemoverEscritorJanelaLayout.setHorizontalGroup(
             RemoverEscritorJanelaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(RemoverEscritorJanelaLayout.createSequentialGroup()
-                .addGap(30, 30, 30)
                 .addGroup(RemoverEscritorJanelaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(NomeEscritorRemover, javax.swing.GroupLayout.PREFERRED_SIZE, 354, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(LabelJanela2))
-                .addContainerGap(16, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, RemoverEscritorJanelaLayout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(BotaoJanela2, javax.swing.GroupLayout.PREFERRED_SIZE, 223, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(84, 84, 84))
+                    .addGroup(RemoverEscritorJanelaLayout.createSequentialGroup()
+                        .addGap(23, 23, 23)
+                        .addGroup(RemoverEscritorJanelaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(NomeEscritorRemover, javax.swing.GroupLayout.PREFERRED_SIZE, 354, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(LabelJanela2)))
+                    .addGroup(RemoverEscritorJanelaLayout.createSequentialGroup()
+                        .addGap(86, 86, 86)
+                        .addComponent(BotaoJanela2, javax.swing.GroupLayout.PREFERRED_SIZE, 223, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(29, Short.MAX_VALUE))
         );
         RemoverEscritorJanelaLayout.setVerticalGroup(
             RemoverEscritorJanelaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(RemoverEscritorJanelaLayout.createSequentialGroup()
-                .addGap(76, 76, 76)
+                .addGap(23, 23, 23)
                 .addComponent(LabelJanela2)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(NomeEscritorRemover, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 71, Short.MAX_VALUE)
+                .addGap(33, 33, 33)
                 .addComponent(BotaoJanela2, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(62, 62, 62))
+                .addContainerGap(88, Short.MAX_VALUE))
         );
+
+        LabelJanela3.setText("<html> Tipo de modificação ao ficheiro escritores.xml: ");
+
+        LabelJanela3_2.setText("Campo a modificar: ");
+
+        LabelJanela3_3.setText("Valor a ser modificado: ");
+
+        nModificacoesJanela3.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Remover campo", "Adicionar Campo", "Alterar Campo"}));
+
+        nCamposJanela3.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "dataNascimento", "dataMorte", "nacionalidade", "generosLiterarios", "ocupacoes", "premios" }));
+
+        BotaoJanela3.setText("OK");
+        BotaoJanela3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BotaoJanela3ActionPerformed(evt);
+            }
+        });
+
+        LabelJanela3_4.setText("Autor a modificar: ");
+
+        LabelJanela3_5.setText("Alterar valor por: ");
+
+        LabelJanela3_6.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        LabelJanela3_6.setText("<html>*Dependendo do tipo de modificação, os campos \"valor a ser modificado\" e \"alterar valor por\" podem não ter utilidade.");
+        LabelJanela3_6.setHorizontalTextPosition(javax.swing.SwingConstants.LEADING);
 
         javax.swing.GroupLayout AlterarDadosJanelaLayout = new javax.swing.GroupLayout(AlterarDadosJanela.getContentPane());
         AlterarDadosJanela.getContentPane().setLayout(AlterarDadosJanelaLayout);
         AlterarDadosJanelaLayout.setHorizontalGroup(
             AlterarDadosJanelaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
+            .addGroup(AlterarDadosJanelaLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(AlterarDadosJanelaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(AlterarDadosJanelaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                        .addGroup(AlterarDadosJanelaLayout.createSequentialGroup()
+                            .addComponent(LabelJanela3_6, javax.swing.GroupLayout.PREFERRED_SIZE, 194, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                            .addComponent(BotaoJanela3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addGroup(AlterarDadosJanelaLayout.createSequentialGroup()
+                            .addComponent(LabelJanela3_4)
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                            .addComponent(EscritorModificarJanela3))
+                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, AlterarDadosJanelaLayout.createSequentialGroup()
+                            .addComponent(LabelJanela3_5, javax.swing.GroupLayout.DEFAULT_SIZE, 98, Short.MAX_VALUE)
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                            .addComponent(AlterarValorJanela3, javax.swing.GroupLayout.PREFERRED_SIZE, 215, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGroup(AlterarDadosJanelaLayout.createSequentialGroup()
+                            .addComponent(LabelJanela3_3)
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                            .addComponent(ValorModificarJanela3)))
+                    .addGroup(AlterarDadosJanelaLayout.createSequentialGroup()
+                        .addComponent(LabelJanela3_2)
+                        .addGap(18, 18, 18)
+                        .addComponent(nCamposJanela3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(AlterarDadosJanelaLayout.createSequentialGroup()
+                        .addComponent(LabelJanela3, javax.swing.GroupLayout.PREFERRED_SIZE, 145, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(nModificacoesJanela3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(0, 20, Short.MAX_VALUE))
         );
         AlterarDadosJanelaLayout.setVerticalGroup(
             AlterarDadosJanelaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
+            .addGroup(AlterarDadosJanelaLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(AlterarDadosJanelaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(LabelJanela3_4)
+                    .addComponent(EscritorModificarJanela3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(AlterarDadosJanelaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(nModificacoesJanela3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(LabelJanela3, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(AlterarDadosJanelaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(nCamposJanela3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(LabelJanela3_2))
+                .addGap(18, 18, 18)
+                .addGroup(AlterarDadosJanelaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(LabelJanela3_3)
+                    .addComponent(ValorModificarJanela3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(AlterarDadosJanelaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(LabelJanela3_5)
+                    .addComponent(AlterarValorJanela3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(9, 9, 9)
+                .addGroup(AlterarDadosJanelaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(LabelJanela3_6, javax.swing.GroupLayout.PREFERRED_SIZE, 67, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(BotaoJanela3, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(50, Short.MAX_VALUE))
         );
-
-        jMenuItem1.setText("jMenuItem1");
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -245,7 +342,7 @@ public class Frame extends javax.swing.JFrame {
     }//GEN-LAST:event_RemoverEscritorActionPerformed
 
     private void AlterarDadosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AlterarDadosActionPerformed
-        AlterarDadosJanela.setSize(400, 215);
+        AlterarDadosJanela.setSize(385, 300);
         AlterarDadosJanela.setLocation(200, 200);
         AlterarDadosJanela.setVisible(true);
     }//GEN-LAST:event_AlterarDadosActionPerformed
@@ -254,50 +351,192 @@ public class Frame extends javax.swing.JFrame {
         try {
             //------------Autores----------------//
             Autor aut = Wrapper.criaAutor(NomeEscritorAdicionar.getText());
-            if(aut != null){
+            if (aut != null) {
                 Document doc = XMLJDomFunctions.lerDocumentoXML("escritores.xml");
                 doc = ModeloXML.adicionaAutor(aut, doc);
                 if (doc != null) {
                     XMLJDomFunctions.escreverDocumentoParaFicheiro(doc, "escritores.xml");
-                }else{
+                } else {
                     System.out.println("Erro com documento Escritores");
                 }
-                
+
                 //------------------Obras-------------------//
                 Livro liv = Wrapper.criaLivro(NomeEscritorAdicionar.getText(), aut.getId(), nObrasJanela1.getSelectedIndex());
                 doc = XMLJDomFunctions.lerDocumentoXML("obras.xml");
                 doc = ModeloXML.adicionaLivro(liv, doc);
                 if (doc != null) {
                     XMLJDomFunctions.escreverDocumentoParaFicheiro(doc, "obras.xml");
-                }else{
+                } else {
                     System.out.println("Erro com documento Obras");
                 }
-                
+
                 AdicionarEscritorJanela.setVisible(false);
                 JOptionPane.showMessageDialog(this,
-                    "Escritor e respetivas obras adicionadas com sucesso",
-                    "Informação",
-                    JOptionPane.INFORMATION_MESSAGE);
-               
-            }else{
+                        "Escritor e respetivas obras adicionadas com sucesso",
+                        "Informação",
+                        JOptionPane.INFORMATION_MESSAGE);
+
+            } else {
                 AdicionarEscritorJanela.setVisible(false);
                 JOptionPane.showMessageDialog(this,
                         "Escritor existe no ficheiro",
                         "Informação",
                         JOptionPane.INFORMATION_MESSAGE);
             }
-            
+
         } catch (IOException ex) {
             Logger.getLogger(Frame.class.getName()).log(Level.SEVERE, null, ex);
         } catch (SaxonApiException ex) {
             Logger.getLogger(Frame.class.getName()).log(Level.SEVERE, null, ex);
-        } 
+        }
     }//GEN-LAST:event_BotaoJanela1ActionPerformed
 
-    public static void main(String args[]) {
+    private void BotaoJanela2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotaoJanela2ActionPerformed
+        //------------Autores----------------//
+        Document docEsc = XMLJDomFunctions.lerDocumentoXML("escritores.xml");
+        Document docObr = XMLJDomFunctions.lerDocumentoXML("obras.xml");
+        Element raiz;
+        String ID = null;
+        boolean found = false;
+        if (docEsc == null || docObr == null) {
+            RemoverEscritorJanela.setVisible(false);
+            JOptionPane.showMessageDialog(this,
+                    "Ficheiro não existe",
+                    "Erro",
+                    JOptionPane.ERROR_MESSAGE);
+
+        } else {
+            raiz = docEsc.getRootElement();
+
+            List todosAutores = raiz.getChildren("autor");
+
+            for (int i = 0; i < todosAutores.size(); i++) {
+                Element autor = (Element) todosAutores.get(i); //obtem livro i da Lista
+
+                if (NomeEscritorRemover.getText().equals(autor.getAttributeValue("nome"))) {
+                    found = true;
+                    ID = autor.getAttributeValue("id");
+                }
+            }
+        }
+        if (found) {
+            docEsc = ModeloXML.removeEscritor(ID, docEsc);
+            if (docEsc != null) {
+                XMLJDomFunctions.escreverDocumentoParaFicheiro(docEsc, "escritores.xml");
+            } else {
+                System.out.println("Erro com documento Obras");
+            }
+
+            docObr = ModeloXML.removeObras(ID, docObr);
+            if (docObr != null) {
+                XMLJDomFunctions.escreverDocumentoParaFicheiro(docObr, "obras.xml");
+            } else {
+                System.out.println("Erro com documento Obras");
+            }
+
+            RemoverEscritorJanela.setVisible(false);
+            JOptionPane.showMessageDialog(this,
+                    "Escritor e respetivas obras removidas com sucesso",
+                    "Informação",
+                    JOptionPane.INFORMATION_MESSAGE);
+
+        } else {
+            RemoverEscritorJanela.setVisible(false);
+            JOptionPane.showMessageDialog(this,
+                    "Escritor não existe no ficheiro",
+                    "Erro",
+                    JOptionPane.ERROR_MESSAGE);
+        }
+    }//GEN-LAST:event_BotaoJanela2ActionPerformed
+
+    private void BotaoJanela3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotaoJanela3ActionPerformed
+        Document doc = XMLJDomFunctions.lerDocumentoXML("escritores.xml");
+        Element raiz;
+        String ID = null;
+        boolean found = false;
         
+        if (doc == null) {
+            AlterarDadosJanela.setVisible(false);
+            JOptionPane.showMessageDialog(this,
+                    "Ficheiro não existe",
+                    "Erro",
+                    JOptionPane.ERROR_MESSAGE);
+
+        } else {
+            raiz = doc.getRootElement();
+
+            List todosAutores = raiz.getChildren("autor");
+
+            for (int i = 0; i < todosAutores.size(); i++) {
+                Element autor = (Element) todosAutores.get(i); //obtem livro i da Lista
+
+                if (EscritorModificarJanela3.getText().equals(autor.getAttributeValue("nome"))) {
+                    found = true;
+                    ID = autor.getAttributeValue("id");
+                }
+            }
+        }
+        if (found) {
+            found = false;
+            
+            switch (nModificacoesJanela3.getSelectedIndex()+1) {
+                case 1:
+                    doc = ModeloXML.removeElementEscritor(ID, (String) nCamposJanela3.getSelectedItem(), ValorModificarJanela3.getText(), doc);
+                    if (doc != null) {
+                        found = true;
+                        XMLJDomFunctions.escreverDocumentoParaFicheiro(doc, "escritores.xml");
+                    } else {
+                        System.out.println("Erro com documento Obras");
+                    }
+                    break;
+                case 2:
+                    doc = ModeloXML.adicionaElementEscritor(ID, (String) nCamposJanela3.getSelectedItem(), AlterarValorJanela3.getText(), doc);
+                    if (doc != null) {
+                        found = true;
+                        XMLJDomFunctions.escreverDocumentoParaFicheiro(doc, "escritores.xml");
+                    } else {
+                        System.out.println("Erro com documento Obras");
+                    }
+                    break;
+                case 3:
+                    
+                    if (doc != null) {
+                        found = true;
+                        XMLJDomFunctions.escreverDocumentoParaFicheiro(doc, "escritores.xml");
+                    } else {
+                        System.out.println("Erro com documento Obras");
+                    }
+                    break;
+                default:
+                    System.out.println("Erro Selected Index");
+            }
+            
+            if(found){
+                AlterarDadosJanela.setVisible(false);
+                JOptionPane.showMessageDialog(this,
+                    "Alteracoes feitas com sucesso",
+                    "Informação",
+                    JOptionPane.INFORMATION_MESSAGE);
+            }else{
+                AlterarDadosJanela.setVisible(false);
+                JOptionPane.showMessageDialog(this,
+                    "Escritor não existe no ficheiro",
+                    "Erro",
+                    JOptionPane.ERROR_MESSAGE);
+            }
+        } else {
+            AlterarDadosJanela.setVisible(false);
+            JOptionPane.showMessageDialog(this,
+                    "Escritor não existe no ficheiro",
+                    "Erro",
+                    JOptionPane.ERROR_MESSAGE);
+        }
+    }//GEN-LAST:event_BotaoJanela3ActionPerformed
+
+    public static void main(String args[]) {
+
         /* Set the Nimbus look and feel */
-       //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
+        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
         /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
          * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
          */
@@ -332,24 +571,35 @@ public class Frame extends javax.swing.JFrame {
     private javax.swing.JDialog AdicionarEscritorJanela;
     private javax.swing.JMenuItem AlterarDados;
     private javax.swing.JDialog AlterarDadosJanela;
+    private javax.swing.JTextField AlterarValorJanela3;
     private javax.swing.JButton BotaoJanela1;
     private javax.swing.JButton BotaoJanela2;
+    private javax.swing.JButton BotaoJanela3;
+    private javax.swing.JTextField EscritorModificarJanela3;
     private javax.swing.JLabel LabelJanela1;
     private javax.swing.JLabel LabelJanela1_2;
     private javax.swing.JLabel LabelJanela2;
+    private javax.swing.JLabel LabelJanela3;
+    private javax.swing.JLabel LabelJanela3_2;
+    private javax.swing.JLabel LabelJanela3_3;
+    private javax.swing.JLabel LabelJanela3_4;
+    private javax.swing.JLabel LabelJanela3_5;
+    private javax.swing.JLabel LabelJanela3_6;
     private javax.swing.JTextField NomeEscritorAdicionar;
     private javax.swing.JTextField NomeEscritorRemover;
     private javax.swing.JMenu Principal;
     private javax.swing.JMenuItem RemoverEscritor;
     private javax.swing.JDialog RemoverEscritorJanela;
     private javax.swing.JMenuItem Sair;
+    private javax.swing.JTextField ValorModificarJanela3;
     private javax.swing.JMenuItem VerXMLEscritores;
     private javax.swing.JMenuItem VerXMLObras;
     private javax.swing.JMenu XML;
     private javax.swing.JTextArea XMLcodeArea;
     private javax.swing.JMenuBar jMenuBar1;
-    private javax.swing.JMenuItem jMenuItem1;
     private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JComboBox<String> nCamposJanela3;
+    private javax.swing.JComboBox<String> nModificacoesJanela3;
     private javax.swing.JComboBox<String> nObrasJanela1;
     // End of variables declaration//GEN-END:variables
 }

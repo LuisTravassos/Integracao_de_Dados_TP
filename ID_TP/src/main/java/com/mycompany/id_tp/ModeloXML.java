@@ -51,13 +51,10 @@ public class ModeloXML {
             subPai.addContent(x);
         }
         pai.addContent(subPai);
-        
+
         subPai = new Element("premios");
-        //temp = aut.getOcupacoes().split("#");
-        //for (int i = 0; i < temp.length; i++) {
-            x = new Element("premio");
+            x = new Element("premio").addContent("Participacao");
             subPai.addContent(x);
-        //}
         pai.addContent(subPai);
 
         raiz.addContent(pai);
@@ -89,7 +86,7 @@ public class ModeloXML {
             pai.setAttribute(a);
 
             Element x;
-            
+
             Element subPai = new Element("nomesAutores");
             String[] temp = nomeAutor[i].split("/");
             for (int j = 0; j < temp.length; j++) {
@@ -114,9 +111,8 @@ public class ModeloXML {
         }
         return doc;
     }
-}
-/*
-    public static Document removeLivroAutor(String procura, Document doc) {
+
+    public static Document removeEscritor(String id, Document doc) {
         Element raiz;
         if (doc == null) {
             System.out.println("Ficheiro nao existe - nao dá para remover informação");
@@ -124,22 +120,168 @@ public class ModeloXML {
         } else {
             raiz = doc.getRootElement();
         }
-        List todosLivros = raiz.getChildren("livro");
+
+        List todosEscritores = raiz.getChildren("autor");
         boolean found = false;
-        for (int i = 0; i < todosLivros.size(); i++) {
-            Element livro = (Element) todosLivros.get(i); //obtem livro i da Lista 
-            if (livro.getChild("autor").getText().contains(procura)) {
-                livro.getParent().removeContent(livro);
-                System.out.println("Livro removido com sucesso!");
+
+        for (int i = 0; i < todosEscritores.size(); i++) {
+            Element escritor = (Element) todosEscritores.get(i); //obtem livro i da Lista
+
+            if (id.equals(escritor.getAttributeValue("id"))) {
+                escritor.getParent().removeContent(escritor);
+                System.out.println("Escritor removido com sucesso!");
                 found = true;
             }
         }
         if (!found) {
-            System.out.println("Autor " + procura + " não foi encontrado");
+            System.out.println("Escritor com id " + id + " não foi encontrado");
             return null;
         }
         return doc;
     }
+
+    public static Document removeObras(String id, Document doc) {
+        Element raiz;
+        if (doc == null) {
+            System.out.println("Ficheiro nao existe - nao dá para remover informação");
+            return null;
+        } else {
+            raiz = doc.getRootElement();
+        }
+
+        List todasObras = raiz.getChildren("livro");
+        boolean found = false;
+
+        for (int i = 0; i < todasObras.size(); i++) {
+            Element obras = (Element) todasObras.get(i); //obtem livro i da Lista
+
+            if (id.equals(obras.getAttributeValue("idAutor"))) {
+                obras.getParent().removeContent(obras);
+                System.out.println("Obra removido com sucesso!");
+                found = true;
+            }
+        }
+        if (!found) {
+            System.out.println("Obra com idAutor " + id + " não foi encontrado");
+            return null;
+        }
+        return doc;
+    }
+
+    public static Document removeElementEscritor(String id, String ele, String value, Document doc) {
+        Element raiz;
+        if (doc == null) {
+            System.out.println("Ficheiro nao existe - nao dá para remover informação");
+            return null;
+        } else {
+            raiz = doc.getRootElement();
+        }
+
+        List todosEscritores = raiz.getChildren("autor");
+        boolean found = false;
+
+        for (int i = 0; i < todosEscritores.size(); i++) {
+            Element escritor = (Element) todosEscritores.get(i); //obtem escritor i da Lista
+
+            if (id.equals(escritor.getAttributeValue("id"))) {
+                List Elem = escritor.getChildren(ele);
+                Element p = (Element) Elem.get(0);
+
+                if (!p.getChildren().isEmpty()) {
+                    Elem = p.getChildren();
+                }
+
+                for (int j = 0; j < Elem.size(); j++) {
+                    p = (Element) Elem.get(j);
+
+                    if (p.getValue().equals(value)) {
+                        p.getParent().removeContent(p);
+                        found = true;
+                    }
+                }
+            }
+        }
+        if (!found) {
+            System.out.println("Dados não encontrados");
+            return null;
+        }
+        return doc;
+    }
+
+    public static Document adicionaElementEscritor(String id, String ele, String value, Document doc) {
+        Element raiz;
+        Element x;
+        String helper;
+
+        if (doc == null) {
+            System.out.println("Ficheiro nao existe - nao dá para remover informação");
+            return null;
+        } else {
+            raiz = doc.getRootElement();
+        }
+
+        List todosEscritores = raiz.getChildren("autor");
+        boolean found = false;
+
+        for (int i = 0; i < todosEscritores.size(); i++) {
+            Element escritor = (Element) todosEscritores.get(i); //obtem escritor i da Lista
+
+            if (id.equals(escritor.getAttributeValue("id"))) {
+                List Elem = escritor.getChildren(ele);
+
+                if (!Elem.isEmpty()) {
+                    Element p = (Element) Elem.get(0);
+
+                    if (!p.getChildren().isEmpty()) {
+                        Elem = p.getChildren();
+                        Element a = (Element) Elem.get(0);
+                        helper = a.getName();
+
+                        x = new Element(helper).addContent(value);
+                        p.addContent(x);
+                    } else {
+                        x = new Element(ele).addContent(value);
+                        escritor.addContent(x);
+                    }
+                } else {
+                    x = new Element(ele).addContent(value);
+                    escritor.addContent(x);
+                }
+            }
+        }
+        return doc;
+    }
+
+    public static Document alteraElementEscritor(String id, String element, String value, Document doc) {
+        Element raiz;
+        if (doc == null) {
+            System.out.println("Ficheiro nao existe - nao dá para remover informação");
+            return null;
+        } else {
+            raiz = doc.getRootElement();
+        }
+
+        List todosEscritores = raiz.getChildren("autor");
+        boolean found = false;
+
+        for (int i = 0; i < todosEscritores.size(); i++) {
+            Element escritor = (Element) todosEscritores.get(i); //obtem livro i da Lista
+
+            if (id.equals(escritor.getAttributeValue("id"))) {
+                escritor.getParent().removeContent(escritor);
+                System.out.println("Escritor removido com sucesso!");
+                found = true;
+            }
+        }
+        if (!found) {
+            System.out.println("Escritor com id " + id + " não foi encontrado");
+            return null;
+        }
+        return doc;
+    }
+
+}
+/*
 
     public static Document removeLivroISBN(String isbn, Document doc) {
         Element raiz;
