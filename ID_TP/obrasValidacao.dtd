@@ -1,0 +1,16 @@
+<!ELEMENT livros (livro+)>
+<!ELEMENT livro (nomesAutores,titulo,editora,preco,fotoCapa)>
+<!ELEMENT nomesAutores (nomeAutor+)>
+<!ELEMENT nomeAutor (#PCDATA)>
+<!ELEMENT titulo (#PCDATA)>
+<!ELEMENT editora (#PCDATA)>
+<!ELEMENT preco (#PCDATA)>
+<!ELEMENT fotoCapa (#PCDATA)>
+
+<!ATTLIST livro isbn CDATA #REQUIRED>
+<!ATTLIST livro idAutor CDATA #REQUIRED>
+
+<!ATTLIST livros xmlns:xsi CDATA #IMPLIED>
+<!ATTLIST livros xsi:noNamespaceSchemaLocation CDATA #IMPLIED>
+
+

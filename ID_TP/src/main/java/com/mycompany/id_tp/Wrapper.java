@@ -138,7 +138,7 @@ public class Wrapper {
         Scanner ler;
         ler = new Scanner(Files.newInputStream(Path.of("wiki.html")));
         String er1 = "<td[^>]+>Nacionalidade";
-        String er2 = "<a\\shref=\"[^\"]+\"\\stitle=\"[^\"]+\">([^<]+)</a>";
+        String er2 = "<a[^>]+>([^<]+)</a>";
 
         Pattern p = Pattern.compile(er1, Pattern.DOTALL);
         Matcher m;
@@ -176,7 +176,7 @@ public class Wrapper {
 
         Scanner ler;
         ler = new Scanner(Files.newInputStream(Path.of("wiki.html")));
-        String er1 = "class=\"image\"\\stitle=\"" + nomeAutor + "\"><img alt=\"\"\\ssrc=\"([^\"]+)\"";
+        String er1 = "class=\"image\"\\stitle=\"[^\"]+\"><img alt=\"\"\\ssrc=\"([^\"]+)\"";
 
         Pattern p = Pattern.compile(er1, Pattern.DOTALL);
         Matcher m;

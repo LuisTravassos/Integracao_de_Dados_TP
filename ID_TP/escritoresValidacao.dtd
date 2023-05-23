@@ -1,0 +1,18 @@
+<!ELEMENT autores (autor+)>
+<!ELEMENT autor (dataNascimento+,dataMorte+,nacionalidade+,fotografia,generosLiterarios,ocupacoes,premios)>
+<!ELEMENT dataNascimento (#PCDATA)>
+<!ELEMENT dataMorte (#PCDATA)>
+<!ELEMENT nacionalidade (#PCDATA)>
+<!ELEMENT fotografia (#PCDATA)>
+<!ELEMENT generosLiterarios (generoLiterario+)>
+<!ELEMENT generoLiterario (#PCDATA)>
+<!ELEMENT ocupacoes (ocupacao+)>
+<!ELEMENT ocupacao (#PCDATA)>
+<!ELEMENT premios (premio+)>
+<!ELEMENT premio (#PCDATA)>
+
+<!ATTLIST autor nome CDATA #REQUIRED>
+<!ATTLIST autor id CDATA #REQUIRED>
+
+<!ATTLIST autores xmlns:xsi CDATA #IMPLIED>
+<!ATTLIST autores xsi:noNamespaceSchemaLocation CDATA #IMPLIED>

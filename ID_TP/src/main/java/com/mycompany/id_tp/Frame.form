@@ -79,11 +79,6 @@
       </SubComponents>
     </Container>
     <Container class="javax.swing.JDialog" name="RemoverEscritorJanela">
-      <Properties>
-        <Property name="preferredSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
-          <Dimension value="[400, 215]"/>
-        </Property>
-      </Properties>
 
       <Layout>
         <DimensionLayout dim="0">
@@ -234,7 +229,7 @@
         </Component>
         <Component class="javax.swing.JLabel" name="LabelJanela3_3">
           <Properties>
-            <Property name="text" type="java.lang.String" value="Valor a ser modificado: "/>
+            <Property name="text" type="java.lang.String" value="Valor a remover: "/>
           </Properties>
         </Component>
         <Component class="javax.swing.JComboBox" name="nModificacoesJanela3">
@@ -276,7 +271,7 @@
         </Component>
         <Component class="javax.swing.JLabel" name="LabelJanela3_5">
           <Properties>
-            <Property name="text" type="java.lang.String" value="Alterar valor por: "/>
+            <Property name="text" type="java.lang.String" value="Valor a adicionar:"/>
           </Properties>
         </Component>
         <Component class="javax.swing.JTextField" name="AlterarValorJanela3">
@@ -284,7 +279,7 @@
         <Component class="javax.swing.JLabel" name="LabelJanela3_6">
           <Properties>
             <Property name="horizontalAlignment" type="int" value="2"/>
-            <Property name="text" type="java.lang.String" value="&lt;html&gt;*Dependendo do tipo de modifica&#xe7;&#xe3;o, os campos &quot;valor a ser modificado&quot; e &quot;alterar valor por&quot; podem n&#xe3;o ter utilidade."/>
+            <Property name="text" type="java.lang.String" value="&lt;html&gt;*Dependendo do tipo de modifica&#xe7;&#xe3;o, os campos &quot;valor a remover&quot; e &quot;valor a adicionar&quot; podem n&#xe3;o ter utilidade."/>
             <Property name="horizontalTextPosition" type="int" value="10"/>
           </Properties>
         </Component>
@@ -350,6 +345,45 @@
               </Properties>
               <Events>
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="AlterarDadosActionPerformed"/>
+              </Events>
+            </MenuItem>
+          </SubComponents>
+        </Menu>
+        <Menu class="javax.swing.JMenu" name="Validar">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Validar"/>
+          </Properties>
+          <SubComponents>
+            <MenuItem class="javax.swing.JMenuItem" name="dtdEscritores">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="DTD Escritores"/>
+              </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="dtdEscritoresActionPerformed"/>
+              </Events>
+            </MenuItem>
+            <MenuItem class="javax.swing.JMenuItem" name="xsdEscritores">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="XSD Escritores"/>
+              </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="xsdEscritoresActionPerformed"/>
+              </Events>
+            </MenuItem>
+            <MenuItem class="javax.swing.JMenuItem" name="dtdObras">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="DTD Obras"/>
+              </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="dtdObrasActionPerformed"/>
+              </Events>
+            </MenuItem>
+            <MenuItem class="javax.swing.JMenuItem" name="xsdObras">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="XSD Obras"/>
+              </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="xsdObrasActionPerformed"/>
               </Events>
             </MenuItem>
           </SubComponents>

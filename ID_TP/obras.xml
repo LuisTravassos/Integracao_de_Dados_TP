@@ -1,70 +1,41 @@
 <?xml version="1.0" encoding="utf-8"?>
-<livros>
+<!DOCTYPE livros SYSTEM "obrasValidacao.dtd">
+<livros xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="obrasValidacao.xsd">
+     <livro isbn="978-972-37-2081-5" idAutor="1">
+          <nomesAutores>
+               <nomeAutor>Luís de Camões</nomeAutor>
+          </nomesAutores>
+          <titulo>Sonetos de Luís de Camões</titulo>
+          <editora>Assírio &amp; Alvim</editora>
+          <preco>14.40</preco>
+          <fotoCapa>https://img.bertrand.pt/images/sonetos-de-luis-de-camoes-luis-de-camoes/NDV8MjM4MzA5OTF8MTk4NDgzNTB8MTU4MjIwMDkzMzAwMA==/300x"</fotoCapa>
+     </livro>
      <livro isbn="9789895427499" idAutor="1">
           <nomesAutores>
                <nomeAutor>Luís de Camões</nomeAutor>
                <nomeAutor>Felipe de Saavedra</nomeAutor>
           </nomesAutores>
-          <titulo xmlns="Epistolário Magno de Luís de Camões - Volume I" />
+          <titulo>Epistolário Magno de Luís de Camões - Volume I</titulo>
           <editora>Canto Redondo</editora>
           <preco>22.05</preco>
           <fotoCapa>https://img.bertrand.pt/images/epistolario-magno-de-luis-de-camoes-volume-i-luis-de-camoes/NDV8MjcyMzI0MjB8MjM1NjUxMjV8MTY1OTYxODA1MDAwMA==/300x"</fotoCapa>
      </livro>
-     <livro isbn="9789897849534" idAutor="2">
+     <livro isbn="978-989-711-194-5" idAutor="2">
           <nomesAutores>
-               <nomeAutor>Bluefire Books</nomeAutor>
-               <nomeAutor>William Shakespeare</nomeAutor>
+               <nomeAutor>Eça de Queiroz</nomeAutor>
           </nomesAutores>
-          <titulo xmlns="The Complete Works Of William Shakespeare (37 Plays, 160 Sonnets And 5 Poetry Books With Active Table Of Contents)" />
-          <editora>Bluefire Books</editora>
-          <preco>0.99</preco>
-          <fotoCapa>https://img.bertrand.pt/images/macbeth-william-shakespeare/NDV8MjgzODE5MzV8MjQ3NDUzMjJ8MTY3ODcyMzMyOTAwMA==/300x"</fotoCapa>
+          <titulo>A Capital</titulo>
+          <editora>Livros do Brasil</editora>
+          <preco>10.98</preco>
+          <fotoCapa>https://img.bertrand.pt/images/a-capital-eca-de-queiroz/NDV8Mjc0MzIzNDB8MjM4MDIzMjd8MTY4MjA5MTIwNTAwMA==/300x"</fotoCapa>
      </livro>
-     <livro isbn="978-972-37-1913-0" idAutor="2">
+     <livro isbn="978-989-711-020-7" idAutor="2">
           <nomesAutores>
-               <nomeAutor>William Shakespeare</nomeAutor>
+               <nomeAutor>Eça de Queiroz</nomeAutor>
           </nomesAutores>
-          <titulo xmlns="Macbeth" />
-          <editora>Penguin Clássicos</editora>
-          <preco>11.66</preco>
-          <fotoCapa>https://img.bertrand.pt/images/muito-barulho-por-nada-william-shakespeare/NDV8MTc5NTQ4MTJ8MjQ1NDY5NTV8MTY3NzUxMTk1MzAwMA==/300x"</fotoCapa>
-     </livro>
-     <livro isbn="9789728839703" idAutor="3">
-          <nomesAutores>
-               <nomeAutor>Fernando Ribeiro</nomeAutor>
-               <nomeAutor>Howard Phillips Lovecraft</nomeAutor>
-          </nomesAutores>
-          <titulo xmlns="Os Melhores Contos de Howard Phillips Lovecraft - 2º Vol." />
-          <editora>Saída de Emergência</editora>
-          <preco>18.80</preco>
-          <fotoCapa>https://img.bertrand.pt/images/os-melhores-contos-de-howard-phillips-lovecraft-2-vol-fernando-ribeiro/NDV8MTk0ODc5fDI0NTk3MnwxMzgzNTc3MDM4MDAw/300x"</fotoCapa>
-     </livro>
-     <livro isbn="9789896370411" idAutor="3">
-          <nomesAutores>
-               <nomeAutor>Howard Phillips Lovecraft</nomeAutor>
-          </nomesAutores>
-          <titulo xmlns="Os Melhores Contos de Howard Phillips Lovecraft - 3º Vol." />
-          <editora>Saída de Emergência</editora>
-          <preco>18.80</preco>
-          <fotoCapa>https://img.bertrand.pt/images/os-melhores-contos-de-howard-phillips-lovecraft-3-vol-howard-phillips-lovecraft/NDV8MjE3OTAyfDMzMzQ4MHwxMzgzNTc3MDU2MDAw/300x"</fotoCapa>
-     </livro>
-     <livro isbn="978-972-37-2081-5" idAutor="4">
-          <nomesAutores>
-               <nomeAutor>Luís de Camões</nomeAutor>
-          </nomesAutores>
-          <titulo xmlns="Sonetos de Luís de Camões" />
-          <editora>Assírio &amp; Alvim</editora>
-          <preco>14.40</preco>
-          <fotoCapa>https://img.bertrand.pt/images/sonetos-de-luis-de-camoes-luis-de-camoes/NDV8MjM4MzA5OTF8MTk4NDgzNTB8MTU4MjIwMDkzMzAwMA==/300x"</fotoCapa>
-     </livro>
-     <livro isbn="9789895427499" idAutor="4">
-          <nomesAutores>
-               <nomeAutor>Luís de Camões</nomeAutor>
-               <nomeAutor>Felipe de Saavedra</nomeAutor>
-          </nomesAutores>
-          <titulo xmlns="Epistolário Magno de Luís de Camões - Volume I" />
-          <editora>Canto Redondo</editora>
-          <preco>22.05</preco>
-          <fotoCapa>https://img.bertrand.pt/images/epistolario-magno-de-luis-de-camoes-volume-i-luis-de-camoes/NDV8MjcyMzI0MjB8MjM1NjUxMjV8MTY1OTYxODA1MDAwMA==/300x"</fotoCapa>
+          <titulo>Os Maias</titulo>
+          <editora>Livros do Brasil</editora>
+          <preco>11.10</preco>
+          <fotoCapa>https://img.bertrand.pt/images/os-maias-eca-de-queiroz/NDV8MTUzMjgzNDZ8MjE4MDQ2ODl8MTYzNzg1ODEwMDAwMA==/300x"</fotoCapa>
      </livro>
 </livros>

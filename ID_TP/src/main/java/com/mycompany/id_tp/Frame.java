@@ -53,6 +53,11 @@ public class Frame extends javax.swing.JFrame {
         AdicionarEscritor = new javax.swing.JMenuItem();
         RemoverEscritor = new javax.swing.JMenuItem();
         AlterarDados = new javax.swing.JMenuItem();
+        Validar = new javax.swing.JMenu();
+        dtdEscritores = new javax.swing.JMenuItem();
+        xsdEscritores = new javax.swing.JMenuItem();
+        dtdObras = new javax.swing.JMenuItem();
+        xsdObras = new javax.swing.JMenuItem();
 
         LabelJanela1.setText("Nome do escritor a adicionar:");
 
@@ -101,8 +106,6 @@ public class Frame extends javax.swing.JFrame {
                 .addContainerGap(141, Short.MAX_VALUE))
         );
 
-        RemoverEscritorJanela.setPreferredSize(new java.awt.Dimension(400, 215));
-
         BotaoJanela2.setText("OK");
         BotaoJanela2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -144,7 +147,7 @@ public class Frame extends javax.swing.JFrame {
 
         LabelJanela3_2.setText("Campo a modificar: ");
 
-        LabelJanela3_3.setText("Valor a ser modificado: ");
+        LabelJanela3_3.setText("Valor a remover: ");
 
         nModificacoesJanela3.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Remover campo", "Adicionar Campo", "Alterar Campo"}));
 
@@ -159,10 +162,10 @@ public class Frame extends javax.swing.JFrame {
 
         LabelJanela3_4.setText("Autor a modificar: ");
 
-        LabelJanela3_5.setText("Alterar valor por: ");
+        LabelJanela3_5.setText("Valor a adicionar:");
 
         LabelJanela3_6.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        LabelJanela3_6.setText("<html>*Dependendo do tipo de modificação, os campos \"valor a ser modificado\" e \"alterar valor por\" podem não ter utilidade.");
+        LabelJanela3_6.setText("<html>*Dependendo do tipo de modificação, os campos \"valor a remover\" e \"valor a adicionar\" podem não ter utilidade.");
         LabelJanela3_6.setHorizontalTextPosition(javax.swing.SwingConstants.LEADING);
 
         javax.swing.GroupLayout AlterarDadosJanelaLayout = new javax.swing.GroupLayout(AlterarDadosJanela.getContentPane());
@@ -291,6 +294,42 @@ public class Frame extends javax.swing.JFrame {
 
         jMenuBar1.add(XML);
 
+        Validar.setText("Validar");
+
+        dtdEscritores.setText("DTD Escritores");
+        dtdEscritores.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                dtdEscritoresActionPerformed(evt);
+            }
+        });
+        Validar.add(dtdEscritores);
+
+        xsdEscritores.setText("XSD Escritores");
+        xsdEscritores.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                xsdEscritoresActionPerformed(evt);
+            }
+        });
+        Validar.add(xsdEscritores);
+
+        dtdObras.setText("DTD Obras");
+        dtdObras.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                dtdObrasActionPerformed(evt);
+            }
+        });
+        Validar.add(dtdObras);
+
+        xsdObras.setText("XSD Obras");
+        xsdObras.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                xsdObrasActionPerformed(evt);
+            }
+        });
+        Validar.add(xsdObras);
+
+        jMenuBar1.add(Validar);
+
         setJMenuBar(jMenuBar1);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -319,14 +358,29 @@ public class Frame extends javax.swing.JFrame {
 
     private void VerXMLEscritoresActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_VerXMLEscritoresActionPerformed
         Document doc = XMLJDomFunctions.lerDocumentoXML("escritores.xml");
-        String texto = XMLJDomFunctions.escreverDocumentoString(doc);
-        XMLcodeArea.setText(texto);
+        if (doc == null) {
+            JOptionPane.showMessageDialog(this,
+                    "Ficheiro não existe",
+                    "Erro",
+                    JOptionPane.ERROR_MESSAGE);
+        } else {
+            String texto = XMLJDomFunctions.escreverDocumentoString(doc);
+            XMLcodeArea.setText(texto);
+        }
+
     }//GEN-LAST:event_VerXMLEscritoresActionPerformed
 
     private void VerXMLObrasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_VerXMLObrasActionPerformed
         Document doc = XMLJDomFunctions.lerDocumentoXML("obras.xml");
-        String texto = XMLJDomFunctions.escreverDocumentoString(doc);
-        XMLcodeArea.setText(texto);
+        if (doc == null) {
+            JOptionPane.showMessageDialog(this,
+                    "Ficheiro não existe",
+                    "Erro",
+                    JOptionPane.ERROR_MESSAGE);
+        } else {
+            String texto = XMLJDomFunctions.escreverDocumentoString(doc);
+            XMLcodeArea.setText(texto);
+        }
     }//GEN-LAST:event_VerXMLObrasActionPerformed
 
     private void AdicionarEscritorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AdicionarEscritorActionPerformed
@@ -351,37 +405,49 @@ public class Frame extends javax.swing.JFrame {
         try {
             //------------Autores----------------//
             Autor aut = Wrapper.criaAutor(NomeEscritorAdicionar.getText());
-            if (aut != null) {
-                Document doc = XMLJDomFunctions.lerDocumentoXML("escritores.xml");
-                doc = ModeloXML.adicionaAutor(aut, doc);
-                if (doc != null) {
-                    XMLJDomFunctions.escreverDocumentoParaFicheiro(doc, "escritores.xml");
-                } else {
-                    System.out.println("Erro com documento Escritores");
-                }
 
-                //------------------Obras-------------------//
-                Livro liv = Wrapper.criaLivro(NomeEscritorAdicionar.getText(), aut.getId(), nObrasJanela1.getSelectedIndex());
-                doc = XMLJDomFunctions.lerDocumentoXML("obras.xml");
-                doc = ModeloXML.adicionaLivro(liv, doc);
-                if (doc != null) {
-                    XMLJDomFunctions.escreverDocumentoParaFicheiro(doc, "obras.xml");
-                } else {
-                    System.out.println("Erro com documento Obras");
-                }
-
-                AdicionarEscritorJanela.setVisible(false);
-                JOptionPane.showMessageDialog(this,
-                        "Escritor e respetivas obras adicionadas com sucesso",
-                        "Informação",
-                        JOptionPane.INFORMATION_MESSAGE);
-
-            } else {
-                AdicionarEscritorJanela.setVisible(false);
+            if (aut == null) {
+                //AdicionarEscritorJanela.setVisible(false);
                 JOptionPane.showMessageDialog(this,
                         "Escritor existe no ficheiro",
                         "Informação",
                         JOptionPane.INFORMATION_MESSAGE);
+
+            } else {
+                Livro liv = Wrapper.criaLivro(NomeEscritorAdicionar.getText(), aut.getId(), nObrasJanela1.getSelectedIndex());
+
+                if (liv.getIsbn().equals("Nao definido")) {
+                    //AdicionarEscritorJanela.setVisible(false);
+                    JOptionPane.showMessageDialog(this,
+                            "Numero de livros nao atingido",
+                            "Erro",
+                            JOptionPane.ERROR_MESSAGE);
+
+                } else {
+                    Document doc = XMLJDomFunctions.lerDocumentoXML("escritores.xml");
+                    doc = ModeloXML.adicionaAutor(aut, doc);
+                    if (doc != null) {
+                        XMLJDomFunctions.escreverDocumentoParaFicheiro(doc, "escritores.xml");
+                    } else {
+                        System.out.println("Erro com documento Escritores");
+                    }
+
+                    //------------------Obras-------------------//
+                    doc = XMLJDomFunctions.lerDocumentoXML("obras.xml");
+                    doc = ModeloXML.adicionaLivro(liv, doc);
+                    if (doc != null) {
+                        XMLJDomFunctions.escreverDocumentoParaFicheiro(doc, "obras.xml");
+                    } else {
+                        System.out.println("Erro com documento Obras");
+                    }
+
+                    AdicionarEscritorJanela.setVisible(false);
+                    JOptionPane.showMessageDialog(this,
+                            "Escritor e respetivas obras adicionadas com sucesso",
+                            "Informação",
+                            JOptionPane.INFORMATION_MESSAGE);
+
+                }
             }
 
         } catch (IOException ex) {
@@ -441,7 +507,7 @@ public class Frame extends javax.swing.JFrame {
                     JOptionPane.INFORMATION_MESSAGE);
 
         } else {
-            RemoverEscritorJanela.setVisible(false);
+            //RemoverEscritorJanela.setVisible(false);
             JOptionPane.showMessageDialog(this,
                     "Escritor não existe no ficheiro",
                     "Erro",
@@ -453,8 +519,9 @@ public class Frame extends javax.swing.JFrame {
         Document doc = XMLJDomFunctions.lerDocumentoXML("escritores.xml");
         Element raiz;
         String ID = null;
-        boolean found = false;
-        
+        boolean found1 = false;
+        boolean found2 = false;
+
         if (doc == null) {
             AlterarDadosJanela.setVisible(false);
             JOptionPane.showMessageDialog(this,
@@ -471,67 +538,235 @@ public class Frame extends javax.swing.JFrame {
                 Element autor = (Element) todosAutores.get(i); //obtem livro i da Lista
 
                 if (EscritorModificarJanela3.getText().equals(autor.getAttributeValue("nome"))) {
-                    found = true;
+                    found1 = true;
                     ID = autor.getAttributeValue("id");
                 }
             }
         }
-        if (found) {
-            found = false;
-            
-            switch (nModificacoesJanela3.getSelectedIndex()+1) {
+        if (found1) {;
+        
+            switch (nModificacoesJanela3.getSelectedIndex() + 1) {
                 case 1:
-                    doc = ModeloXML.removeElementEscritor(ID, (String) nCamposJanela3.getSelectedItem(), ValorModificarJanela3.getText(), doc);
-                    if (doc != null) {
-                        found = true;
-                        XMLJDomFunctions.escreverDocumentoParaFicheiro(doc, "escritores.xml");
-                    } else {
-                        System.out.println("Erro com documento Obras");
+                    if(!ValorModificarJanela3.getText().equals("")){
+                        doc = ModeloXML.removeElementEscritor(ID, (String) nCamposJanela3.getSelectedItem(), ValorModificarJanela3.getText(), doc);
+                        if (doc != null) {
+                            XMLJDomFunctions.escreverDocumentoParaFicheiro(doc, "escritores.xml");
+                            found2 = true;
+                        } else {
+                            found1 = false;
+                            System.out.println("Erro com documento Obras");
+                        }
+                    }else{
+                        JOptionPane.showMessageDialog(this,
+                                "Valor a remover por preencher",
+                                "Informação",
+                                JOptionPane.INFORMATION_MESSAGE);
                     }
+                    
                     break;
                 case 2:
-                    doc = ModeloXML.adicionaElementEscritor(ID, (String) nCamposJanela3.getSelectedItem(), AlterarValorJanela3.getText(), doc);
-                    if (doc != null) {
-                        found = true;
-                        XMLJDomFunctions.escreverDocumentoParaFicheiro(doc, "escritores.xml");
-                    } else {
-                        System.out.println("Erro com documento Obras");
+                    if(!AlterarValorJanela3.getText().equals("")){
+                        doc = ModeloXML.adicionaElementEscritor(ID, (String) nCamposJanela3.getSelectedItem(), AlterarValorJanela3.getText(), doc);
+                        if (doc != null) {
+                            XMLJDomFunctions.escreverDocumentoParaFicheiro(doc, "escritores.xml");
+                            found2 = true;
+                        } else {
+                            found1 = false;
+                            System.out.println("Erro com documento Obras");
+                        }
+                    }else{
+                        JOptionPane.showMessageDialog(this,
+                                "Valor a adicionar por preencher",
+                                "Informação",
+                                JOptionPane.INFORMATION_MESSAGE);
                     }
+                    
                     break;
                 case 3:
-                    
-                    if (doc != null) {
-                        found = true;
-                        XMLJDomFunctions.escreverDocumentoParaFicheiro(doc, "escritores.xml");
-                    } else {
-                        System.out.println("Erro com documento Obras");
+                    if(!ValorModificarJanela3.getText().equals("") && !AlterarValorJanela3.getText().equals("")){
+                        doc = ModeloXML.alteraElementEscritor(ID, (String) nCamposJanela3.getSelectedItem(), ValorModificarJanela3.getText(), AlterarValorJanela3.getText(), doc);
+                        if (doc != null) {
+                            XMLJDomFunctions.escreverDocumentoParaFicheiro(doc, "escritores.xml");
+                            found2 = true;
+                        } else {
+                            found1 = false;
+                            System.out.println("Erro com documento Obras");
+                        }
+                    }else{
+                        JOptionPane.showMessageDialog(this,
+                                "Valor a remover e/ou a adicionar por preencher",
+                                "Informação",
+                                JOptionPane.INFORMATION_MESSAGE);
                     }
+                    
                     break;
                 default:
                     System.out.println("Erro Selected Index");
             }
-            
-            if(found){
+
+            if (found1 && found2) {
                 AlterarDadosJanela.setVisible(false);
                 JOptionPane.showMessageDialog(this,
-                    "Alteracoes feitas com sucesso",
-                    "Informação",
-                    JOptionPane.INFORMATION_MESSAGE);
-            }else{
-                AlterarDadosJanela.setVisible(false);
+                        "Alteracoes feitas com sucesso",
+                        "Informação",
+                        JOptionPane.INFORMATION_MESSAGE);
+            } else if (!found1 && !found2) {
+                //AlterarDadosJanela.setVisible(false);
                 JOptionPane.showMessageDialog(this,
-                    "Escritor não existe no ficheiro",
-                    "Erro",
-                    JOptionPane.ERROR_MESSAGE);
+                        "Erro ao alterar elemento",
+                        "Erro",
+                        JOptionPane.ERROR_MESSAGE);
             }
         } else {
-            AlterarDadosJanela.setVisible(false);
+            //AlterarDadosJanela.setVisible(false);
             JOptionPane.showMessageDialog(this,
                     "Escritor não existe no ficheiro",
                     "Erro",
                     JOptionPane.ERROR_MESSAGE);
         }
     }//GEN-LAST:event_BotaoJanela3ActionPerformed
+
+    private void dtdEscritoresActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_dtdEscritoresActionPerformed
+        try {
+            int result = ValidarXML.validarDocumentoDTD("escritores.xml", "escritoresValidacao.dtd");
+
+            switch (result) {
+                case 0:
+                    JOptionPane.showMessageDialog(this,
+                            "Erro em ficheiros",
+                            "Erro",
+                            JOptionPane.ERROR_MESSAGE);
+                    break;
+
+                case 1:
+                    JOptionPane.showMessageDialog(this,
+                            "Ficheiro escritores.xml valido por DTD",
+                            "De Acordo com DTD",
+                            JOptionPane.INFORMATION_MESSAGE);
+                    break;
+
+                case -1:
+                    JOptionPane.showMessageDialog(this,
+                            "Ficheiro escritores.xml invalido por DTD",
+                            "Nao está de Acordo com DTD",
+                            JOptionPane.INFORMATION_MESSAGE);
+                    break;
+
+                default:
+                    JOptionPane.showMessageDialog(this,
+                            "Resultado imprevisto",
+                            "Erro",
+                            JOptionPane.ERROR_MESSAGE);
+                    break;
+            }
+        } catch (IOException ex) {
+            Logger.getLogger(Frame.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }//GEN-LAST:event_dtdEscritoresActionPerformed
+
+    private void xsdEscritoresActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_xsdEscritoresActionPerformed
+        int result = ValidarXML.validarDocumentoXSD("escritores.xml", "escritoresValidacao.xsd");
+        switch (result) {
+            case 0:
+                JOptionPane.showMessageDialog(this,
+                        "Erro em ficheiros",
+                        "Erro",
+                        JOptionPane.ERROR_MESSAGE);
+                break;
+
+            case 1:
+                JOptionPane.showMessageDialog(this,
+                        "Ficheiro escritores.xml valido por XSD",
+                        "De Acordo com XSD",
+                        JOptionPane.INFORMATION_MESSAGE);
+                break;
+
+            case -1:
+                JOptionPane.showMessageDialog(this,
+                        "Ficheiro escritores.xml invalido por XSD",
+                        "Nao está de Acordo com XSD",
+                        JOptionPane.INFORMATION_MESSAGE);
+                break;
+
+            default:
+                JOptionPane.showMessageDialog(this,
+                        "Resultado imprevisto",
+                        "Erro",
+                        JOptionPane.ERROR_MESSAGE);
+                break;
+        }
+    }//GEN-LAST:event_xsdEscritoresActionPerformed
+
+    private void dtdObrasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_dtdObrasActionPerformed
+        try {
+            int result = ValidarXML.validarDocumentoDTD("obras.xml", "obrasValidacao.dtd");
+
+            switch (result) {
+                case 0:
+                    JOptionPane.showMessageDialog(this,
+                            "Erro em ficheiros",
+                            "Erro",
+                            JOptionPane.ERROR_MESSAGE);
+                    break;
+
+                case 1:
+                    JOptionPane.showMessageDialog(this,
+                            "Ficheiro obras.xml valido por DTD",
+                            "De Acordo com DTD",
+                            JOptionPane.INFORMATION_MESSAGE);
+                    break;
+
+                case -1:
+                    JOptionPane.showMessageDialog(this,
+                            "Ficheiro obras.xml invalido por DTD",
+                            "Nao está de Acordo com DTD",
+                            JOptionPane.INFORMATION_MESSAGE);
+                    break;
+
+                default:
+                    JOptionPane.showMessageDialog(this,
+                            "Resultado imprevisto",
+                            "Erro",
+                            JOptionPane.ERROR_MESSAGE);
+                    break;
+            }
+        } catch (IOException ex) {
+            Logger.getLogger(Frame.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }//GEN-LAST:event_dtdObrasActionPerformed
+
+    private void xsdObrasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_xsdObrasActionPerformed
+        int result = ValidarXML.validarDocumentoXSD("obras.xml", "obrasValidacao.xsd");
+        switch (result) {
+            case 0:
+                JOptionPane.showMessageDialog(this,
+                        "Erro em ficheiros",
+                        "Erro",
+                        JOptionPane.ERROR_MESSAGE);
+                break;
+
+            case 1:
+                JOptionPane.showMessageDialog(this,
+                        "Ficheiro obras.xml valido por XSD",
+                        "De Acordo com XSD",
+                        JOptionPane.INFORMATION_MESSAGE);
+                break;
+
+            case -1:
+                JOptionPane.showMessageDialog(this,
+                        "Ficheiro obras.xml invalido por XSD",
+                        "Nao está de Acordo com XSD",
+                        JOptionPane.INFORMATION_MESSAGE);
+                break;
+
+            default:
+                JOptionPane.showMessageDialog(this,
+                        "Resultado imprevisto",
+                        "Erro",
+                        JOptionPane.ERROR_MESSAGE);
+                break;
+        }
+    }//GEN-LAST:event_xsdObrasActionPerformed
 
     public static void main(String args[]) {
 
@@ -591,15 +826,20 @@ public class Frame extends javax.swing.JFrame {
     private javax.swing.JMenuItem RemoverEscritor;
     private javax.swing.JDialog RemoverEscritorJanela;
     private javax.swing.JMenuItem Sair;
+    private javax.swing.JMenu Validar;
     private javax.swing.JTextField ValorModificarJanela3;
     private javax.swing.JMenuItem VerXMLEscritores;
     private javax.swing.JMenuItem VerXMLObras;
     private javax.swing.JMenu XML;
     private javax.swing.JTextArea XMLcodeArea;
+    private javax.swing.JMenuItem dtdEscritores;
+    private javax.swing.JMenuItem dtdObras;
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JComboBox<String> nCamposJanela3;
     private javax.swing.JComboBox<String> nModificacoesJanela3;
     private javax.swing.JComboBox<String> nObrasJanela1;
+    private javax.swing.JMenuItem xsdEscritores;
+    private javax.swing.JMenuItem xsdObras;
     // End of variables declaration//GEN-END:variables
 }

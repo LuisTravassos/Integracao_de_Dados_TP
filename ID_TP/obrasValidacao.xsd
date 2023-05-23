@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+
+	<xsd:element name="nomeAutor" type="xsd:string"/>
+	<xsd:element name="titulo" type="xsd:string"/>
+	<xsd:element name="editora" type="xsd:string"/>
+	<xsd:element name="preco" type="xsd:string"/>
+	<xsd:element name="fotoCapa" type="xsd:string"/>
+
+	<xsd:attribute name="isbn" type="xsd:string"/>
+	<xsd:attribute name="idAutor" type="xsd:string"/>
+
+	<xsd:element name="nomesAutores">
+		<xsd:complexType>
+			<xsd:sequence>
+				<xsd:element ref="nomeAutor" maxOccurs="unbounded"/>
+			</xsd:sequence>
+		</xsd:complexType>
+	</xsd:element>
+
+	<xsd:element name="livro">
+		<xsd:complexType>
+			<xsd:sequence>
+				<xsd:element ref="nomesAutores"/>
+				<xsd:element ref="titulo"/>
+				<xsd:element ref="editora"/>
+				<xsd:element ref="preco"/>
+				<xsd:element ref="fotoCapa"/>
+			</xsd:sequence>
+			<xsd:attribute ref="isbn" use="required"/>
+			<xsd:attribute ref="idAutor" use="required"/>
+		</xsd:complexType>
+	</xsd:element>
+
+	<xsd:element name="livros">
+		<xsd:complexType>
+			<xsd:sequence>
+				<xsd:element ref="livro" minOccurs="1" maxOccurs="unbounded"/>
+			</xsd:sequence>
+		</xsd:complexType>
+	</xsd:element>
+
+</xsd:schema>

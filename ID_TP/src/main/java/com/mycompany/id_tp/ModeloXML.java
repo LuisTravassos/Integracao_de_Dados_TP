@@ -95,7 +95,7 @@ public class ModeloXML {
             }
             pai.addContent(subPai);
 
-            x = new Element("titulo", titulo[i]);
+            x = new Element("titulo").addContent(titulo[i]);
             pai.addContent(x);
 
             x = new Element("editora").addContent(editora[i]);
@@ -159,6 +159,7 @@ public class ModeloXML {
                 obras.getParent().removeContent(obras);
                 System.out.println("Obra removido com sucesso!");
                 found = true;
+                i--;
             }
         }
         if (!found) {
@@ -252,7 +253,7 @@ public class ModeloXML {
         return doc;
     }
 
-    public static Document alteraElementEscritor(String id, String element, String value, Document doc) {
+    public static Document alteraElementEscritor(String id, String ele, String valueSearch, String valueAlter, Document doc) {
         Element raiz;
         if (doc == null) {
             System.out.println("Ficheiro nao existe - nao dá para remover informação");
@@ -265,21 +266,33 @@ public class ModeloXML {
         boolean found = false;
 
         for (int i = 0; i < todosEscritores.size(); i++) {
-            Element escritor = (Element) todosEscritores.get(i); //obtem livro i da Lista
+            Element escritor = (Element) todosEscritores.get(i); //obtem escritor i da Lista
 
             if (id.equals(escritor.getAttributeValue("id"))) {
-                escritor.getParent().removeContent(escritor);
-                System.out.println("Escritor removido com sucesso!");
-                found = true;
+                List Elem = escritor.getChildren(ele);
+                Element p = (Element) Elem.get(0);
+
+                if (!p.getChildren().isEmpty()) {
+                    Elem = p.getChildren();
+                }
+
+                for (int j = 0; j < Elem.size(); j++) {
+                    p = (Element) Elem.get(j);
+
+                    if (p.getValue().equals(valueSearch)) {
+                        p.removeContent();
+                        p.addContent(valueAlter);
+                        found = true;
+                    }
+                }
             }
         }
         if (!found) {
-            System.out.println("Escritor com id " + id + " não foi encontrado");
+            System.out.println("Dados não encontrados");
             return null;
         }
         return doc;
     }
-
 }
 /*
 

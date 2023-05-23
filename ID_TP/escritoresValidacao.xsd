@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+
+	<xsd:element name="dataNascimento" type="xsd:string"/>
+	<xsd:element name="dataMorte" type="xsd:string"/>
+	<xsd:element name="nacionalidade" type="xsd:string"/>
+	<xsd:element name="fotografia" type="xsd:string"/>
+	<xsd:element name="generoLiterario" type="xsd:string"/>
+	<xsd:element name="ocupacao" type="xsd:string"/>
+	<xsd:element name="premio" type="xsd:string"/>
+
+	<xsd:attribute name="nome" type="xsd:string"/>
+	<xsd:attribute name="id" type="xsd:string"/>
+
+	<xsd:element name="generosLiterarios">
+		<xsd:complexType>
+			<xsd:sequence>
+				<xsd:element ref="generoLiterario" maxOccurs="unbounded"/>
+			</xsd:sequence>
+		</xsd:complexType>
+	</xsd:element>
+
+	<xsd:element name="ocupacoes">
+		<xsd:complexType>
+			<xsd:sequence>
+				<xsd:element ref="ocupacao" maxOccurs="unbounded"/>
+			</xsd:sequence>
+		</xsd:complexType>
+	</xsd:element>
+
+	<xsd:element name="premios">
+		<xsd:complexType>
+			<xsd:sequence>
+				<xsd:element ref="premio" maxOccurs="unbounded"/>
+			</xsd:sequence>
+		</xsd:complexType>
+	</xsd:element>
+
+	<xsd:element name="autor">
+		<xsd:complexType>
+			<xsd:sequence>
+				<xsd:element ref="dataNascimento" maxOccurs="unbounded"/>
+				<xsd:element ref="dataMorte" maxOccurs="unbounded"/>
+				<xsd:element ref="nacionalidade" maxOccurs="unbounded"/>
+				<xsd:element ref="fotografia"/>
+				<xsd:element ref="generosLiterarios"/>
+				<xsd:element ref="ocupacoes"/>
+				<xsd:element ref="premios"/>
+			</xsd:sequence>
+			<xsd:attribute ref="nome" use="required"/>
+			<xsd:attribute ref="id" use="required"/>
+		</xsd:complexType>
+	</xsd:element>
+
+	<xsd:element name="autores">
+		<xsd:complexType>
+			<xsd:sequence>
+				<xsd:element ref="autor" minOccurs="1" maxOccurs="unbounded"/>
+			</xsd:sequence>
+		</xsd:complexType>
+	</xsd:element>
+
+</xsd:schema>
