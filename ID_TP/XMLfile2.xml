@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<autores>
+     <autores>
+          <autor nome="Luís de Camões" id="1">
+               152410 de junho de 1579português//upload.wikimedia.org/wikipedia/commons/thumb/f/f3/Cam%C3%B5es%2C_por_Fern%C3%A3o_Gomes.jpg/200px-Cam%C3%B5es%2C_por_Fern%C3%A3o_Gomes.jpg
+               Nao definido
+          
+               poeta
+               soldado
+          
+               Participacao
+               <obras />
+          </autor>
+          <autor nome="Eça de Queiroz" id="2">
+               25 de novembro de 184516 de agosto de 1900Português//upload.wikimedia.org/wikipedia/commons/thumb/d/d9/E%C3%A7a_de_Queir%C3%B3s_c._1882.jpg/200px-E%C3%A7a_de_Queir%C3%B3s_c._1882.jpg
+               Nao definido
+          
+               romantico
+               contista
+               diplomata
+          
+               Participacao
+               <obras />
+          </autor>
+          <autor nome="Fernando Pessoa" id="3">
+               13 de junho de 188830 de novembro de 1935Português//upload.wikimedia.org/wikipedia/commons/thumb/3/32/Pessoa_chapeu.jpg/200px-Pessoa_chapeu.jpg
+               Nao definido
+          
+               Poeta
+               escritor
+               tradutor
+          
+               Participacao
+               <obras />
+          </autor>
+     </autores>
+     <autores />
+</autores>

@@ -1,13 +1,29 @@
 package com.mycompany.id_tp;
 
+import java.awt.Desktop;
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.List;
+import java.util.Scanner;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JOptionPane;
+import javax.xml.transform.Source;
+import javax.xml.transform.Transformer;
+import javax.xml.transform.TransformerException;
+import javax.xml.transform.TransformerFactory;
+import javax.xml.transform.stream.StreamResult;
+import javax.xml.transform.stream.StreamSource;
 import net.sf.saxon.s9api.SaxonApiException;
+import net.sf.saxon.s9api.XdmValue;
 import org.jdom2.Document;
 import org.jdom2.Element;
+import org.jdom2.output.Format;
+import org.jdom2.output.XMLOutputter;
+import org.jdom2.transform.JDOMResult;
+import org.jdom2.transform.JDOMSource;
 
 public class Frame extends javax.swing.JFrame {
 
@@ -42,6 +58,10 @@ public class Frame extends javax.swing.JFrame {
         LabelJanela3_5 = new javax.swing.JLabel();
         AlterarValorJanela3 = new javax.swing.JTextField();
         LabelJanela3_6 = new javax.swing.JLabel();
+        DadosJanela = new javax.swing.JDialog();
+        BotaoJanela4 = new javax.swing.JButton();
+        NomeEscritor = new javax.swing.JTextField();
+        LabelJanela4 = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
         XMLcodeArea = new javax.swing.JTextArea();
         jMenuBar1 = new javax.swing.JMenuBar();
@@ -58,6 +78,15 @@ public class Frame extends javax.swing.JFrame {
         xsdEscritores = new javax.swing.JMenuItem();
         dtdObras = new javax.swing.JMenuItem();
         xsdObras = new javax.swing.JMenuItem();
+        XSLT = new javax.swing.JMenu();
+        HTML1 = new javax.swing.JMenuItem();
+        TXT1 = new javax.swing.JMenuItem();
+        XML1 = new javax.swing.JMenuItem();
+        HTML2 = new javax.swing.JMenuItem();
+        XML2 = new javax.swing.JMenuItem();
+        jMenuItem6 = new javax.swing.JMenuItem();
+        jMenuItem7 = new javax.swing.JMenuItem();
+        jMenuItem8 = new javax.swing.JMenuItem();
 
         LabelJanela1.setText("Nome do escritor a adicionar:");
 
@@ -232,6 +261,43 @@ public class Frame extends javax.swing.JFrame {
                 .addContainerGap(50, Short.MAX_VALUE))
         );
 
+        BotaoJanela4.setText("OK");
+        BotaoJanela4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BotaoJanela4ActionPerformed(evt);
+            }
+        });
+
+        LabelJanela4.setText("Nome do escritor:");
+
+        javax.swing.GroupLayout DadosJanelaLayout = new javax.swing.GroupLayout(DadosJanela.getContentPane());
+        DadosJanela.getContentPane().setLayout(DadosJanelaLayout);
+        DadosJanelaLayout.setHorizontalGroup(
+            DadosJanelaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(DadosJanelaLayout.createSequentialGroup()
+                .addGroup(DadosJanelaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(DadosJanelaLayout.createSequentialGroup()
+                        .addGap(23, 23, 23)
+                        .addGroup(DadosJanelaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(NomeEscritor, javax.swing.GroupLayout.PREFERRED_SIZE, 354, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(LabelJanela4)))
+                    .addGroup(DadosJanelaLayout.createSequentialGroup()
+                        .addGap(86, 86, 86)
+                        .addComponent(BotaoJanela4, javax.swing.GroupLayout.PREFERRED_SIZE, 223, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(23, Short.MAX_VALUE))
+        );
+        DadosJanelaLayout.setVerticalGroup(
+            DadosJanelaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(DadosJanelaLayout.createSequentialGroup()
+                .addGap(23, 23, 23)
+                .addComponent(LabelJanela4)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(NomeEscritor, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(33, 33, 33)
+                .addComponent(BotaoJanela4, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(153, Short.MAX_VALUE))
+        );
+
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         XMLcodeArea.setColumns(20);
@@ -329,6 +395,59 @@ public class Frame extends javax.swing.JFrame {
         Validar.add(xsdObras);
 
         jMenuBar1.add(Validar);
+
+        XSLT.setText("XSLT");
+
+        HTML1.setText("XML >> HTML1");
+        HTML1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                HTML1ActionPerformed(evt);
+            }
+        });
+        XSLT.add(HTML1);
+
+        TXT1.setText("XML >> TXT1");
+        TXT1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                TXT1ActionPerformed(evt);
+            }
+        });
+        XSLT.add(TXT1);
+
+        XML1.setText("XML >> XML1");
+        XML1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                XML1ActionPerformed(evt);
+            }
+        });
+        XSLT.add(XML1);
+
+        HTML2.setText("XML >> HTML2");
+        HTML2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                HTML2ActionPerformed(evt);
+            }
+        });
+        XSLT.add(HTML2);
+
+        XML2.setText("XML >> XML2");
+        XML2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                XML2ActionPerformed(evt);
+            }
+        });
+        XSLT.add(XML2);
+
+        jMenuItem6.setText("jMenuItem6");
+        XSLT.add(jMenuItem6);
+
+        jMenuItem7.setText("jMenuItem7");
+        XSLT.add(jMenuItem7);
+
+        jMenuItem8.setText("jMenuItem8");
+        XSLT.add(jMenuItem8);
+
+        jMenuBar1.add(XSLT);
 
         setJMenuBar(jMenuBar1);
 
@@ -544,10 +663,10 @@ public class Frame extends javax.swing.JFrame {
             }
         }
         if (found1) {;
-        
+
             switch (nModificacoesJanela3.getSelectedIndex() + 1) {
                 case 1:
-                    if(!ValorModificarJanela3.getText().equals("")){
+                    if (!ValorModificarJanela3.getText().equals("")) {
                         doc = ModeloXML.removeElementEscritor(ID, (String) nCamposJanela3.getSelectedItem(), ValorModificarJanela3.getText(), doc);
                         if (doc != null) {
                             XMLJDomFunctions.escreverDocumentoParaFicheiro(doc, "escritores.xml");
@@ -556,16 +675,16 @@ public class Frame extends javax.swing.JFrame {
                             found1 = false;
                             System.out.println("Erro com documento Obras");
                         }
-                    }else{
+                    } else {
                         JOptionPane.showMessageDialog(this,
                                 "Valor a remover por preencher",
                                 "Informação",
                                 JOptionPane.INFORMATION_MESSAGE);
                     }
-                    
+
                     break;
                 case 2:
-                    if(!AlterarValorJanela3.getText().equals("")){
+                    if (!AlterarValorJanela3.getText().equals("")) {
                         doc = ModeloXML.adicionaElementEscritor(ID, (String) nCamposJanela3.getSelectedItem(), AlterarValorJanela3.getText(), doc);
                         if (doc != null) {
                             XMLJDomFunctions.escreverDocumentoParaFicheiro(doc, "escritores.xml");
@@ -574,16 +693,16 @@ public class Frame extends javax.swing.JFrame {
                             found1 = false;
                             System.out.println("Erro com documento Obras");
                         }
-                    }else{
+                    } else {
                         JOptionPane.showMessageDialog(this,
                                 "Valor a adicionar por preencher",
                                 "Informação",
                                 JOptionPane.INFORMATION_MESSAGE);
                     }
-                    
+
                     break;
                 case 3:
-                    if(!ValorModificarJanela3.getText().equals("") && !AlterarValorJanela3.getText().equals("")){
+                    if (!ValorModificarJanela3.getText().equals("") && !AlterarValorJanela3.getText().equals("")) {
                         doc = ModeloXML.alteraElementEscritor(ID, (String) nCamposJanela3.getSelectedItem(), ValorModificarJanela3.getText(), AlterarValorJanela3.getText(), doc);
                         if (doc != null) {
                             XMLJDomFunctions.escreverDocumentoParaFicheiro(doc, "escritores.xml");
@@ -592,13 +711,13 @@ public class Frame extends javax.swing.JFrame {
                             found1 = false;
                             System.out.println("Erro com documento Obras");
                         }
-                    }else{
+                    } else {
                         JOptionPane.showMessageDialog(this,
                                 "Valor a remover e/ou a adicionar por preencher",
                                 "Informação",
                                 JOptionPane.INFORMATION_MESSAGE);
                     }
-                    
+
                     break;
                 default:
                     System.out.println("Erro Selected Index");
@@ -768,6 +887,161 @@ public class Frame extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_xsdObrasActionPerformed
 
+    private void HTML1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_HTML1ActionPerformed
+        Document doc = XMLJDomFunctions.lerDocumentoXML("escritores.xml");
+        Document novo = JDOMFunctions_XSLT.transformaDocumento(doc, "escritores.xml", "transf1.xsl");
+        if (doc != null && novo != null) {
+            XMLJDomFunctions.escreverDocumentoParaFicheiro(novo, "HTMLfile1.html");
+            doc = XMLJDomFunctions.lerDocumentoXML("HTMLfile1.html");
+
+            String url = "HTMLfile1.html";
+            File htmlFile = new File(url);
+
+            try {
+                Desktop.getDesktop().browse(htmlFile.toURI());
+            } catch (IOException ex) {
+                Logger.getLogger(Frame.class.getName()).log(Level.SEVERE, null, ex);
+            }
+
+        } else {
+            JOptionPane.showMessageDialog(this,
+                    "Erro nos ficheiros",
+                    "Error",
+                    JOptionPane.ERROR_MESSAGE);
+        }
+    }//GEN-LAST:event_HTML1ActionPerformed
+
+    private void TXT1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TXT1ActionPerformed
+        Document doc = XMLJDomFunctions.lerDocumentoXML("escritores.xml");
+
+        if (doc != null) {
+            JDOMFunctions_XSLT.transformaDocumento2("escritores.xml", "transf2.xsl", "TXTfile1.txt");
+            Scanner ler = null;
+
+            try {
+                ler = new Scanner(new FileInputStream("TXTfile1.txt"));
+            } catch (FileNotFoundException ex) {
+                Logger.getLogger(Frame.class.getName()).log(Level.SEVERE, null, ex);
+            }
+
+            StringBuilder texto = new StringBuilder();
+            String linha;
+
+            while (ler.hasNextLine()) {
+                linha = ler.nextLine();
+                texto = texto.append(linha).append("\n");
+            }
+
+            ler.close();
+            XMLcodeArea.setText(texto.toString());
+        } else {
+            JOptionPane.showMessageDialog(this,
+                    "Erro nos ficheiros",
+                    "Error",
+                    JOptionPane.ERROR_MESSAGE);
+        }
+    }//GEN-LAST:event_TXT1ActionPerformed
+
+    private void XML1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_XML1ActionPerformed
+        Document doc = XMLJDomFunctions.lerDocumentoXML("obras.xml");
+        if (doc != null) {
+            Document novo = JDOMFunctions_XSLT.transformaDocumento(doc, "obras.xml", "transf3.xsl");
+            XMLJDomFunctions.escreverDocumentoParaFicheiro(novo, "XMLfile1.xml");
+            doc = XMLJDomFunctions.lerDocumentoXML("XMLfile1.xml");
+
+            String t = XMLJDomFunctions.escreverDocumentoString(doc);
+            XMLcodeArea.setText(t);
+        } else {
+            JOptionPane.showMessageDialog(this,
+                    "Erro nos ficheiros",
+                    "Error",
+                    JOptionPane.ERROR_MESSAGE);
+        }
+    }//GEN-LAST:event_XML1ActionPerformed
+
+    private void HTML2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_HTML2ActionPerformed
+        DadosJanela.setSize(400, 215);
+        DadosJanela.setLocation(200, 200);
+        DadosJanela.setVisible(true);
+    }//GEN-LAST:event_HTML2ActionPerformed
+
+    private void XML2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_XML2ActionPerformed
+    /*    Document doc1 = XMLJDomFunctions.lerDocumentoXML("escritores.xml");
+        Document doc2 = XMLJDomFunctions.lerDocumentoXML("obras.xml");
+
+        if (doc1 != null && doc2 != null) {
+            Document novo1 = JDOMFunctions_XSLT.transformaDocumento(doc1, "escritores.xml", "transf5.xsl");
+            Document novo2 = JDOMFunctions_XSLT.transformaDocumento(doc2, "obras.xml", "transf5.xsl");
+
+            Document novo = new Document();
+            Element autores = new Element("autores");
+            novo.setRootElement(autores);
+
+            Element autorElement1 = novo1.getRootElement().clone();
+            Element autorElement2 = novo2.getRootElement().clone();
+
+            autores.addContent(autorElement1);
+            autores.addContent(autorElement2);
+
+            XMLJDomFunctions.escreverDocumentoParaFicheiro(novo, "XMLfile2.xml");
+            Document doc = XMLJDomFunctions.lerDocumentoXML("XMLfile2.xml");
+
+            String t = XMLJDomFunctions.escreverDocumentoString(doc);
+            XMLcodeArea.setText(t);
+        } else {
+            JOptionPane.showMessageDialog(this,
+                    "Erro nos ficheiros",
+                    "Error",
+                    JOptionPane.ERROR_MESSAGE);
+        }*/
+    }//GEN-LAST:event_XML2ActionPerformed
+
+    private void BotaoJanela4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotaoJanela4ActionPerformed
+        try {
+            String xp = "//autor[@nome='" + NomeEscritor.getText() + "']";
+            XdmValue res = null;
+            res = XPathFunctions.executaXpath(xp, "escritores.xml");
+
+            if (res != null && res.size() != 0) {
+                // Carregar o arquivo XSL
+                File xslFile = new File("transf4.xsl");
+                Source xslt = new StreamSource(xslFile);
+
+                // Carregar o arquivo XML de entrada
+                File xmlFile = new File("obras.xml");
+                Source xml = new StreamSource(xmlFile);
+
+                // Definir o valor do parâmetro do autor
+                String autor = NomeEscritor.getText();
+                TransformerFactory factory = TransformerFactory.newInstance();
+                Transformer transformer = factory.newTransformer(xslt);
+                transformer.setParameter("autor", autor);
+
+                // Executar a transformação
+                File outputFile = new File("HTMLfile2.html");
+                transformer.transform(xml, new StreamResult(outputFile));
+
+                // Abrir o arquivo resultante no navegador
+                if (Desktop.isDesktopSupported()) {
+                    Desktop.getDesktop().browse(outputFile.toURI());
+                }
+
+                DadosJanela.setVisible(false);
+
+            } else {
+                JOptionPane.showMessageDialog(this,
+                        "Nome de autor inexistente",
+                        "Error",
+                        JOptionPane.ERROR_MESSAGE);
+            }
+
+        } catch (TransformerException | IOException e) {
+            e.printStackTrace();
+        } catch (SaxonApiException ex) {
+            Logger.getLogger(Frame.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }//GEN-LAST:event_BotaoJanela4ActionPerformed
+
     public static void main(String args[]) {
 
         /* Set the Nimbus look and feel */
@@ -810,7 +1084,11 @@ public class Frame extends javax.swing.JFrame {
     private javax.swing.JButton BotaoJanela1;
     private javax.swing.JButton BotaoJanela2;
     private javax.swing.JButton BotaoJanela3;
+    private javax.swing.JButton BotaoJanela4;
+    private javax.swing.JDialog DadosJanela;
     private javax.swing.JTextField EscritorModificarJanela3;
+    private javax.swing.JMenuItem HTML1;
+    private javax.swing.JMenuItem HTML2;
     private javax.swing.JLabel LabelJanela1;
     private javax.swing.JLabel LabelJanela1_2;
     private javax.swing.JLabel LabelJanela2;
@@ -820,21 +1098,30 @@ public class Frame extends javax.swing.JFrame {
     private javax.swing.JLabel LabelJanela3_4;
     private javax.swing.JLabel LabelJanela3_5;
     private javax.swing.JLabel LabelJanela3_6;
+    private javax.swing.JLabel LabelJanela4;
+    private javax.swing.JTextField NomeEscritor;
     private javax.swing.JTextField NomeEscritorAdicionar;
     private javax.swing.JTextField NomeEscritorRemover;
     private javax.swing.JMenu Principal;
     private javax.swing.JMenuItem RemoverEscritor;
     private javax.swing.JDialog RemoverEscritorJanela;
     private javax.swing.JMenuItem Sair;
+    private javax.swing.JMenuItem TXT1;
     private javax.swing.JMenu Validar;
     private javax.swing.JTextField ValorModificarJanela3;
     private javax.swing.JMenuItem VerXMLEscritores;
     private javax.swing.JMenuItem VerXMLObras;
     private javax.swing.JMenu XML;
+    private javax.swing.JMenuItem XML1;
+    private javax.swing.JMenuItem XML2;
     private javax.swing.JTextArea XMLcodeArea;
+    private javax.swing.JMenu XSLT;
     private javax.swing.JMenuItem dtdEscritores;
     private javax.swing.JMenuItem dtdObras;
     private javax.swing.JMenuBar jMenuBar1;
+    private javax.swing.JMenuItem jMenuItem6;
+    private javax.swing.JMenuItem jMenuItem7;
+    private javax.swing.JMenuItem jMenuItem8;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JComboBox<String> nCamposJanela3;
     private javax.swing.JComboBox<String> nModificacoesJanela3;

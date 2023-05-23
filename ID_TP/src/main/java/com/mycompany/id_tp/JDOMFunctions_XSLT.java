@@ -1,8 +1,4 @@
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
-package ficha9;
+package com.mycompany.id_tp;
 
 import java.io.BufferedReader;
 import java.io.FileOutputStream;
@@ -21,10 +17,6 @@ import org.jdom2.Document;
 import org.jdom2.transform.XSLTransformException;
 import org.jdom2.transform.XSLTransformer;
 
-/**
- *
- * @author abs
- */
 public class JDOMFunctions_XSLT {
     
       /* Não permitte Transformações para TXT method="text"*/

@@ -1,5 +1,4 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE livros SYSTEM "obrasValidacao.dtd">
 <livros xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="obrasValidacao.xsd">
      <livro isbn="978-972-37-2081-5" idAutor="1">
           <nomesAutores>
@@ -37,5 +36,24 @@
           <editora>Livros do Brasil</editora>
           <preco>11.10</preco>
           <fotoCapa>https://img.bertrand.pt/images/os-maias-eca-de-queiroz/NDV8MTUzMjgzNDZ8MjE4MDQ2ODl8MTYzNzg1ODEwMDAwMA==/300x"</fotoCapa>
+     </livro>
+     <livro isbn="978-972-37-2318-2" idAutor="3">
+          <nomesAutores>
+               <nomeAutor>Fernando Pessoa</nomeAutor>
+          </nomesAutores>
+          <titulo>Poesia, Ricardo Reis</titulo>
+          <editora>Assírio &amp; Alvim</editora>
+          <preco>16.97</preco>
+          <fotoCapa>https://img.bertrand.pt/images/poesia-ricardo-reis-fernando-pessoa/NDV8MTEyMzcwNTJ8MjQ3NjYxODJ8MTY4MzcyOTUzMDAwMA==/300x"</fotoCapa>
+     </livro>
+     <livro isbn="978-972-0-79310-2" idAutor="3">
+          <nomesAutores>
+               <nomeAutor>Fernando Pessoa</nomeAutor>
+               <nomeAutor>Ofélia Queiroz</nomeAutor>
+          </nomesAutores>
+          <titulo>Cartas de Amor de Fernando Pessoa e Ofélia Queiroz</titulo>
+          <editora>Assírio &amp; Alvim</editora>
+          <preco>18.85</preco>
+          <fotoCapa>https://img.bertrand.pt/images/cartas-de-amor-de-fernando-pessoa-e-ofelia-queiroz-fernando-pessoa/NDV8MTMwMjk2MjN8MTg3MTg3MTZ8MTU1MTI1OTA4MDAwMA==/300x"</fotoCapa>
      </livro>
 </livros>

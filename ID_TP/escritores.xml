@@ -1,5 +1,4 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE autores SYSTEM "escritoresValidacao.dtd">
 <autores xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="escritoresValidacao.xsd">
      <autor nome="Luís de Camões" id="1">
           <dataNascimento>1524</dataNascimento>
@@ -29,6 +28,23 @@
                <ocupacao>romantico</ocupacao>
                <ocupacao>contista</ocupacao>
                <ocupacao>diplomata</ocupacao>
+          </ocupacoes>
+          <premios>
+               <premio>Participacao</premio>
+          </premios>
+     </autor>
+     <autor nome="Fernando Pessoa" id="3">
+          <dataNascimento>13 de junho de 1888</dataNascimento>
+          <dataMorte>30 de novembro de 1935</dataMorte>
+          <nacionalidade>Português</nacionalidade>
+          <fotografia>//upload.wikimedia.org/wikipedia/commons/thumb/3/32/Pessoa_chapeu.jpg/200px-Pessoa_chapeu.jpg</fotografia>
+          <generosLiterarios>
+               <generoLiterario>Nao definido</generoLiterario>
+          </generosLiterarios>
+          <ocupacoes>
+               <ocupacao>Poeta</ocupacao>
+               <ocupacao>escritor</ocupacao>
+               <ocupacao>tradutor</ocupacao>
           </ocupacoes>
           <premios>
                <premio>Participacao</premio>
