@@ -56,4 +56,32 @@
           <preco>18.85</preco>
           <fotoCapa>https://img.bertrand.pt/images/cartas-de-amor-de-fernando-pessoa-e-ofelia-queiroz-fernando-pessoa/NDV8MTMwMjk2MjN8MTg3MTg3MTZ8MTU1MTI1OTA4MDAwMA==/300x"</fotoCapa>
      </livro>
+     <livro isbn="9789728839703" idAutor="4">
+          <nomesAutores>
+               <nomeAutor>Fernando Ribeiro</nomeAutor>
+               <nomeAutor>Howard Phillips Lovecraft</nomeAutor>
+          </nomesAutores>
+          <titulo>Os Melhores Contos de Howard Phillips Lovecraft - 2º Vol.</titulo>
+          <editora>Saída de Emergência</editora>
+          <preco>18.80</preco>
+          <fotoCapa>https://img.bertrand.pt/images/os-melhores-contos-de-howard-phillips-lovecraft-2-vol-fernando-ribeiro/NDV8MTk0ODc5fDI0NTk3MnwxMzgzNTc3MDM4MDAw/300x"</fotoCapa>
+     </livro>
+     <livro isbn="9789896370411" idAutor="4">
+          <nomesAutores>
+               <nomeAutor>Howard Phillips Lovecraft</nomeAutor>
+          </nomesAutores>
+          <titulo>Os Melhores Contos de Howard Phillips Lovecraft - 3º Vol.</titulo>
+          <editora>Saída de Emergência</editora>
+          <preco>18.80</preco>
+          <fotoCapa>https://img.bertrand.pt/images/os-melhores-contos-de-howard-phillips-lovecraft-3-vol-howard-phillips-lovecraft/NDV8MjE3OTAyfDMzMzQ4MHwxMzgzNTc3MDU2MDAw/300x"</fotoCapa>
+     </livro>
+     <livro isbn="9789896371487" idAutor="4">
+          <nomesAutores>
+               <nomeAutor>Howard Phillips Lovecraft</nomeAutor>
+          </nomesAutores>
+          <titulo>Os Melhores Contos de Howard Phillips Lovecraft - 4º Vol.</titulo>
+          <editora>Saída de Emergência</editora>
+          <preco>18.80</preco>
+          <fotoCapa>https://img.bertrand.pt/images/os-melhores-contos-de-howard-phillips-lovecraft-4-vol-howard-phillips-lovecraft/NDV8MjA1MDk1N3wxODExNTY4fDEzODM1Nzg1NTkwMDA=/300x"</fotoCapa>
+     </livro>
 </livros>

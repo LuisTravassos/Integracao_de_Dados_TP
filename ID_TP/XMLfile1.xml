@@ -20,31 +20,32 @@
           <preco>18.85</preco>
           <fotoCapa>https://img.bertrand.pt/images/cartas-de-amor-de-fernando-pessoa-e-ofelia-queiroz-fernando-pessoa/NDV8MTMwMjk2MjN8MTg3MTg3MTZ8MTU1MTI1OTA4MDAwMA==/300x"</fotoCapa>
      </livro>
-     <livro isbn="978-972-37-2318-2">
-          <titulo>Poesia, Ricardo Reis</titulo>
+     <livro isbn="9789728839703">
+          <titulo>Os Melhores Contos de Howard Phillips Lovecraft - 2º Vol.</titulo>
           <nomesAutores>
-               <nomeAutor>Fernando Pessoa</nomeAutor>
+               <nomeAutor>Fernando Ribeiro</nomeAutor>
+               <nomeAutor>Howard Phillips Lovecraft</nomeAutor>
           </nomesAutores>
-          <editora>Assírio &amp; Alvim</editora>
-          <preco>16.97</preco>
-          <fotoCapa>https://img.bertrand.pt/images/poesia-ricardo-reis-fernando-pessoa/NDV8MTEyMzcwNTJ8MjQ3NjYxODJ8MTY4MzcyOTUzMDAwMA==/300x"</fotoCapa>
+          <editora>Saída de Emergência</editora>
+          <preco>18.80</preco>
+          <fotoCapa>https://img.bertrand.pt/images/os-melhores-contos-de-howard-phillips-lovecraft-2-vol-fernando-ribeiro/NDV8MTk0ODc5fDI0NTk3MnwxMzgzNTc3MDM4MDAw/300x"</fotoCapa>
      </livro>
-     <livro isbn="978-972-37-2081-5">
-          <titulo>Sonetos de Luís de Camões</titulo>
+     <livro isbn="9789896370411">
+          <titulo>Os Melhores Contos de Howard Phillips Lovecraft - 3º Vol.</titulo>
           <nomesAutores>
-               <nomeAutor>Luís de Camões</nomeAutor>
+               <nomeAutor>Howard Phillips Lovecraft</nomeAutor>
           </nomesAutores>
-          <editora>Assírio &amp; Alvim</editora>
-          <preco>14.40</preco>
-          <fotoCapa>https://img.bertrand.pt/images/sonetos-de-luis-de-camoes-luis-de-camoes/NDV8MjM4MzA5OTF8MTk4NDgzNTB8MTU4MjIwMDkzMzAwMA==/300x"</fotoCapa>
+          <editora>Saída de Emergência</editora>
+          <preco>18.80</preco>
+          <fotoCapa>https://img.bertrand.pt/images/os-melhores-contos-de-howard-phillips-lovecraft-3-vol-howard-phillips-lovecraft/NDV8MjE3OTAyfDMzMzQ4MHwxMzgzNTc3MDU2MDAw/300x"</fotoCapa>
      </livro>
-     <livro isbn="978-989-711-020-7">
-          <titulo>Os Maias</titulo>
+     <livro isbn="9789896371487">
+          <titulo>Os Melhores Contos de Howard Phillips Lovecraft - 4º Vol.</titulo>
           <nomesAutores>
-               <nomeAutor>Eça de Queiroz</nomeAutor>
+               <nomeAutor>Howard Phillips Lovecraft</nomeAutor>
           </nomesAutores>
-          <editora>Livros do Brasil</editora>
-          <preco>11.10</preco>
-          <fotoCapa>https://img.bertrand.pt/images/os-maias-eca-de-queiroz/NDV8MTUzMjgzNDZ8MjE4MDQ2ODl8MTYzNzg1ODEwMDAwMA==/300x"</fotoCapa>
+          <editora>Saída de Emergência</editora>
+          <preco>18.80</preco>
+          <fotoCapa>https://img.bertrand.pt/images/os-melhores-contos-de-howard-phillips-lovecraft-4-vol-howard-phillips-lovecraft/NDV8MjA1MDk1N3wxODExNTY4fDEzODM1Nzg1NTkwMDA=/300x"</fotoCapa>
      </livro>
 </livros>

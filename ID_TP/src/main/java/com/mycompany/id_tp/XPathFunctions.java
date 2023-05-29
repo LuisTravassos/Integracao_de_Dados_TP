@@ -43,9 +43,9 @@ public class XPathFunctions {
     static String listaResultado(XdmValue lista) {
         if (lista != null) {
             StringBuilder texto = new StringBuilder();
-            System.out.println("RESULTADO DA PESQUISA XPATH:");
+            //System.out.println("RESULTADO DA PESQUISA XPATH:");
             for (XdmItem item : lista) {
-                texto = texto.append(item.getStringValue()).append("\n");
+                texto = texto.append(item).append("\n");
             }
             return texto.toString();
         }
