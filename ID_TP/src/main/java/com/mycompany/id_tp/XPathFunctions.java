@@ -39,7 +39,38 @@ public class XPathFunctions {
         }
         return resultado;
     }
+    
+    static String listaResultado2(XdmValue lista) {
+        String result = "";
+        if (lista != null) {
+            StringBuilder texto = new StringBuilder();
+            //System.out.println("RESULTADO DA PESQUISA XPATH:");
+            for (XdmItem item : lista) {
+                texto = texto.append(item.getStringValue());
+                result += texto.toString().replace("\n", "") + "\n";
+                result += "\n";
+            }
+            return result;
+        }
+        else
+            return "Ficheiro XML não existe";
 
+    }
+
+    static String listaResultado1(XdmValue lista) {
+        if (lista != null) {
+            StringBuilder texto = new StringBuilder();
+            //System.out.println("RESULTADO DA PESQUISA XPATH:");
+            for (XdmItem item : lista) {
+                texto = texto.append(item.getStringValue()).append("\n");
+            }
+            return texto.toString();
+        }
+        else
+            return "Ficheiro XML não existe";
+
+    }
+    
     static String listaResultado(XdmValue lista) {
         if (lista != null) {
             StringBuilder texto = new StringBuilder();

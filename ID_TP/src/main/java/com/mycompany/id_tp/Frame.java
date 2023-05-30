@@ -68,20 +68,18 @@ public class Frame extends javax.swing.JFrame {
         LabelJanela5 = new javax.swing.JLabel();
         Xpath_Escritor_Nacionalidade = new javax.swing.JDialog();
         BotaoJanela6 = new javax.swing.JButton();
-        NomeEscritor2 = new javax.swing.JTextField();
+        NacionalidadeEscritor = new javax.swing.JTextField();
         LabelJanela6 = new javax.swing.JLabel();
         Xpath_Obras = new javax.swing.JDialog();
         BotaoJanela7 = new javax.swing.JButton();
         NomeEscritor3 = new javax.swing.JTextField();
         LabelJanela7 = new javax.swing.JLabel();
-        Xpath_Escritor_Premiado = new javax.swing.JDialog();
-        BotaoJanela8 = new javax.swing.JButton();
-        NomeEscritor4 = new javax.swing.JTextField();
-        LabelJanela8 = new javax.swing.JLabel();
         Xpath_Obras_Valor_Editora = new javax.swing.JDialog();
         BotaoJanela9 = new javax.swing.JButton();
-        NomeEscritor5 = new javax.swing.JTextField();
+        NomeEditora = new javax.swing.JTextField();
         LabelJanela9 = new javax.swing.JLabel();
+        ValorSuperiorA = new javax.swing.JTextField();
+        LabelJanela10 = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
         XMLcodeArea = new javax.swing.JTextArea();
         jMenuBar1 = new javax.swing.JMenuBar();
@@ -368,7 +366,7 @@ public class Frame extends javax.swing.JFrame {
             }
         });
 
-        LabelJanela6.setText("Nome do escritor:");
+        LabelJanela6.setText("Nacionalidade Escritores:");
 
         javax.swing.GroupLayout Xpath_Escritor_NacionalidadeLayout = new javax.swing.GroupLayout(Xpath_Escritor_Nacionalidade.getContentPane());
         Xpath_Escritor_Nacionalidade.getContentPane().setLayout(Xpath_Escritor_NacionalidadeLayout);
@@ -379,7 +377,7 @@ public class Frame extends javax.swing.JFrame {
                     .addGroup(Xpath_Escritor_NacionalidadeLayout.createSequentialGroup()
                         .addGap(23, 23, 23)
                         .addGroup(Xpath_Escritor_NacionalidadeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(NomeEscritor2, javax.swing.GroupLayout.PREFERRED_SIZE, 354, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(NacionalidadeEscritor, javax.swing.GroupLayout.PREFERRED_SIZE, 354, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(LabelJanela6)))
                     .addGroup(Xpath_Escritor_NacionalidadeLayout.createSequentialGroup()
                         .addGap(86, 86, 86)
@@ -392,7 +390,7 @@ public class Frame extends javax.swing.JFrame {
                 .addGap(23, 23, 23)
                 .addComponent(LabelJanela6)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(NomeEscritor2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(NacionalidadeEscritor, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(33, 33, 33)
                 .addComponent(BotaoJanela6, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(153, Short.MAX_VALUE))
@@ -435,43 +433,6 @@ public class Frame extends javax.swing.JFrame {
                 .addContainerGap(153, Short.MAX_VALUE))
         );
 
-        BotaoJanela8.setText("OK");
-        BotaoJanela8.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                BotaoJanela8ActionPerformed(evt);
-            }
-        });
-
-        LabelJanela8.setText("Nome do escritor:");
-
-        javax.swing.GroupLayout Xpath_Escritor_PremiadoLayout = new javax.swing.GroupLayout(Xpath_Escritor_Premiado.getContentPane());
-        Xpath_Escritor_Premiado.getContentPane().setLayout(Xpath_Escritor_PremiadoLayout);
-        Xpath_Escritor_PremiadoLayout.setHorizontalGroup(
-            Xpath_Escritor_PremiadoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(Xpath_Escritor_PremiadoLayout.createSequentialGroup()
-                .addGroup(Xpath_Escritor_PremiadoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(Xpath_Escritor_PremiadoLayout.createSequentialGroup()
-                        .addGap(23, 23, 23)
-                        .addGroup(Xpath_Escritor_PremiadoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(NomeEscritor4, javax.swing.GroupLayout.PREFERRED_SIZE, 354, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(LabelJanela8)))
-                    .addGroup(Xpath_Escritor_PremiadoLayout.createSequentialGroup()
-                        .addGap(86, 86, 86)
-                        .addComponent(BotaoJanela8, javax.swing.GroupLayout.PREFERRED_SIZE, 223, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(23, Short.MAX_VALUE))
-        );
-        Xpath_Escritor_PremiadoLayout.setVerticalGroup(
-            Xpath_Escritor_PremiadoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(Xpath_Escritor_PremiadoLayout.createSequentialGroup()
-                .addGap(23, 23, 23)
-                .addComponent(LabelJanela8)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(NomeEscritor4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(33, 33, 33)
-                .addComponent(BotaoJanela8, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(153, Short.MAX_VALUE))
-        );
-
         BotaoJanela9.setText("OK");
         BotaoJanela9.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -479,34 +440,40 @@ public class Frame extends javax.swing.JFrame {
             }
         });
 
-        LabelJanela9.setText("Nome do escritor:");
+        LabelJanela9.setText("Nome da editora:");
+
+        LabelJanela10.setText("Valor acima de:");
 
         javax.swing.GroupLayout Xpath_Obras_Valor_EditoraLayout = new javax.swing.GroupLayout(Xpath_Obras_Valor_Editora.getContentPane());
         Xpath_Obras_Valor_Editora.getContentPane().setLayout(Xpath_Obras_Valor_EditoraLayout);
         Xpath_Obras_Valor_EditoraLayout.setHorizontalGroup(
             Xpath_Obras_Valor_EditoraLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(Xpath_Obras_Valor_EditoraLayout.createSequentialGroup()
+                .addGap(18, 18, 18)
                 .addGroup(Xpath_Obras_Valor_EditoraLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(NomeEditora, javax.swing.GroupLayout.PREFERRED_SIZE, 354, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(LabelJanela9)
+                    .addComponent(ValorSuperiorA, javax.swing.GroupLayout.PREFERRED_SIZE, 354, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(LabelJanela10)
                     .addGroup(Xpath_Obras_Valor_EditoraLayout.createSequentialGroup()
-                        .addGap(23, 23, 23)
-                        .addGroup(Xpath_Obras_Valor_EditoraLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(NomeEscritor5, javax.swing.GroupLayout.PREFERRED_SIZE, 354, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(LabelJanela9)))
-                    .addGroup(Xpath_Obras_Valor_EditoraLayout.createSequentialGroup()
-                        .addGap(86, 86, 86)
+                        .addGap(63, 63, 63)
                         .addComponent(BotaoJanela9, javax.swing.GroupLayout.PREFERRED_SIZE, 223, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(23, Short.MAX_VALUE))
+                .addContainerGap(28, Short.MAX_VALUE))
         );
         Xpath_Obras_Valor_EditoraLayout.setVerticalGroup(
             Xpath_Obras_Valor_EditoraLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(Xpath_Obras_Valor_EditoraLayout.createSequentialGroup()
-                .addGap(23, 23, 23)
+                .addContainerGap()
                 .addComponent(LabelJanela9)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(NomeEscritor5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(33, 33, 33)
+                .addComponent(NomeEditora, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(LabelJanela10)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(ValorSuperiorA, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(26, 26, 26)
                 .addComponent(BotaoJanela9, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(153, Short.MAX_VALUE))
+                .addContainerGap(111, Short.MAX_VALUE))
         );
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -1299,41 +1266,95 @@ public class Frame extends javax.swing.JFrame {
 
     private void BotaoJanela5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotaoJanela5ActionPerformed
         try {
-            String xp = "//autores/autor[@nome='" + NomeEscritor1.getText() + "']/@nome";
+            String xp = "//autor[@nome='" + NomeEscritor1.getText() + "']";
             XdmValue res = null;
             res = XPathFunctions.executaXpath(xp, "escritores.xml");
 
             if (res != null && res.size() != 0) {
-                
+
                 XMLcodeArea.setText(XPathFunctions.listaResultado(res).toString());
                 Xpath_Escritor.setVisible(false);
 
-                } else {
-                    JOptionPane.showMessageDialog(this,
-                            "Nome de autor inexistente",
-                            "Error",
-                            JOptionPane.ERROR_MESSAGE);
-                }
+            } else {
+                JOptionPane.showMessageDialog(this,
+                        "Nome de autor inexistente",
+                        "Error",
+                        JOptionPane.ERROR_MESSAGE);
+            }
 
-            }catch (SaxonApiException ex) {
+        } catch (SaxonApiException ex) {
             Logger.getLogger(Frame.class.getName()).log(Level.SEVERE, null, ex);
         }
     }//GEN-LAST:event_BotaoJanela5ActionPerformed
 
     private void BotaoJanela6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotaoJanela6ActionPerformed
-        // TODO add your handling code here:
+        try {
+            //System.out.println(NacionalidadeEscritor.getText());
+            String xp = "//autores/autor[nacionalidade='" + NacionalidadeEscritor.getText() + "']/@nome";
+            XdmValue res = null;
+            res = XPathFunctions.executaXpath(xp, "escritores.xml");
+
+            if (res != null && res.size() != 0) {
+
+                XMLcodeArea.setText(XPathFunctions.listaResultado(res).toString());
+                Xpath_Escritor_Nacionalidade.setVisible(false);
+
+            } else {
+                JOptionPane.showMessageDialog(this,
+                        "Nacionalidade de autor inexistente",
+                        "Error",
+                        JOptionPane.ERROR_MESSAGE);
+            }
+
+        } catch (SaxonApiException ex) {
+            Logger.getLogger(Frame.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }//GEN-LAST:event_BotaoJanela6ActionPerformed
 
     private void BotaoJanela7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotaoJanela7ActionPerformed
-        // TODO add your handling code here:
+        try {
+            String xp = "//livros/livro[nomesAutores/nomeAutor='" + NomeEscritor3.getText() + "']/titulo";
+            XdmValue res = null;
+            res = XPathFunctions.executaXpath(xp, "obras.xml");
+
+            if (res != null && res.size() != 0) {
+
+                XMLcodeArea.setText(XPathFunctions.listaResultado1(res).toString());
+                Xpath_Obras.setVisible(false);
+
+            } else {
+                JOptionPane.showMessageDialog(this,
+                        "Nome de autor inexistente",
+                        "Error",
+                        JOptionPane.ERROR_MESSAGE);
+            }
+
+        } catch (SaxonApiException ex) {
+            Logger.getLogger(Frame.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }//GEN-LAST:event_BotaoJanela7ActionPerformed
 
-    private void BotaoJanela8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotaoJanela8ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_BotaoJanela8ActionPerformed
-
     private void BotaoJanela9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotaoJanela9ActionPerformed
-        // TODO add your handling code here:
+        try {
+            String xp = "//livro[editora='" + NomeEditora.getText() + "' and preco > " + ValorSuperiorA.getText() + "]/titulo";
+            XdmValue res = null;
+            res = XPathFunctions.executaXpath(xp, "obras.xml");
+
+            if (res != null && res.size() != 0) {
+
+                XMLcodeArea.setText(XPathFunctions.listaResultado1(res).toString());
+                Xpath_Obras_Valor_Editora.setVisible(false);
+
+            } else {
+                JOptionPane.showMessageDialog(this,
+                        "Erro com os dados",
+                        "Error",
+                        JOptionPane.ERROR_MESSAGE);
+            }
+
+        } catch (SaxonApiException ex) {
+            Logger.getLogger(Frame.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }//GEN-LAST:event_BotaoJanela9ActionPerformed
 
     private void NomeAutorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_NomeAutorActionPerformed
@@ -1355,13 +1376,29 @@ public class Frame extends javax.swing.JFrame {
     }//GEN-LAST:event_AutorObrasActionPerformed
 
     private void PremiadoAutorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_PremiadoAutorActionPerformed
-        Xpath_Escritor_Premiado.setSize(400, 215);
-        Xpath_Escritor_Premiado.setLocation(200, 200);
-        Xpath_Escritor_Premiado.setVisible(true);
+        try {
+            String xp = "//autor[count(premios/premio) = max(//autor/count(premios/premio))]/@nome";
+            XdmValue res = null;
+            res = XPathFunctions.executaXpath(xp, "escritores.xml");
+
+            if (res != null && res.size() != 0) {
+
+                XMLcodeArea.setText(XPathFunctions.listaResultado1(res).toString());
+
+            } else {
+                JOptionPane.showMessageDialog(this,
+                        "Erro na operacao",
+                        "Error",
+                        JOptionPane.ERROR_MESSAGE);
+            }
+
+        } catch (SaxonApiException ex) {
+            Logger.getLogger(Frame.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }//GEN-LAST:event_PremiadoAutorActionPerformed
 
     private void EditoraValorObrasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EditoraValorObrasActionPerformed
-        Xpath_Obras_Valor_Editora.setSize(400, 215);
+        Xpath_Obras_Valor_Editora.setSize(400, 250);
         Xpath_Obras_Valor_Editora.setLocation(200, 200);
         Xpath_Obras_Valor_Editora.setVisible(true);
     }//GEN-LAST:event_EditoraValorObrasActionPerformed
@@ -1413,13 +1450,13 @@ public class Frame extends javax.swing.JFrame {
     private javax.swing.JButton BotaoJanela5;
     private javax.swing.JButton BotaoJanela6;
     private javax.swing.JButton BotaoJanela7;
-    private javax.swing.JButton BotaoJanela8;
     private javax.swing.JButton BotaoJanela9;
     private javax.swing.JMenuItem EditoraValorObras;
     private javax.swing.JTextField EscritorModificarJanela3;
     private javax.swing.JMenuItem HTML1;
     private javax.swing.JMenuItem HTML2;
     private javax.swing.JLabel LabelJanela1;
+    private javax.swing.JLabel LabelJanela10;
     private javax.swing.JLabel LabelJanela1_2;
     private javax.swing.JLabel LabelJanela2;
     private javax.swing.JLabel LabelJanela3;
@@ -1432,16 +1469,14 @@ public class Frame extends javax.swing.JFrame {
     private javax.swing.JLabel LabelJanela5;
     private javax.swing.JLabel LabelJanela6;
     private javax.swing.JLabel LabelJanela7;
-    private javax.swing.JLabel LabelJanela8;
     private javax.swing.JLabel LabelJanela9;
     private javax.swing.JMenuItem NacionalidadeAutor;
+    private javax.swing.JTextField NacionalidadeEscritor;
     private javax.swing.JMenuItem NomeAutor;
+    private javax.swing.JTextField NomeEditora;
     private javax.swing.JTextField NomeEscritor;
     private javax.swing.JTextField NomeEscritor1;
-    private javax.swing.JTextField NomeEscritor2;
     private javax.swing.JTextField NomeEscritor3;
-    private javax.swing.JTextField NomeEscritor4;
-    private javax.swing.JTextField NomeEscritor5;
     private javax.swing.JTextField NomeEscritorAdicionar;
     private javax.swing.JTextField NomeEscritorRemover;
     private javax.swing.JMenuItem PremiadoAutor;
@@ -1452,6 +1487,7 @@ public class Frame extends javax.swing.JFrame {
     private javax.swing.JMenuItem TXT1;
     private javax.swing.JMenu Validar;
     private javax.swing.JTextField ValorModificarJanela3;
+    private javax.swing.JTextField ValorSuperiorA;
     private javax.swing.JMenuItem VerXMLEscritores;
     private javax.swing.JMenuItem VerXMLObras;
     private javax.swing.JMenu XML;
@@ -1463,7 +1499,6 @@ public class Frame extends javax.swing.JFrame {
     private javax.swing.JMenu XSLT;
     private javax.swing.JDialog Xpath_Escritor;
     private javax.swing.JDialog Xpath_Escritor_Nacionalidade;
-    private javax.swing.JDialog Xpath_Escritor_Premiado;
     private javax.swing.JDialog Xpath_Obras;
     private javax.swing.JDialog Xpath_Obras_Valor_Editora;
     private javax.swing.JMenuItem dtdEscritores;

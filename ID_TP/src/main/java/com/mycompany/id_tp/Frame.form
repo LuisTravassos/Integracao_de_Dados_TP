@@ -405,7 +405,7 @@
                       <Group type="102" alignment="0" attributes="0">
                           <EmptySpace min="-2" pref="23" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" attributes="0">
-                              <Component id="NomeEscritor2" alignment="0" min="-2" pref="354" max="-2" attributes="0"/>
+                              <Component id="NacionalidadeEscritor" alignment="0" min="-2" pref="354" max="-2" attributes="0"/>
                               <Component id="LabelJanela6" alignment="0" min="-2" max="-2" attributes="0"/>
                           </Group>
                       </Group>
@@ -424,7 +424,7 @@
                   <EmptySpace min="-2" pref="23" max="-2" attributes="0"/>
                   <Component id="LabelJanela6" min="-2" max="-2" attributes="0"/>
                   <EmptySpace max="-2" attributes="0"/>
-                  <Component id="NomeEscritor2" min="-2" max="-2" attributes="0"/>
+                  <Component id="NacionalidadeEscritor" min="-2" max="-2" attributes="0"/>
                   <EmptySpace min="-2" pref="33" max="-2" attributes="0"/>
                   <Component id="BotaoJanela6" min="-2" pref="43" max="-2" attributes="0"/>
                   <EmptySpace pref="153" max="32767" attributes="0"/>
@@ -441,11 +441,11 @@
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="BotaoJanela6ActionPerformed"/>
           </Events>
         </Component>
-        <Component class="javax.swing.JTextField" name="NomeEscritor2">
+        <Component class="javax.swing.JTextField" name="NacionalidadeEscritor">
         </Component>
         <Component class="javax.swing.JLabel" name="LabelJanela6">
           <Properties>
-            <Property name="text" type="java.lang.String" value="Nome do escritor:"/>
+            <Property name="text" type="java.lang.String" value="Nacionalidade Escritores:"/>
           </Properties>
         </Component>
       </SubComponents>
@@ -505,94 +505,41 @@
         </Component>
       </SubComponents>
     </Container>
-    <Container class="javax.swing.JDialog" name="Xpath_Escritor_Premiado">
-
-      <Layout>
-        <DimensionLayout dim="0">
-          <Group type="103" groupAlignment="0" attributes="0">
-              <Group type="102" alignment="0" attributes="0">
-                  <Group type="103" groupAlignment="0" attributes="0">
-                      <Group type="102" alignment="0" attributes="0">
-                          <EmptySpace min="-2" pref="23" max="-2" attributes="0"/>
-                          <Group type="103" groupAlignment="0" attributes="0">
-                              <Component id="NomeEscritor4" alignment="0" min="-2" pref="354" max="-2" attributes="0"/>
-                              <Component id="LabelJanela8" alignment="0" min="-2" max="-2" attributes="0"/>
-                          </Group>
-                      </Group>
-                      <Group type="102" alignment="0" attributes="0">
-                          <EmptySpace min="-2" pref="86" max="-2" attributes="0"/>
-                          <Component id="BotaoJanela8" min="-2" pref="223" max="-2" attributes="0"/>
-                      </Group>
-                  </Group>
-                  <EmptySpace pref="23" max="32767" attributes="0"/>
-              </Group>
-          </Group>
-        </DimensionLayout>
-        <DimensionLayout dim="1">
-          <Group type="103" groupAlignment="0" attributes="0">
-              <Group type="102" alignment="0" attributes="0">
-                  <EmptySpace min="-2" pref="23" max="-2" attributes="0"/>
-                  <Component id="LabelJanela8" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace max="-2" attributes="0"/>
-                  <Component id="NomeEscritor4" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace min="-2" pref="33" max="-2" attributes="0"/>
-                  <Component id="BotaoJanela8" min="-2" pref="43" max="-2" attributes="0"/>
-                  <EmptySpace pref="153" max="32767" attributes="0"/>
-              </Group>
-          </Group>
-        </DimensionLayout>
-      </Layout>
-      <SubComponents>
-        <Component class="javax.swing.JButton" name="BotaoJanela8">
-          <Properties>
-            <Property name="text" type="java.lang.String" value="OK"/>
-          </Properties>
-          <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="BotaoJanela8ActionPerformed"/>
-          </Events>
-        </Component>
-        <Component class="javax.swing.JTextField" name="NomeEscritor4">
-        </Component>
-        <Component class="javax.swing.JLabel" name="LabelJanela8">
-          <Properties>
-            <Property name="text" type="java.lang.String" value="Nome do escritor:"/>
-          </Properties>
-        </Component>
-      </SubComponents>
-    </Container>
     <Container class="javax.swing.JDialog" name="Xpath_Obras_Valor_Editora">
 
       <Layout>
         <DimensionLayout dim="0">
           <Group type="103" groupAlignment="0" attributes="0">
               <Group type="102" alignment="0" attributes="0">
+                  <EmptySpace min="-2" pref="18" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" attributes="0">
+                      <Component id="NomeEditora" alignment="0" min="-2" pref="354" max="-2" attributes="0"/>
+                      <Component id="LabelJanela9" alignment="0" min="-2" max="-2" attributes="0"/>
+                      <Component id="ValorSuperiorA" alignment="0" min="-2" pref="354" max="-2" attributes="0"/>
+                      <Component id="LabelJanela10" alignment="0" min="-2" max="-2" attributes="0"/>
                       <Group type="102" alignment="0" attributes="0">
-                          <EmptySpace min="-2" pref="23" max="-2" attributes="0"/>
-                          <Group type="103" groupAlignment="0" attributes="0">
-                              <Component id="NomeEscritor5" alignment="0" min="-2" pref="354" max="-2" attributes="0"/>
-                              <Component id="LabelJanela9" alignment="0" min="-2" max="-2" attributes="0"/>
-                          </Group>
-                      </Group>
-                      <Group type="102" alignment="0" attributes="0">
-                          <EmptySpace min="-2" pref="86" max="-2" attributes="0"/>
+                          <EmptySpace min="-2" pref="63" max="-2" attributes="0"/>
                           <Component id="BotaoJanela9" min="-2" pref="223" max="-2" attributes="0"/>
                       </Group>
                   </Group>
-                  <EmptySpace pref="23" max="32767" attributes="0"/>
+                  <EmptySpace pref="28" max="32767" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
         <DimensionLayout dim="1">
           <Group type="103" groupAlignment="0" attributes="0">
               <Group type="102" alignment="0" attributes="0">
-                  <EmptySpace min="-2" pref="23" max="-2" attributes="0"/>
+                  <EmptySpace max="-2" attributes="0"/>
                   <Component id="LabelJanela9" min="-2" max="-2" attributes="0"/>
                   <EmptySpace max="-2" attributes="0"/>
-                  <Component id="NomeEscritor5" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace min="-2" pref="33" max="-2" attributes="0"/>
+                  <Component id="NomeEditora" min="-2" max="-2" attributes="0"/>
+                  <EmptySpace type="separate" max="-2" attributes="0"/>
+                  <Component id="LabelJanela10" min="-2" max="-2" attributes="0"/>
+                  <EmptySpace max="-2" attributes="0"/>
+                  <Component id="ValorSuperiorA" min="-2" max="-2" attributes="0"/>
+                  <EmptySpace min="-2" pref="26" max="-2" attributes="0"/>
                   <Component id="BotaoJanela9" min="-2" pref="43" max="-2" attributes="0"/>
-                  <EmptySpace pref="153" max="32767" attributes="0"/>
+                  <EmptySpace pref="111" max="32767" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -606,11 +553,18 @@
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="BotaoJanela9ActionPerformed"/>
           </Events>
         </Component>
-        <Component class="javax.swing.JTextField" name="NomeEscritor5">
+        <Component class="javax.swing.JTextField" name="NomeEditora">
         </Component>
         <Component class="javax.swing.JLabel" name="LabelJanela9">
           <Properties>
-            <Property name="text" type="java.lang.String" value="Nome do escritor:"/>
+            <Property name="text" type="java.lang.String" value="Nome da editora:"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JTextField" name="ValorSuperiorA">
+        </Component>
+        <Component class="javax.swing.JLabel" name="LabelJanela10">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Valor acima de:"/>
           </Properties>
         </Component>
       </SubComponents>

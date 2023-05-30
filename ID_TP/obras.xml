@@ -1,4 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE livros SYSTEM "obrasValidacao.dtd">
 <livros xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="obrasValidacao.xsd">
      <livro isbn="978-972-37-2081-5" idAutor="1">
           <nomesAutores>
