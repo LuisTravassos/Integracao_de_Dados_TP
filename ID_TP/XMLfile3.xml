@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dadosAutor>
+   <autor xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" nome="H. P. Lovecraft"
+          id="4">
+      <dataNascimento>20 de agosto de 1890</dataNascimento>
+      <dataMorte>15 de março de 1937</dataMorte>
+      <nacionalidade>estadunidense</nacionalidade>
+      <fotografia>//upload.wikimedia.org/wikipedia/commons/thumb/1/10/H._P._Lovecraft%2C_June_1934.jpg/250px-H._P._Lovecraft%2C_June_1934.jpg</fotografia>
+      <generosLiterarios>
+         <generoLiterario>Terror</generoLiterario>
+         <generoLiterario>ficção científica</generoLiterario>
+      </generosLiterarios>
+      <ocupacoes>
+         <ocupacao>Escritor</ocupacao>
+      </ocupacoes>
+      <premios>
+         <premio>Participacao</premio>
+         <premio>boas</premio>
+      </premios>
+   </autor>
+</dadosAutor>
