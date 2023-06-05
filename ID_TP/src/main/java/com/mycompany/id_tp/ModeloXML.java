@@ -6,6 +6,19 @@ import org.jdom2.Document;
 import org.jdom2.Element;
 
 public class ModeloXML {
+    
+    public static Document addtitulo(String titulo, Document doc){
+        Element raiz;
+
+        if (doc == null) {
+            raiz = new Element("titulo"); //cria <titulo>...</titulo>
+            doc = new Document(raiz);
+        } else {
+            raiz = doc.getRootElement();
+        }
+        raiz.addContent(titulo);
+        return doc;
+    }
 
     public static Document adicionaAutor(Autor aut, Document doc) {
         Element raiz;

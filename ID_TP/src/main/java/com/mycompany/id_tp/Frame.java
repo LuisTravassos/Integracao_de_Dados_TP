@@ -81,6 +81,10 @@ public class Frame extends javax.swing.JFrame {
         LabelJanela9 = new javax.swing.JLabel();
         ValorSuperiorA = new javax.swing.JTextField();
         LabelJanela10 = new javax.swing.JLabel();
+        XML_HTML3 = new javax.swing.JDialog();
+        LabelJanela8 = new javax.swing.JLabel();
+        TituloObra = new javax.swing.JTextField();
+        BotaoJanela8 = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
         XMLcodeArea = new javax.swing.JTextArea();
         jMenuBar1 = new javax.swing.JMenuBar();
@@ -109,9 +113,9 @@ public class Frame extends javax.swing.JFrame {
         XML1 = new javax.swing.JMenuItem();
         HTML2 = new javax.swing.JMenuItem();
         XML2 = new javax.swing.JMenuItem();
-        jMenuItem6 = new javax.swing.JMenuItem();
-        jMenuItem7 = new javax.swing.JMenuItem();
-        jMenuItem8 = new javax.swing.JMenuItem();
+        XML3 = new javax.swing.JMenuItem();
+        ultimoAutor = new javax.swing.JMenuItem();
+        obraBarata = new javax.swing.JMenuItem();
 
         LabelJanela1.setText("Nome do escritor a adicionar:");
 
@@ -477,6 +481,42 @@ public class Frame extends javax.swing.JFrame {
                 .addContainerGap(111, Short.MAX_VALUE))
         );
 
+        LabelJanela8.setText("Titulo da Obra");
+
+        BotaoJanela8.setText("OK");
+        BotaoJanela8.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BotaoJanela8ActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout XML_HTML3Layout = new javax.swing.GroupLayout(XML_HTML3.getContentPane());
+        XML_HTML3.getContentPane().setLayout(XML_HTML3Layout);
+        XML_HTML3Layout.setHorizontalGroup(
+            XML_HTML3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, XML_HTML3Layout.createSequentialGroup()
+                .addGap(0, 31, Short.MAX_VALUE)
+                .addGroup(XML_HTML3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(LabelJanela8, javax.swing.GroupLayout.PREFERRED_SIZE, 96, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(TituloObra, javax.swing.GroupLayout.PREFERRED_SIZE, 363, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap())
+            .addGroup(XML_HTML3Layout.createSequentialGroup()
+                .addGap(78, 78, 78)
+                .addComponent(BotaoJanela8, javax.swing.GroupLayout.PREFERRED_SIZE, 246, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+        XML_HTML3Layout.setVerticalGroup(
+            XML_HTML3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(XML_HTML3Layout.createSequentialGroup()
+                .addGap(28, 28, 28)
+                .addComponent(LabelJanela8)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(TituloObra, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(BotaoJanela8, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(161, Short.MAX_VALUE))
+        );
+
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         XMLcodeArea.setColumns(20);
@@ -661,14 +701,29 @@ public class Frame extends javax.swing.JFrame {
         });
         XSLT.add(XML2);
 
-        jMenuItem6.setText("jMenuItem6");
-        XSLT.add(jMenuItem6);
+        XML3.setText("XML >> XML3");
+        XML3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                XML3ActionPerformed(evt);
+            }
+        });
+        XSLT.add(XML3);
 
-        jMenuItem7.setText("jMenuItem7");
-        XSLT.add(jMenuItem7);
+        ultimoAutor.setText("XML >> Ultimo Autor");
+        ultimoAutor.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ultimoAutorActionPerformed(evt);
+            }
+        });
+        XSLT.add(ultimoAutor);
 
-        jMenuItem8.setText("jMenuItem8");
-        XSLT.add(jMenuItem8);
+        obraBarata.setText("XML >> Obra Barata");
+        obraBarata.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                obraBarataActionPerformed(evt);
+            }
+        });
+        XSLT.add(obraBarata);
 
         jMenuBar1.add(XSLT);
 
@@ -1401,6 +1456,84 @@ public class Frame extends javax.swing.JFrame {
         Xpath_Obras_Valor_Editora.setVisible(true);
     }//GEN-LAST:event_EditoraValorObrasActionPerformed
 
+    private void XML3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_XML3ActionPerformed
+        // TODO add your handling code here:
+        XML_HTML3.setSize(400, 215);
+        XML_HTML3.setLocation(200, 200);
+        XML_HTML3.setVisible(true);
+    }//GEN-LAST:event_XML3ActionPerformed
+
+    private void BotaoJanela8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotaoJanela8ActionPerformed
+        // TODO add your handling code here:
+        try {
+        Document doc1 = XMLJDomFunctions.lerDocumentoXML("titulo.xml");
+        ModeloXML.addtitulo(TituloObra.getText(),doc1);
+        //raiz.addContent(TituloObra.getText());
+
+        
+            SaxonFunctions_XQuery.xQueryToXml("XMLfile3.xml", "transf6.xql");
+            Document doc = XMLJDomFunctions.lerDocumentoXML("XMLfile3.xml");
+            
+            if (doc != null) {
+                String t = XMLJDomFunctions.escreverDocumentoString(doc);
+                XMLcodeArea.setText(t);
+            } else {
+                JOptionPane.showMessageDialog(this,
+                        "Erro nos ficheiros",
+                        "Error",
+                        JOptionPane.ERROR_MESSAGE);
+            }
+        } catch (XPathException ex) {
+            Logger.getLogger(Frame.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (IOException ex) {
+            Logger.getLogger(Frame.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }//GEN-LAST:event_BotaoJanela8ActionPerformed
+
+    private void ultimoAutorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ultimoAutorActionPerformed
+        // TODO add your handling code here:
+        try {
+            SaxonFunctions_XQuery.xQueryToXml("XMLfile4.xml", "transf7.xql");
+            Document doc = XMLJDomFunctions.lerDocumentoXML("XMLfile4.xml");
+            
+            if (doc != null) {
+                String t = XMLJDomFunctions.escreverDocumentoString(doc);
+                XMLcodeArea.setText(t);
+            } else {
+                JOptionPane.showMessageDialog(this,
+                        "Erro nos ficheiros",
+                        "Error",
+                        JOptionPane.ERROR_MESSAGE);
+            }
+        } catch (XPathException ex) {
+            Logger.getLogger(Frame.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (IOException ex) {
+            Logger.getLogger(Frame.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }//GEN-LAST:event_ultimoAutorActionPerformed
+
+    private void obraBarataActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_obraBarataActionPerformed
+        // TODO add your handling code here:
+        try {
+            SaxonFunctions_XQuery.xQueryToXml("XMLfile5.xml", "transf8.xql");
+            Document doc = XMLJDomFunctions.lerDocumentoXML("XMLfile5.xml");
+            
+            if (doc != null) {
+                String t = XMLJDomFunctions.escreverDocumentoString(doc);
+                XMLcodeArea.setText(t);
+            } else {
+                JOptionPane.showMessageDialog(this,
+                        "Erro nos ficheiros",
+                        "Error",
+                        JOptionPane.ERROR_MESSAGE);
+            }
+        } catch (XPathException ex) {
+            Logger.getLogger(Frame.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (IOException ex) {
+            Logger.getLogger(Frame.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }//GEN-LAST:event_obraBarataActionPerformed
+
     public static void main(String args[]) {
 
         /* Set the Nimbus look and feel */
@@ -1448,6 +1581,7 @@ public class Frame extends javax.swing.JFrame {
     private javax.swing.JButton BotaoJanela5;
     private javax.swing.JButton BotaoJanela6;
     private javax.swing.JButton BotaoJanela7;
+    private javax.swing.JButton BotaoJanela8;
     private javax.swing.JButton BotaoJanela9;
     private javax.swing.JMenuItem EditoraValorObras;
     private javax.swing.JTextField EscritorModificarJanela3;
@@ -1467,6 +1601,7 @@ public class Frame extends javax.swing.JFrame {
     private javax.swing.JLabel LabelJanela5;
     private javax.swing.JLabel LabelJanela6;
     private javax.swing.JLabel LabelJanela7;
+    private javax.swing.JLabel LabelJanela8;
     private javax.swing.JLabel LabelJanela9;
     private javax.swing.JMenuItem NacionalidadeAutor;
     private javax.swing.JTextField NacionalidadeEscritor;
@@ -1483,6 +1618,7 @@ public class Frame extends javax.swing.JFrame {
     private javax.swing.JDialog RemoverEscritorJanela;
     private javax.swing.JMenuItem Sair;
     private javax.swing.JMenuItem TXT1;
+    private javax.swing.JTextField TituloObra;
     private javax.swing.JMenu Validar;
     private javax.swing.JTextField ValorModificarJanela3;
     private javax.swing.JTextField ValorSuperiorA;
@@ -1491,7 +1627,9 @@ public class Frame extends javax.swing.JFrame {
     private javax.swing.JMenu XML;
     private javax.swing.JMenuItem XML1;
     private javax.swing.JMenuItem XML2;
+    private javax.swing.JMenuItem XML3;
     private javax.swing.JDialog XML_HTML2;
+    private javax.swing.JDialog XML_HTML3;
     private javax.swing.JTextArea XMLcodeArea;
     private javax.swing.JMenu XPath;
     private javax.swing.JMenu XSLT;
@@ -1502,13 +1640,12 @@ public class Frame extends javax.swing.JFrame {
     private javax.swing.JMenuItem dtdEscritores;
     private javax.swing.JMenuItem dtdObras;
     private javax.swing.JMenuBar jMenuBar1;
-    private javax.swing.JMenuItem jMenuItem6;
-    private javax.swing.JMenuItem jMenuItem7;
-    private javax.swing.JMenuItem jMenuItem8;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JComboBox<String> nCamposJanela3;
     private javax.swing.JComboBox<String> nModificacoesJanela3;
     private javax.swing.JComboBox<String> nObrasJanela1;
+    private javax.swing.JMenuItem obraBarata;
+    private javax.swing.JMenuItem ultimoAutor;
     private javax.swing.JMenuItem xsdEscritores;
     private javax.swing.JMenuItem xsdObras;
     // End of variables declaration//GEN-END:variables

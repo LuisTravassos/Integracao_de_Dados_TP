@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dadosAutor>
+   <livro xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" isbn="978-989-711-194-5"
+          idAutor="2">
+      <nomesAutores>
+         <nomeAutor>Eça de Queiroz</nomeAutor>
+      </nomesAutores>
+      <titulo>A Capital</titulo>
+      <editora>Livros do Brasil</editora>
+      <preco>10.98</preco>
+      <fotoCapa>https://img.bertrand.pt/images/a-capital-eca-de-queiroz/NDV8Mjc0MzIzNDB8MjM4MDIzMjd8MTY4MjA5MTIwNTAwMA==/300x"</fotoCapa>
+   </livro>
+</dadosAutor>
