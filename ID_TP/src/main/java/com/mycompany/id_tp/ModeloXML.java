@@ -37,24 +37,27 @@ public class ModeloXML {
         pai.addContent(x);
 
         Element subPai = new Element("generosLiterarios");
-        String[] temp = aut.getGeneroLiter().split("#");
-        for (int i = 0; i < temp.length; i++) {
-            x = new Element("generoLiterario").addContent(temp[i]);
+        List<String> temp = aut.getGeneroLiter();
+        for (int i = 0; i < temp.size(); i++) {
+            x = new Element("generoLiterario").addContent(temp.get(i));
             subPai.addContent(x);
         }
         pai.addContent(subPai);
 
         subPai = new Element("ocupacoes");
-        temp = aut.getOcupacoes().split("#");
-        for (int i = 0; i < temp.length; i++) {
-            x = new Element("ocupacao").addContent(temp[i]);
+        temp = aut.getOcupacoes();
+        for (int i = 0; i < temp.size(); i++) {
+            x = new Element("ocupacao").addContent(temp.get(i));
             subPai.addContent(x);
         }
         pai.addContent(subPai);
 
         subPai = new Element("premios");
-            x = new Element("premio").addContent("Participacao");
+        temp = aut.getPremios();
+        for (int i = 0; i < temp.size(); i++) {
+            x = new Element("premio").addContent(temp.get(i));
             subPai.addContent(x);
+        }
         pai.addContent(subPai);
 
         raiz.addContent(pai);
@@ -71,44 +74,34 @@ public class ModeloXML {
             raiz = doc.getRootElement();
         }
 
-        String[] isbn = liv.getIsbn().split("#");
-        String[] nomeAutor = liv.getNomeAutor().split("#");
-        String[] titulo = liv.getTitulo().split("#");
-        String[] editora = liv.getEditora().split("#");
-        String[] preco = liv.getPreco().split("#");
-        String[] fotoCapa = liv.getFotoCapa().split("#");
-
-        for (int i = 0; i < isbn.length; i++) {
-            Element pai = new Element("livro");
-            Attribute a = new Attribute("isbn", isbn[i]);
-            pai.setAttribute(a);
-            a = new Attribute("idAutor", Integer.toString(liv.getIdAutor()));
-            pai.setAttribute(a);
-
-            Element x;
-
-            Element subPai = new Element("nomesAutores");
-            String[] temp = nomeAutor[i].split("/");
-            for (int j = 0; j < temp.length; j++) {
-                x = new Element("nomeAutor").addContent(temp[j]);
-                subPai.addContent(x);
-            }
-            pai.addContent(subPai);
-
-            x = new Element("titulo").addContent(titulo[i]);
-            pai.addContent(x);
-
-            x = new Element("editora").addContent(editora[i]);
-            pai.addContent(x);
-
-            x = new Element("preco").addContent(preco[i]);
-            pai.addContent(x);
-
-            x = new Element("fotoCapa").addContent(fotoCapa[i]);
-            pai.addContent(x);
-
-            raiz.addContent(pai);
+        Element pai = new Element("livro");
+        Attribute a = new Attribute("isbn", liv.getIsbn());
+        pai.setAttribute(a);
+        a = new Attribute("idAutor", String.valueOf(liv.getIdAutor()));
+        pai.setAttribute(a);
+        
+        Element x;
+        Element subPai = new Element("nomesAutores");
+        List<String> temp = liv.getNomeAutor();
+        for (int i = 0; i < temp.size(); i++) {
+            x = new Element("nomeAutor").addContent(temp.get(i));
+            subPai.addContent(x);
         }
+        pai.addContent(subPai);
+
+        x = new Element("titulo").addContent(liv.getTitulo());
+        pai.addContent(x);
+
+        x = new Element("editora").addContent(liv.getEditora());
+        pai.addContent(x);
+
+        x = new Element("preco").addContent(liv.getPreco());
+        pai.addContent(x);
+
+        x = new Element("fotoCapa").addContent(liv.getFotoCapa());
+        pai.addContent(x);
+
+        raiz.addContent(pai);
         return doc;
     }
 
@@ -294,69 +287,4 @@ public class ModeloXML {
         return doc;
     }
 }
-/*
 
-    public static Document removeLivroISBN(String isbn, Document doc) {
-        Element raiz;
-        if (doc == null) {
-            System.out.println("Ficheiro nao existe - nao dá para remover informação");
-            return null;
-        } else {
-            raiz = doc.getRootElement();
-        }
-        List todosLivros = raiz.getChildren("livro");
-        boolean found = false;
-        for (int i = 0; i < todosLivros.size(); i++) {
-            Element livro = (Element) todosLivros.get(i); //obtem livro i da Lista 
-            if (livro.getAttributeValue("isbn").equals(isbn)) {
-                livro.getParent().removeContent(livro);
-                System.out.println("Livro removido com sucesso!");
-                found = true;
-            }
-
-        }
-        if (!found) {
-            System.out.println("Autor " + isbn + " não foi encontrado");
-            return null;
-        }
-        return doc;
-    }
-
-    public static Document alteraPrecoLivro(String isbn, double novoPreco, String loja, Document doc) {
-        Element raiz;
-        if (doc == null) {
-            System.out.println("Ficheiro nao existe - nao dá para alterar informação");
-            return null;
-        } else {
-            raiz = doc.getRootElement();
-        }
-        List todosLivros = raiz.getChildren("livro");
-        boolean found = false;
-        for (int i = 0; i < todosLivros.size(); i++) {
-            Element livro = (Element) todosLivros.get(i); //obtem livro i da Lista 
-            if (livro.getAttributeValue("isbn").equals(isbn)) {
-                String titulo = livro.getChildText("titulo");
-                System.out.println("Titulo " + titulo);
-                //obtem os dois preços: bertrand e wook    
-                List precos = livro.getChildren("preco");
-                for (int j = 0; j <precos.size(); j++) {
-                    Element p = (Element) precos.get(j); //obtem preço j da Lista 
-                    if (p.getAttributeValue("store").equals(loja)) { //loja indicada
-                        System.out.println("Preço " + p.getValue());
-                        p.setText(String.valueOf(novoPreco));
-                    }
-                }
-                System.out.println("Preço alterado com sucesso!");
-                found = true;
-            }
-        }
-        if (!found) {
-            System.out.println("Livro " + isbn + " não foi encontrado");
-            return null;
-        }
-        return doc;
-    }
-    
-    
-}
- */

@@ -756,39 +756,46 @@ public class Frame extends javax.swing.JFrame {
                         JOptionPane.INFORMATION_MESSAGE);
 
             } else {
-                Livro liv = Wrapper.criaLivro(NomeEscritorAdicionar.getText(), aut.getId(), nObrasJanela1.getSelectedIndex());
 
-                if (liv.getIsbn().equals("Nao definido")) {
+                List<Livro> liv = Wrapper.criaLivro(NomeEscritorAdicionar.getText(), aut.getId(), nObrasJanela1.getSelectedIndex());
+                Document doc;
+
+                if (liv.get(0).getIsbn().equals("Nao definido")) {
                     //AdicionarEscritorJanela.setVisible(false);
                     JOptionPane.showMessageDialog(this,
                             "Numero de livros nao atingido",
                             "Erro",
                             JOptionPane.ERROR_MESSAGE);
-
+                    
                 } else {
-                    Document doc = XMLJDomFunctions.lerDocumentoXML("escritores.xml");
-                    doc = ModeloXML.adicionaAutor(aut, doc);
-                    if (doc != null) {
-                        XMLJDomFunctions.escreverDocumentoParaFicheiro(doc, "escritores.xml");
-                    } else {
-                        System.out.println("Erro com documento Escritores");
+                    
+                    for (int i = 0; i < liv.size(); i++) {
+                        //------------------Obras-------------------//
+                        doc = XMLJDomFunctions.lerDocumentoXML("obras.xml");
+                        doc = ModeloXML.adicionaLivro(liv.get(i), doc);
+
+                        if (doc != null) {
+                            XMLJDomFunctions.escreverDocumentoParaFicheiro(doc, "obras.xml");
+                        } else {
+                            System.out.println("Erro com documento Obras");
+                        }
+
                     }
 
-                    //------------------Obras-------------------//
-                    doc = XMLJDomFunctions.lerDocumentoXML("obras.xml");
-                    doc = ModeloXML.adicionaLivro(liv, doc);
-                    if (doc != null) {
-                        XMLJDomFunctions.escreverDocumentoParaFicheiro(doc, "obras.xml");
-                    } else {
-                        System.out.println("Erro com documento Obras");
-                    }
+                    doc = XMLJDomFunctions.lerDocumentoXML("escritores.xml");
+                doc = ModeloXML.adicionaAutor(aut, doc);
+                if (doc != null) {
+                    XMLJDomFunctions.escreverDocumentoParaFicheiro(doc, "escritores.xml");
+                } else {
+                    System.out.println("Erro com documento Escritores");
+                }
 
-                    AdicionarEscritorJanela.setVisible(false);
-                    JOptionPane.showMessageDialog(this,
-                            "Escritor e respetivas obras adicionadas com sucesso",
-                            "Informação",
-                            JOptionPane.INFORMATION_MESSAGE);
-
+                AdicionarEscritorJanela.setVisible(false);
+                JOptionPane.showMessageDialog(this,
+                        "Escritor e respetivas obras adicionadas com sucesso",
+                        "Informação",
+                        JOptionPane.INFORMATION_MESSAGE);
+                    
                 }
             }
 
@@ -1192,7 +1199,7 @@ public class Frame extends javax.swing.JFrame {
         try {
             SaxonFunctions_XQuery.xQueryToXml("XMLfile2.xml", "transf5.xql");
             Document doc = XMLJDomFunctions.lerDocumentoXML("XMLfile2.xml");
-            
+
             if (doc != null) {
                 String t = XMLJDomFunctions.escreverDocumentoString(doc);
                 XMLcodeArea.setText(t);

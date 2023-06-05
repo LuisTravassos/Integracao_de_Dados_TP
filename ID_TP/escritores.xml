@@ -1,23 +1,29 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE autores SYSTEM "escritoresValidacao.dtd">
-<autores xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="escritoresValidacao.xsd">
-     <autor nome="Luís de Camões" id="1">
-          <dataNascimento>1524</dataNascimento>
-          <dataMorte>10 de junho de 1579</dataMorte>
-          <fotografia>//upload.wikimedia.org/wikipedia/commons/thumb/f/f3/Cam%C3%B5es%2C_por_Fern%C3%A3o_Gomes.jpg/200px-Cam%C3%B5es%2C_por_Fern%C3%A3o_Gomes.jpg</fotografia>
+<autores>
+     <autor nome="José Saramago" id="1">
+          <dataNascimento>16 de novembro de 1922</dataNascimento>
+          <dataMorte>18 de junho de 2010</dataMorte>
+          <nacionalidade>português</nacionalidade>
+          <fotografia>//upload.wikimedia.org/wikipedia/commons/thumb/5/5c/JSJoseSaramago.jpg/250px-JSJoseSaramago.jpg</fotografia>
           <generosLiterarios>
                <generoLiterario>Nao definido</generoLiterario>
           </generosLiterarios>
           <ocupacoes>
-               <ocupacao>poeta</ocupacao>
-               <ocupacao>soldado</ocupacao>
+               <ocupacao>serralheiro</ocupacao>
+               <ocupacao>mecânico</ocupacao>
+               <ocupacao>funcionário público</ocupacao>
+               <ocupacao>técnico editorial</ocupacao>
+               <ocupacao>escritor</ocupacao>
           </ocupacoes>
           <premios>
-               <premio>Participacao</premio>
-               <premio>ola</premio>
-               <premio>bopas</premio>
+               <premio>Prémio Cidade de Lisboa</premio>
+               <premio>Prémio Literário Município de Lisboa</premio>
+               <premio>Prémio P.E.N. Clube Português de Novelística</premio>
+               <premio>Prémio D. Dinis</premio>
+               <premio>Prémio da Crítica da Associação Portuguesa de Críticos Literários</premio>
+               <premio>Grande Prémio de Romance e Novela APE/DGLB</premio>
+               <premio>Prémio Bordalo de Literatura da Casa da Imprensa</premio>
           </premios>
-          <nacionalidade>português</nacionalidade>
      </autor>
      <autor nome="Eça de Queiroz" id="2">
           <dataNascimento>25 de novembro de 1845</dataNascimento>
@@ -28,12 +34,12 @@
                <generoLiterario>Nao definido</generoLiterario>
           </generosLiterarios>
           <ocupacoes>
-               <ocupacao>romantico</ocupacao>
-               <ocupacao>contista</ocupacao>
                <ocupacao>diplomata</ocupacao>
+               <ocupacao>romancista</ocupacao>
+               <ocupacao>contista</ocupacao>
           </ocupacoes>
           <premios>
-               <premio>Participacao</premio>
+               <premio>Nao definido</premio>
           </premios>
      </autor>
      <autor nome="Fernando Pessoa" id="3">
@@ -42,7 +48,7 @@
           <nacionalidade>Português</nacionalidade>
           <fotografia>//upload.wikimedia.org/wikipedia/commons/thumb/3/32/Pessoa_chapeu.jpg/200px-Pessoa_chapeu.jpg</fotografia>
           <generosLiterarios>
-               <generoLiterario>Nao definido</generoLiterario>
+               <generoLiterario>Fantasia</generoLiterario>
           </generosLiterarios>
           <ocupacoes>
                <ocupacao>Poeta</ocupacao>
@@ -50,24 +56,7 @@
                <ocupacao>tradutor</ocupacao>
           </ocupacoes>
           <premios>
-               <premio>Participacao</premio>
-          </premios>
-     </autor>
-     <autor nome="H. P. Lovecraft" id="4">
-          <dataNascimento>20 de agosto de 1890</dataNascimento>
-          <dataMorte>15 de março de 1937</dataMorte>
-          <nacionalidade>estadunidense</nacionalidade>
-          <fotografia>//upload.wikimedia.org/wikipedia/commons/thumb/1/10/H._P._Lovecraft%2C_June_1934.jpg/250px-H._P._Lovecraft%2C_June_1934.jpg</fotografia>
-          <generosLiterarios>
-               <generoLiterario>Terror</generoLiterario>
-               <generoLiterario>ficção científica</generoLiterario>
-          </generosLiterarios>
-          <ocupacoes>
-               <ocupacao>Escritor</ocupacao>
-          </ocupacoes>
-          <premios>
-               <premio>Participacao</premio>
-               <premio>boas</premio>
+               <premio>Prémio Antero de Quental</premio>
           </premios>
      </autor>
 </autores>

@@ -1,11 +1,14 @@
 package com.mycompany.id_tp;
 
+import java.util.List;
+
 public class Autor {
     
     private int id;
-    private String nome, dataNasc, dataMort, nacional, fotografia, generoLiter, ocupacoes;
+    private String nome, dataNasc, dataMort, nacional, fotografia;
+    private List<String> generoLiter, ocupacoes, premios;
 
-    public Autor(int id, String nome, String dataNasc, String dataMort, String nacional, String fotografia, String generoLiter, String ocupacoes) {
+    public Autor(int id, String nome, String dataNasc, String dataMort, String nacional, String fotografia, List<String> generoLiter, List<String> ocupacoes, List<String> premios) {
         this.id = id;
         this.nome = nome;
         this.dataNasc = dataNasc;
@@ -14,6 +17,7 @@ public class Autor {
         this.fotografia = fotografia;
         this.generoLiter = generoLiter;
         this.ocupacoes = ocupacoes;
+        this.premios = premios;
     }
 
     public int getId() {
@@ -64,19 +68,27 @@ public class Autor {
         this.fotografia = fotografia;
     }
 
-    public String getGeneroLiter() {
+    public List<String> getGeneroLiter() {
         return generoLiter;
     }
 
-    public void setGeneroLiter(String generoLiter) {
+    public void setGeneroLiter(List<String> generoLiter) {
         this.generoLiter = generoLiter;
     }
 
-    public String getOcupacoes() {
+    public List<String> getOcupacoes() {
         return ocupacoes;
     }
 
-    public void setOcupacoes(String ocupacoes) {
+    public void setOcupacoes(List<String> ocupacoes) {
         this.ocupacoes = ocupacoes;
+    }
+
+    public List<String> getPremios() {
+        return premios;
+    }
+
+    public void setPremios(List<String> premios) {
+        this.premios = premios;
     }
 }

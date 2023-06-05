@@ -1,18 +1,21 @@
 package com.mycompany.id_tp;
 
+import java.util.List;
+
 public class Livro {
     
     private int idAutor;
-    private String isbn, nomeAutor, titulo, editora, preco, fotoCapa;
+    private String isbn, titulo, editora, preco, fotoCapa;
+    private List<String> nomeAutor;
 
-    public Livro(int idAutor, String isbn, String nomeAutor, String titulo, String editora, String preco, String fotoCapa) {
+    public Livro(int idAutor, String isbn, String titulo, String editora, String preco, String fotoCapa, List<String> nomeAutor) {
         this.idAutor = idAutor;
         this.isbn = isbn;
-        this.nomeAutor = nomeAutor;
         this.titulo = titulo;
         this.editora = editora;
         this.preco = preco;
         this.fotoCapa = fotoCapa;
+        this.nomeAutor = nomeAutor;
     }
 
     public int getIdAutor() {
@@ -29,14 +32,6 @@ public class Livro {
 
     public void setIsbn(String isbn) {
         this.isbn = isbn;
-    }
-
-    public String getNomeAutor() {
-        return nomeAutor;
-    }
-
-    public void setNomeAutor(String nomeAutor) {
-        this.nomeAutor = nomeAutor;
     }
 
     public String getTitulo() {
@@ -69,5 +64,13 @@ public class Livro {
 
     public void setFotoCapa(String fotoCapa) {
         this.fotoCapa = fotoCapa;
+    }
+
+    public List<String> getNomeAutor() {
+        return nomeAutor;
+    }
+
+    public void setNomeAutor(List<String> nomeAutor) {
+        this.nomeAutor = nomeAutor;
     }
 }

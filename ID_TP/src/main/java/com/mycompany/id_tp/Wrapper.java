@@ -3,6 +3,7 @@ package com.mycompany.id_tp;
 import java.io.*;
 import java.nio.file.Files;
 import java.nio.file.Path;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 import java.util.regex.Matcher;
@@ -197,7 +198,7 @@ public class Wrapper {
 
     }
 
-    public static String autor_generoLiterario(String nomeAutor) throws IOException {
+    public static List<String> autor_generoLiterario(String nomeAutor) throws IOException {
 
         String link = "https://pt.wikipedia.org/wiki/";
         nomeAutor = nomeAutor.replace(" ", "_");
@@ -205,13 +206,13 @@ public class Wrapper {
 
         Scanner ler;
         ler = new Scanner(Files.newInputStream(Path.of("wiki.html")));
-        String er1 = ">Gênero literário";
+        String er1 = "<td[^>]+>Gênero literário";
         String er2 = "<a\\shref=\"[^\"]+\"\\stitle=\"[^\"]+\">([^<]+)</a>";
 
         Pattern p = Pattern.compile(er1, Pattern.DOTALL);
         Matcher m;
         String linha;
-        String resultado = "";
+        List<String> resultado = new ArrayList<>();
 
         while (ler.hasNextLine()) {
             linha = ler.nextLine();
@@ -220,7 +221,7 @@ public class Wrapper {
             if (m.find()) {
                 p = Pattern.compile(er2, Pattern.DOTALL);
 
-                while (ler.hasNextLine()) {
+                for (int j = 0; j < 10; j++) {
                     linha = ler.nextLine();
                     m = p.matcher(linha);
 
@@ -231,22 +232,25 @@ public class Wrapper {
                             m = p.matcher(temp[i]);
 
                             if (m.find()) {
-                                resultado += m.group(1) + "#";
+                                resultado.add(m.group(1));
                             }
                         }
 
-                        ler.close();
-                        return resultado;
                     }
                 }
+                ler.close();
+                return resultado;
             }
         }
 
-        return "Nao definido";
+        resultado.clear();
+        resultado.add("Nao definido");
+
+        return resultado;
 
     }
 
-    public static String autor_ocupacoes(String nomeAutor) throws IOException {
+    public static List<String> autor_ocupacoes(String nomeAutor) throws IOException {
 
         String link = "https://pt.wikipedia.org/wiki/";
         nomeAutor = nomeAutor.replace(" ", "_");
@@ -254,13 +258,13 @@ public class Wrapper {
 
         Scanner ler;
         ler = new Scanner(Files.newInputStream(Path.of("wiki.html")));
-        String er1 = ">Ocupação";
+        String er1 = "<td[^>]+>Ocupação";
         String er2 = "\"[^\"]+\">([^<]+)</a>";
 
         Pattern p = Pattern.compile(er1, Pattern.DOTALL);
         Matcher m;
         String linha;
-        String resultado = "";
+        List<String> resultado = new ArrayList<>();
 
         while (ler.hasNextLine()) {
             linha = ler.nextLine();
@@ -269,7 +273,7 @@ public class Wrapper {
             if (m.find()) {
                 p = Pattern.compile(er2, Pattern.DOTALL);
 
-                while (ler.hasNextLine()) {
+                for (int j = 0; j < 10; j++) {
                     linha = ler.nextLine();
                     m = p.matcher(linha);
 
@@ -280,22 +284,77 @@ public class Wrapper {
                             m = p.matcher(temp[i]);
 
                             if (m.find()) {
-                                resultado += m.group(1) + "#";
+                                resultado.add(m.group(1));
                             }
                         }
 
-                        ler.close();
-                        return resultado;
                     }
                 }
+                ler.close();
+                return resultado;
             }
         }
 
-        return "Nao definido";
+        resultado.clear();
+        resultado.add("Nao definido");
+
+        return resultado;
+    }
+
+    public static List<String> autor_premios(String nomeAutor) throws IOException {
+
+        String link = "https://pt.wikipedia.org/wiki/";
+        nomeAutor = nomeAutor.replace(" ", "_");
+        HttpRequestFunctions.httpRequest1(link, nomeAutor, "wiki.html");
+
+        Scanner ler;
+        ler = new Scanner(Files.newInputStream(Path.of("wiki.html")));
+        String er1 = "<td[^>]+>Prémios";
+        String er2 = "\"[^\"]+\">([^<]+)</a>";
+
+        Pattern p = Pattern.compile(er1, Pattern.DOTALL);
+        Matcher m;
+        String linha;
+        List<String> resultado = new ArrayList<>();
+
+        while (ler.hasNextLine()) {
+            linha = ler.nextLine();
+            m = p.matcher(linha);
+
+            if (m.find()) {
+                p = Pattern.compile(er2, Pattern.DOTALL);
+                //System.out.println(linha);
+                for (int j = 0; j < 10; j++) {
+                    linha = ler.nextLine();
+                    m = p.matcher(linha);
+
+                    if (m.find()) {
+
+                        String[] temp = linha.split("=");
+
+                        for (int i = 0; i < temp.length; i++) {
+                            m = p.matcher(temp[i]);
+
+                            if (m.find()) {
+                                resultado.add(m.group(1));
+                            }
+                        }
+
+                    }
+                }
+                ler.close();
+                return resultado;
+            }
+        }
+
+        resultado.clear();
+        resultado.add("Nao definido");
+
+        return resultado;
 
     }
 
-    public static String obras_ISBN(String nomeAutor, int quant) throws IOException {
+    public static List<String> obras_ISBN(String nomeAutor, int quant) throws IOException {
 
         String link = "https://www.bertrand.pt/pesquisa/";
         String nome = nomeAutor.replace(" ", "+");
@@ -312,7 +371,8 @@ public class Wrapper {
 
         Pattern p1 = Pattern.compile(er), p2, p3, p4;
         Matcher m1, m2, m3, m4;
-        String linha, resultado = "";
+        String linha;
+        List<String> resultado = new ArrayList<>();
 
         int next, counter = 0;
 
@@ -361,7 +421,7 @@ public class Wrapper {
                                     linha = ler3.nextLine();
                                     m4 = p4.matcher(linha);
                                     if (m4.find()) {
-                                        resultado += m4.group(1) + "#";
+                                        resultado.add(m4.group(1));
                                     }
                                 }
 
@@ -385,11 +445,14 @@ public class Wrapper {
             }
         }
 
-        return "Nao definido";
+        resultado.clear();
+        resultado.add("Nao definido");
+
+        return resultado;
 
     }
 
-    public static String obras_nomeAutor(String nomeAutor, int quant) throws IOException {
+    public static List<List<String>> obras_nomeAutor(String nomeAutor, int quant) throws IOException {
         String link = "https://www.bertrand.pt/pesquisa/";
         String nome = nomeAutor.replace(" ", "+");
         HttpRequestFunctions.httpRequest1(link, nome, "bert.html");
@@ -404,7 +467,8 @@ public class Wrapper {
 
         Pattern p1 = Pattern.compile(er), p2, p3;
         Matcher m1, m2, m3;
-        String linha, resultado = "";
+        String linha;
+        List<List<String>> resultado = new ArrayList<>();
 
         int next, counter = 0;
 
@@ -442,16 +506,19 @@ public class Wrapper {
                                 //System.out.println("-----------------------------------------3");
 
                                 String[] temp = linha.split("=");
+                                List<String> res = new ArrayList<>();
 
                                 for (int i = 0; i < temp.length; i++) {
                                     m3 = p3.matcher(temp[i]);
 
                                     if (m3.find()) {
-                                        resultado += m3.group(1) + "/";
+                                        res.add(m3.group(1));
+                                        //System.out.println("res->" + res);
                                     }
                                 }
 
-                                resultado += "#";
+                                resultado.add(new ArrayList<>(res));
+                                //System.out.println("resultado->" + resultado);
 
                                 //resultado += m3.group(1) + "\n";
                                 if (counter == quant) {
@@ -462,7 +529,7 @@ public class Wrapper {
                                 } else {
                                     counter++;
                                     next = 1;
-
+                                    res.clear();
                                 }
                             }
                         }
@@ -474,11 +541,17 @@ public class Wrapper {
             }
         }
 
-        return "Nao definido";
+        List<String> res = new ArrayList<>();
+        res.add("Nao definido");
+
+        resultado.clear();
+        resultado.add(res);
+
+        return resultado;
 
     }
 
-    public static String obras_titulo(String nomeAutor, int quant) throws IOException {
+    public static List<String> obras_titulo(String nomeAutor, int quant) throws IOException {
 
         String link = "https://www.bertrand.pt/pesquisa/";
         String nome = nomeAutor.replace(" ", "+");
@@ -494,7 +567,8 @@ public class Wrapper {
 
         Pattern p1 = Pattern.compile(er), p2, p3;
         Matcher m1, m2, m3;
-        String linha, resultado = "";
+        String linha;
+        List<String> resultado = new ArrayList<>();
 
         int next, counter = 0;
 
@@ -531,7 +605,7 @@ public class Wrapper {
                             if (m3.find()) {
                                 //System.out.println("-----------------------------------------3");
 
-                                resultado += m3.group(1) + "#";
+                                resultado.add(m3.group(1));
 
                                 if (counter == quant) {
                                     ler1.close();
@@ -553,11 +627,14 @@ public class Wrapper {
             }
         }
 
-        return "Nao definido";
+        resultado.clear();
+        resultado.add("Nao definido");
+
+        return resultado;
 
     }
 
-    public static String obras_preco(String nomeAutor, int quant) throws IOException {
+    public static List<String> obras_preco(String nomeAutor, int quant) throws IOException {
 
         String link = "https://www.bertrand.pt/pesquisa/";
         String nome = nomeAutor.replace(" ", "+");
@@ -573,7 +650,8 @@ public class Wrapper {
 
         Pattern p1 = Pattern.compile(er), p2, p3;
         Matcher m1, m2, m3;
-        String linha, resultado = "";
+        String linha;
+        List<String> resultado = new ArrayList<>();
 
         int next, counter = 0;
 
@@ -610,7 +688,7 @@ public class Wrapper {
                             if (m3.find()) {
                                 //System.out.println("-----------------------------------------3");
 
-                                resultado += m3.group(1) + "#";
+                                resultado.add(m3.group(1));
 
                                 if (counter == quant) {
                                     ler1.close();
@@ -632,11 +710,14 @@ public class Wrapper {
             }
         }
 
-        return "Nao definido";
+        resultado.clear();
+        resultado.add("Nao definido");
+
+        return resultado;
 
     }
 
-    public static String obras_editora(String nomeAutor, int quant) throws IOException {
+    public static List<String> obras_editora(String nomeAutor, int quant) throws IOException {
 
         String link = "https://www.bertrand.pt/pesquisa/";
         String nome = nomeAutor.replace(" ", "+");
@@ -652,7 +733,8 @@ public class Wrapper {
 
         Pattern p1 = Pattern.compile(er), p2, p3;
         Matcher m1, m2, m3;
-        String linha, resultado = "";
+        String linha;
+        List<String> resultado = new ArrayList<>();
 
         int next, counter = 0;
 
@@ -689,7 +771,7 @@ public class Wrapper {
                             if (m3.find()) {
                                 //System.out.println("-----------------------------------------3");
 
-                                resultado += m3.group(1) + "#";
+                                resultado.add(m3.group(1));
 
                                 if (counter == quant) {
                                     ler1.close();
@@ -711,11 +793,14 @@ public class Wrapper {
             }
         }
 
-        return "Nao definido";
+        resultado.clear();
+        resultado.add("Nao definido");
+
+        return resultado;
 
     }
 
-    public static String obras_fotoCapa(String nomeAutor, int quant) throws IOException {
+    public static List<String> obras_fotoCapa(String nomeAutor, int quant) throws IOException {
 
         String link = "https://www.bertrand.pt/pesquisa/";
         String nome = nomeAutor.replace(" ", "+");
@@ -732,7 +817,8 @@ public class Wrapper {
 
         Pattern p1 = Pattern.compile(er), p2, p3, p4;
         Matcher m1, m2, m3, m4;
-        String linha, resultado = "";
+        String linha;
+        List<String> resultado = new ArrayList<>();
 
         int next, counter = 0;
 
@@ -781,7 +867,7 @@ public class Wrapper {
                                     linha = ler3.nextLine();
                                     m4 = p4.matcher(linha);
                                     if (m4.find()) {
-                                        resultado += m4.group(1) + "#";
+                                        resultado.add(m4.group(1));
                                         next = 1;
                                     }
                                 }
@@ -806,7 +892,10 @@ public class Wrapper {
             }
         }
 
-        return "Nao definido";
+        resultado.clear();
+        resultado.add("Nao definido");
+
+        return resultado;
 
     }
 
@@ -835,7 +924,7 @@ public class Wrapper {
                 }
             }
         }
-        
+
         if (res == null || res.size() == 0) { //Livro não existe
             int id = maxID;
             String nome = Wrapper.autor_nome(nomeAutor);
@@ -843,26 +932,31 @@ public class Wrapper {
             String dataMort = Wrapper.autor_DataMorte(nomeAutor);
             String nacional = Wrapper.autor_nacionalidade(nomeAutor);
             String fotografia = Wrapper.autor_fotografia(nomeAutor);
-            String generoLiter = Wrapper.autor_generoLiterario(nomeAutor);
-            String ocupacoes = Wrapper.autor_ocupacoes(nomeAutor);
+            List<String> generoLiter = Wrapper.autor_generoLiterario(nomeAutor);
+            List<String> ocupacoes = Wrapper.autor_ocupacoes(nomeAutor);
+            List<String> premios = Wrapper.autor_premios(nomeAutor);
 
-            Autor x = new Autor(id, nome, dataNasc, dataMort, nacional, fotografia, generoLiter, ocupacoes);
+            Autor x = new Autor(id, nome, dataNasc, dataMort, nacional, fotografia, generoLiter, ocupacoes, premios);
             return x;
         }
 
         return null;
     }
 
-    public static Livro criaLivro(String nomeAutor, int idAutor, int quant) throws IOException {
-        String isbn = Wrapper.obras_ISBN(nomeAutor, quant);
-        String nomeAu = Wrapper.obras_nomeAutor(nomeAutor, quant);
-        String titulo = Wrapper.obras_titulo(nomeAutor, quant);
-        String editora = Wrapper.obras_editora(nomeAutor, quant);
-        String preco = Wrapper.obras_preco(nomeAutor, quant);
-        String fotoCapa = Wrapper.obras_fotoCapa(nomeAutor, quant);
+    public static List<Livro> criaLivro(String nomeAutor, int idAutor, int quant) throws IOException {
+        List<Livro> livros = new ArrayList<>();
 
-        Livro x = new Livro(idAutor, isbn, nomeAu, titulo, editora, preco, fotoCapa);
-        return x;
+        List<String> isbn = Wrapper.obras_ISBN(nomeAutor, quant);
+        List<List<String>> nomeAu = Wrapper.obras_nomeAutor(nomeAutor, quant);
+        List<String> titulo = Wrapper.obras_titulo(nomeAutor, quant);
+        List<String> editora = Wrapper.obras_editora(nomeAutor, quant);
+        List<String> preco = Wrapper.obras_preco(nomeAutor, quant);
+        List<String> fotoCapa = Wrapper.obras_fotoCapa(nomeAutor, quant);
+
+        for (int i = 0; i < isbn.size(); i++) {
+            livros.add(new Livro(idAutor, isbn.get(i), titulo.get(i), editora.get(i), preco.get(i), fotoCapa.get(i), nomeAu.get(i)));
+        }
+
+        return livros;
     }
-
 }

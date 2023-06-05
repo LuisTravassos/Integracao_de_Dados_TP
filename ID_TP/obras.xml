@@ -1,24 +1,22 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE livros SYSTEM "obrasValidacao.dtd">
-<livros xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="obrasValidacao.xsd">
-     <livro isbn="978-972-37-2081-5" idAutor="1">
+<livros>
+     <livro isbn="978-972-0-04671-0" idAutor="1">
           <nomesAutores>
-               <nomeAutor>Luís de Camões</nomeAutor>
+               <nomeAutor>José Saramago</nomeAutor>
           </nomesAutores>
-          <titulo>Sonetos de Luís de Camões</titulo>
-          <editora>Assírio &amp; Alvim</editora>
-          <preco>14.40</preco>
-          <fotoCapa>https://img.bertrand.pt/images/sonetos-de-luis-de-camoes-luis-de-camoes/NDV8MjM4MzA5OTF8MTk4NDgzNTB8MTU4MjIwMDkzMzAwMA==/300x"</fotoCapa>
+          <titulo>Memorial do Convento</titulo>
+          <editora>Porto Editora</editora>
+          <preco>14.20</preco>
+          <fotoCapa>https://img.bertrand.pt/images/memorial-do-convento-jose-saramago/NDV8MTU3NDc0NDR8MjM1NjIyNjF8MTY2MjA0MDgyMzAwMA==/300x"</fotoCapa>
      </livro>
-     <livro isbn="9789895427499" idAutor="1">
+     <livro isbn="978-972-0-04667-3" idAutor="1">
           <nomesAutores>
-               <nomeAutor>Luís de Camões</nomeAutor>
-               <nomeAutor>Felipe de Saavedra</nomeAutor>
+               <nomeAutor>José Saramago</nomeAutor>
           </nomesAutores>
-          <titulo>Epistolário Magno de Luís de Camões - Volume I</titulo>
-          <editora>Canto Redondo</editora>
-          <preco>22.05</preco>
-          <fotoCapa>https://img.bertrand.pt/images/epistolario-magno-de-luis-de-camoes-volume-i-luis-de-camoes/NDV8MjcyMzI0MjB8MjM1NjUxMjV8MTY1OTYxODA1MDAwMA==/300x"</fotoCapa>
+          <titulo>As Intermitências da Morte</titulo>
+          <editora>Porto Editora</editora>
+          <preco>13.32</preco>
+          <fotoCapa>https://img.bertrand.pt/images/as-intermitencias-da-morte-jose-saramago/NDV8MTU3MjM4ODR8MjQ5MjQxNDB8MTY4NDg0NzY4NjAwMA==/300x"</fotoCapa>
      </livro>
      <livro isbn="978-989-711-194-5" idAutor="2">
           <nomesAutores>
@@ -26,7 +24,7 @@
           </nomesAutores>
           <titulo>A Capital</titulo>
           <editora>Livros do Brasil</editora>
-          <preco>10.98</preco>
+          <preco>9.76</preco>
           <fotoCapa>https://img.bertrand.pt/images/a-capital-eca-de-queiroz/NDV8Mjc0MzIzNDB8MjM4MDIzMjd8MTY4MjA5MTIwNTAwMA==/300x"</fotoCapa>
      </livro>
      <livro isbn="978-989-711-020-7" idAutor="2">
@@ -35,8 +33,17 @@
           </nomesAutores>
           <titulo>Os Maias</titulo>
           <editora>Livros do Brasil</editora>
-          <preco>11.10</preco>
+          <preco>8.88</preco>
           <fotoCapa>https://img.bertrand.pt/images/os-maias-eca-de-queiroz/NDV8MTUzMjgzNDZ8MjE4MDQ2ODl8MTYzNzg1ODEwMDAwMA==/300x"</fotoCapa>
+     </livro>
+     <livro isbn="9789897731341" idAutor="2">
+          <nomesAutores>
+               <nomeAutor>Eça de Queiroz</nomeAutor>
+          </nomesAutores>
+          <titulo>Eça De Queiroz Entre Os Seus</titulo>
+          <editora>Editorial Caminho</editora>
+          <preco>11.19</preco>
+          <fotoCapa>https://img.bertrand.pt/images/eca-de-queiroz-sonia-louro/NDV8MjIzMzg1NTJ8MTgyMjQyMTh8MTUzOTM1ODQ4MjAwMA==/300x"</fotoCapa>
      </livro>
      <livro isbn="978-972-37-2318-2" idAutor="3">
           <nomesAutores>
@@ -44,45 +51,7 @@
           </nomesAutores>
           <titulo>Poesia, Ricardo Reis</titulo>
           <editora>Assírio &amp; Alvim</editora>
-          <preco>16.97</preco>
+          <preco>15.08</preco>
           <fotoCapa>https://img.bertrand.pt/images/poesia-ricardo-reis-fernando-pessoa/NDV8MTEyMzcwNTJ8MjQ3NjYxODJ8MTY4MzcyOTUzMDAwMA==/300x"</fotoCapa>
-     </livro>
-     <livro isbn="978-972-0-79310-2" idAutor="3">
-          <nomesAutores>
-               <nomeAutor>Fernando Pessoa</nomeAutor>
-               <nomeAutor>Ofélia Queiroz</nomeAutor>
-          </nomesAutores>
-          <titulo>Cartas de Amor de Fernando Pessoa e Ofélia Queiroz</titulo>
-          <editora>Assírio &amp; Alvim</editora>
-          <preco>18.85</preco>
-          <fotoCapa>https://img.bertrand.pt/images/cartas-de-amor-de-fernando-pessoa-e-ofelia-queiroz-fernando-pessoa/NDV8MTMwMjk2MjN8MTg3MTg3MTZ8MTU1MTI1OTA4MDAwMA==/300x"</fotoCapa>
-     </livro>
-     <livro isbn="9789728839703" idAutor="4">
-          <nomesAutores>
-               <nomeAutor>Fernando Ribeiro</nomeAutor>
-               <nomeAutor>Howard Phillips Lovecraft</nomeAutor>
-          </nomesAutores>
-          <titulo>Os Melhores Contos de Howard Phillips Lovecraft - 2º Vol.</titulo>
-          <editora>Saída de Emergência</editora>
-          <preco>18.80</preco>
-          <fotoCapa>https://img.bertrand.pt/images/os-melhores-contos-de-howard-phillips-lovecraft-2-vol-fernando-ribeiro/NDV8MTk0ODc5fDI0NTk3MnwxMzgzNTc3MDM4MDAw/300x"</fotoCapa>
-     </livro>
-     <livro isbn="9789896370411" idAutor="4">
-          <nomesAutores>
-               <nomeAutor>Howard Phillips Lovecraft</nomeAutor>
-          </nomesAutores>
-          <titulo>Os Melhores Contos de Howard Phillips Lovecraft - 3º Vol.</titulo>
-          <editora>Saída de Emergência</editora>
-          <preco>18.80</preco>
-          <fotoCapa>https://img.bertrand.pt/images/os-melhores-contos-de-howard-phillips-lovecraft-3-vol-howard-phillips-lovecraft/NDV8MjE3OTAyfDMzMzQ4MHwxMzgzNTc3MDU2MDAw/300x"</fotoCapa>
-     </livro>
-     <livro isbn="9789896371487" idAutor="4">
-          <nomesAutores>
-               <nomeAutor>Howard Phillips Lovecraft</nomeAutor>
-          </nomesAutores>
-          <titulo>Os Melhores Contos de Howard Phillips Lovecraft - 4º Vol.</titulo>
-          <editora>Saída de Emergência</editora>
-          <preco>18.80</preco>
-          <fotoCapa>https://img.bertrand.pt/images/os-melhores-contos-de-howard-phillips-lovecraft-4-vol-howard-phillips-lovecraft/NDV8MjA1MDk1N3wxODExNTY4fDEzODM1Nzg1NTkwMDA=/300x"</fotoCapa>
      </livro>
 </livros>
