@@ -1,38 +1,169 @@
-<?xml version="1.0" encoding="utf-8"?>
-<autores>
-     <autores>
-          <autor nome="Luís de Camões" id="1">
-               152410 de junho de 1579português//upload.wikimedia.org/wikipedia/commons/thumb/f/f3/Cam%C3%B5es%2C_por_Fern%C3%A3o_Gomes.jpg/200px-Cam%C3%B5es%2C_por_Fern%C3%A3o_Gomes.jpg
-               Nao definido
-          
-               poeta
-               soldado
-          
-               Participacao
-               <obras />
-          </autor>
-          <autor nome="Eça de Queiroz" id="2">
-               25 de novembro de 184516 de agosto de 1900Português//upload.wikimedia.org/wikipedia/commons/thumb/d/d9/E%C3%A7a_de_Queir%C3%B3s_c._1882.jpg/200px-E%C3%A7a_de_Queir%C3%B3s_c._1882.jpg
-               Nao definido
-          
-               romantico
-               contista
-               diplomata
-          
-               Participacao
-               <obras />
-          </autor>
-          <autor nome="Fernando Pessoa" id="3">
-               13 de junho de 188830 de novembro de 1935Português//upload.wikimedia.org/wikipedia/commons/thumb/3/32/Pessoa_chapeu.jpg/200px-Pessoa_chapeu.jpg
-               Nao definido
-          
-               Poeta
-               escritor
-               tradutor
-          
-               Participacao
-               <obras />
-          </autor>
-     </autores>
-     <autores />
-</autores>
+<?xml version="1.0" encoding="UTF-8"?>
+<escritoresobras>
+   <autor xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" nome="Luís de Camões"
+          id="1">
+      <dataNascimento>1524</dataNascimento>
+      <dataMorte>10 de junho de 1579</dataMorte>
+      <fotografia>//upload.wikimedia.org/wikipedia/commons/thumb/f/f3/Cam%C3%B5es%2C_por_Fern%C3%A3o_Gomes.jpg/200px-Cam%C3%B5es%2C_por_Fern%C3%A3o_Gomes.jpg</fotografia>
+      <generosLiterarios>
+         <generoLiterario>Nao definido</generoLiterario>
+      </generosLiterarios>
+      <ocupacoes>
+         <ocupacao>poeta</ocupacao>
+         <ocupacao>soldado</ocupacao>
+      </ocupacoes>
+      <premios>
+         <premio>Participacao</premio>
+         <premio>ola</premio>
+         <premio>bopas</premio>
+      </premios>
+      <nacionalidade>português</nacionalidade>
+   </autor>
+   <livro xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" isbn="978-972-37-2081-5"
+          idAutor="1">
+      <nomesAutores>
+         <nomeAutor>Luís de Camões</nomeAutor>
+      </nomesAutores>
+      <titulo>Sonetos de Luís de Camões</titulo>
+      <editora>Assírio &amp; Alvim</editora>
+      <preco>14.40</preco>
+      <fotoCapa>https://img.bertrand.pt/images/sonetos-de-luis-de-camoes-luis-de-camoes/NDV8MjM4MzA5OTF8MTk4NDgzNTB8MTU4MjIwMDkzMzAwMA==/300x"</fotoCapa>
+   </livro>
+   <livro xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" isbn="9789895427499"
+          idAutor="1">
+      <nomesAutores>
+         <nomeAutor>Luís de Camões</nomeAutor>
+         <nomeAutor>Felipe de Saavedra</nomeAutor>
+      </nomesAutores>
+      <titulo>Epistolário Magno de Luís de Camões - Volume I</titulo>
+      <editora>Canto Redondo</editora>
+      <preco>22.05</preco>
+      <fotoCapa>https://img.bertrand.pt/images/epistolario-magno-de-luis-de-camoes-volume-i-luis-de-camoes/NDV8MjcyMzI0MjB8MjM1NjUxMjV8MTY1OTYxODA1MDAwMA==/300x"</fotoCapa>
+   </livro>
+   <autor xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" nome="Eça de Queiroz"
+          id="2">
+      <dataNascimento>25 de novembro de 1845</dataNascimento>
+      <dataMorte>16 de agosto de 1900</dataMorte>
+      <nacionalidade>Português</nacionalidade>
+      <fotografia>//upload.wikimedia.org/wikipedia/commons/thumb/d/d9/E%C3%A7a_de_Queir%C3%B3s_c._1882.jpg/200px-E%C3%A7a_de_Queir%C3%B3s_c._1882.jpg</fotografia>
+      <generosLiterarios>
+         <generoLiterario>Nao definido</generoLiterario>
+      </generosLiterarios>
+      <ocupacoes>
+         <ocupacao>romantico</ocupacao>
+         <ocupacao>contista</ocupacao>
+         <ocupacao>diplomata</ocupacao>
+      </ocupacoes>
+      <premios>
+         <premio>Participacao</premio>
+      </premios>
+   </autor>
+   <livro xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" isbn="978-989-711-194-5"
+          idAutor="2">
+      <nomesAutores>
+         <nomeAutor>Eça de Queiroz</nomeAutor>
+      </nomesAutores>
+      <titulo>A Capital</titulo>
+      <editora>Livros do Brasil</editora>
+      <preco>10.98</preco>
+      <fotoCapa>https://img.bertrand.pt/images/a-capital-eca-de-queiroz/NDV8Mjc0MzIzNDB8MjM4MDIzMjd8MTY4MjA5MTIwNTAwMA==/300x"</fotoCapa>
+   </livro>
+   <livro xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" isbn="978-989-711-020-7"
+          idAutor="2">
+      <nomesAutores>
+         <nomeAutor>Eça de Queiroz</nomeAutor>
+      </nomesAutores>
+      <titulo>Os Maias</titulo>
+      <editora>Livros do Brasil</editora>
+      <preco>11.10</preco>
+      <fotoCapa>https://img.bertrand.pt/images/os-maias-eca-de-queiroz/NDV8MTUzMjgzNDZ8MjE4MDQ2ODl8MTYzNzg1ODEwMDAwMA==/300x"</fotoCapa>
+   </livro>
+   <autor xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" nome="Fernando Pessoa"
+          id="3">
+      <dataNascimento>13 de junho de 1888</dataNascimento>
+      <dataMorte>30 de novembro de 1935</dataMorte>
+      <nacionalidade>Português</nacionalidade>
+      <fotografia>//upload.wikimedia.org/wikipedia/commons/thumb/3/32/Pessoa_chapeu.jpg/200px-Pessoa_chapeu.jpg</fotografia>
+      <generosLiterarios>
+         <generoLiterario>Nao definido</generoLiterario>
+      </generosLiterarios>
+      <ocupacoes>
+         <ocupacao>Poeta</ocupacao>
+         <ocupacao>escritor</ocupacao>
+         <ocupacao>tradutor</ocupacao>
+      </ocupacoes>
+      <premios>
+         <premio>Participacao</premio>
+      </premios>
+   </autor>
+   <livro xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" isbn="978-972-37-2318-2"
+          idAutor="3">
+      <nomesAutores>
+         <nomeAutor>Fernando Pessoa</nomeAutor>
+      </nomesAutores>
+      <titulo>Poesia, Ricardo Reis</titulo>
+      <editora>Assírio &amp; Alvim</editora>
+      <preco>16.97</preco>
+      <fotoCapa>https://img.bertrand.pt/images/poesia-ricardo-reis-fernando-pessoa/NDV8MTEyMzcwNTJ8MjQ3NjYxODJ8MTY4MzcyOTUzMDAwMA==/300x"</fotoCapa>
+   </livro>
+   <livro xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" isbn="978-972-0-79310-2"
+          idAutor="3">
+      <nomesAutores>
+         <nomeAutor>Fernando Pessoa</nomeAutor>
+         <nomeAutor>Ofélia Queiroz</nomeAutor>
+      </nomesAutores>
+      <titulo>Cartas de Amor de Fernando Pessoa e Ofélia Queiroz</titulo>
+      <editora>Assírio &amp; Alvim</editora>
+      <preco>18.85</preco>
+      <fotoCapa>https://img.bertrand.pt/images/cartas-de-amor-de-fernando-pessoa-e-ofelia-queiroz-fernando-pessoa/NDV8MTMwMjk2MjN8MTg3MTg3MTZ8MTU1MTI1OTA4MDAwMA==/300x"</fotoCapa>
+   </livro>
+   <autor xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" nome="H. P. Lovecraft"
+          id="4">
+      <dataNascimento>20 de agosto de 1890</dataNascimento>
+      <dataMorte>15 de março de 1937</dataMorte>
+      <nacionalidade>estadunidense</nacionalidade>
+      <fotografia>//upload.wikimedia.org/wikipedia/commons/thumb/1/10/H._P._Lovecraft%2C_June_1934.jpg/250px-H._P._Lovecraft%2C_June_1934.jpg</fotografia>
+      <generosLiterarios>
+         <generoLiterario>Terror</generoLiterario>
+         <generoLiterario>ficção científica</generoLiterario>
+      </generosLiterarios>
+      <ocupacoes>
+         <ocupacao>Escritor</ocupacao>
+      </ocupacoes>
+      <premios>
+         <premio>Participacao</premio>
+         <premio>boas</premio>
+      </premios>
+   </autor>
+   <livro xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" isbn="9789728839703"
+          idAutor="4">
+      <nomesAutores>
+         <nomeAutor>Fernando Ribeiro</nomeAutor>
+         <nomeAutor>Howard Phillips Lovecraft</nomeAutor>
+      </nomesAutores>
+      <titulo>Os Melhores Contos de Howard Phillips Lovecraft - 2º Vol.</titulo>
+      <editora>Saída de Emergência</editora>
+      <preco>18.80</preco>
+      <fotoCapa>https://img.bertrand.pt/images/os-melhores-contos-de-howard-phillips-lovecraft-2-vol-fernando-ribeiro/NDV8MTk0ODc5fDI0NTk3MnwxMzgzNTc3MDM4MDAw/300x"</fotoCapa>
+   </livro>
+   <livro xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" isbn="9789896370411"
+          idAutor="4">
+      <nomesAutores>
+         <nomeAutor>Howard Phillips Lovecraft</nomeAutor>
+      </nomesAutores>
+      <titulo>Os Melhores Contos de Howard Phillips Lovecraft - 3º Vol.</titulo>
+      <editora>Saída de Emergência</editora>
+      <preco>18.80</preco>
+      <fotoCapa>https://img.bertrand.pt/images/os-melhores-contos-de-howard-phillips-lovecraft-3-vol-howard-phillips-lovecraft/NDV8MjE3OTAyfDMzMzQ4MHwxMzgzNTc3MDU2MDAw/300x"</fotoCapa>
+   </livro>
+   <livro xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" isbn="9789896371487"
+          idAutor="4">
+      <nomesAutores>
+         <nomeAutor>Howard Phillips Lovecraft</nomeAutor>
+      </nomesAutores>
+      <titulo>Os Melhores Contos de Howard Phillips Lovecraft - 4º Vol.</titulo>
+      <editora>Saída de Emergência</editora>
+      <preco>18.80</preco>
+      <fotoCapa>https://img.bertrand.pt/images/os-melhores-contos-de-howard-phillips-lovecraft-4-vol-howard-phillips-lovecraft/NDV8MjA1MDk1N3wxODExNTY4fDEzODM1Nzg1NTkwMDA=/300x"</fotoCapa>
+   </livro>
+</escritoresobras>

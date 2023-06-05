@@ -18,6 +18,7 @@ import javax.xml.transform.stream.StreamResult;
 import javax.xml.transform.stream.StreamSource;
 import net.sf.saxon.s9api.SaxonApiException;
 import net.sf.saxon.s9api.XdmValue;
+import net.sf.saxon.trans.XPathException;
 import org.jdom2.Document;
 import org.jdom2.Element;
 import org.jdom2.output.Format;
@@ -1188,34 +1189,24 @@ public class Frame extends javax.swing.JFrame {
     }//GEN-LAST:event_HTML2ActionPerformed
 
     private void XML2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_XML2ActionPerformed
-        /*    Document doc1 = XMLJDomFunctions.lerDocumentoXML("escritores.xml");
-        Document doc2 = XMLJDomFunctions.lerDocumentoXML("obras.xml");
-
-        if (doc1 != null && doc2 != null) {
-            Document novo1 = JDOMFunctions_XSLT.transformaDocumento(doc1, "escritores.xml", "transf5.xsl");
-            Document novo2 = JDOMFunctions_XSLT.transformaDocumento(doc2, "obras.xml", "transf5.xsl");
-
-            Document novo = new Document();
-            Element autores = new Element("autores");
-            novo.setRootElement(autores);
-
-            Element autorElement1 = novo1.getRootElement().clone();
-            Element autorElement2 = novo2.getRootElement().clone();
-
-            autores.addContent(autorElement1);
-            autores.addContent(autorElement2);
-
-            XMLJDomFunctions.escreverDocumentoParaFicheiro(novo, "XMLfile2.xml");
+        try {
+            SaxonFunctions_XQuery.xQueryToXml("XMLfile2.xml", "transf5.xql");
             Document doc = XMLJDomFunctions.lerDocumentoXML("XMLfile2.xml");
-
-            String t = XMLJDomFunctions.escreverDocumentoString(doc);
-            XMLcodeArea.setText(t);
-        } else {
-            JOptionPane.showMessageDialog(this,
-                    "Erro nos ficheiros",
-                    "Error",
-                    JOptionPane.ERROR_MESSAGE);
-        }*/
+            
+            if (doc != null) {
+                String t = XMLJDomFunctions.escreverDocumentoString(doc);
+                XMLcodeArea.setText(t);
+            } else {
+                JOptionPane.showMessageDialog(this,
+                        "Erro nos ficheiros",
+                        "Error",
+                        JOptionPane.ERROR_MESSAGE);
+            }
+        } catch (XPathException ex) {
+            Logger.getLogger(Frame.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (IOException ex) {
+            Logger.getLogger(Frame.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }//GEN-LAST:event_XML2ActionPerformed
 
     private void BotaoJanela4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotaoJanela4ActionPerformed
