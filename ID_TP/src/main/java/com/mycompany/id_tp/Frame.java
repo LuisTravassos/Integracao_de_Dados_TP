@@ -1466,9 +1466,10 @@ public class Frame extends javax.swing.JFrame {
     private void BotaoJanela8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotaoJanela8ActionPerformed
         // TODO add your handling code here:
         try {
-        Document doc1 = XMLJDomFunctions.lerDocumentoXML("titulo.xml");
-        ModeloXML.addtitulo(TituloObra.getText(),doc1);
-        //raiz.addContent(TituloObra.getText());
+            Element raiz = new Element("titulo");
+            Document docV = new Document(raiz);
+            raiz.addContent(TituloObra.getText());
+            XMLJDomFunctions.escreverDocumentoParaFicheiro(docV, "titulo.xml");
 
         
             SaxonFunctions_XQuery.xQueryToXml("XMLfile3.xml", "transf6.xql");
