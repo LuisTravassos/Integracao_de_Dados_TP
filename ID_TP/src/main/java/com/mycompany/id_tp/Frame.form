@@ -505,6 +505,58 @@
         </Component>
       </SubComponents>
     </Container>
+    <Container class="javax.swing.JDialog" name="XQuery_XML3">
+
+      <Layout>
+        <DimensionLayout dim="0">
+          <Group type="103" groupAlignment="0" attributes="0">
+              <Group type="102" alignment="1" attributes="0">
+                  <EmptySpace min="0" pref="31" max="32767" attributes="0"/>
+                  <Group type="103" groupAlignment="0" attributes="0">
+                      <Component id="LabelJanela8" min="-2" pref="96" max="-2" attributes="0"/>
+                      <Component id="TituloObra" min="-2" pref="363" max="-2" attributes="0"/>
+                  </Group>
+                  <EmptySpace max="-2" attributes="0"/>
+              </Group>
+              <Group type="102" alignment="0" attributes="0">
+                  <EmptySpace min="-2" pref="78" max="-2" attributes="0"/>
+                  <Component id="BotaoJanela8" min="-2" pref="246" max="-2" attributes="0"/>
+                  <EmptySpace max="32767" attributes="0"/>
+              </Group>
+          </Group>
+        </DimensionLayout>
+        <DimensionLayout dim="1">
+          <Group type="103" groupAlignment="0" attributes="0">
+              <Group type="102" alignment="0" attributes="0">
+                  <EmptySpace min="-2" pref="28" max="-2" attributes="0"/>
+                  <Component id="LabelJanela8" min="-2" max="-2" attributes="0"/>
+                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                  <Component id="TituloObra" min="-2" max="-2" attributes="0"/>
+                  <EmptySpace type="separate" max="-2" attributes="0"/>
+                  <Component id="BotaoJanela8" min="-2" pref="43" max="-2" attributes="0"/>
+                  <EmptySpace pref="161" max="32767" attributes="0"/>
+              </Group>
+          </Group>
+        </DimensionLayout>
+      </Layout>
+      <SubComponents>
+        <Component class="javax.swing.JLabel" name="LabelJanela8">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Titulo da Obra"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JTextField" name="TituloObra">
+        </Component>
+        <Component class="javax.swing.JButton" name="BotaoJanela8">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="OK"/>
+          </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="BotaoJanela8ActionPerformed"/>
+          </Events>
+        </Component>
+      </SubComponents>
+    </Container>
     <Container class="javax.swing.JDialog" name="Xpath_Obras_Valor_Editora">
 
       <Layout>
@@ -566,58 +618,6 @@
           <Properties>
             <Property name="text" type="java.lang.String" value="Valor acima de:"/>
           </Properties>
-        </Component>
-      </SubComponents>
-    </Container>
-    <Container class="javax.swing.JDialog" name="XML_HTML3">
-
-      <Layout>
-        <DimensionLayout dim="0">
-          <Group type="103" groupAlignment="0" attributes="0">
-              <Group type="102" alignment="1" attributes="0">
-                  <EmptySpace min="0" pref="31" max="32767" attributes="0"/>
-                  <Group type="103" groupAlignment="0" attributes="0">
-                      <Component id="LabelJanela8" min="-2" pref="96" max="-2" attributes="0"/>
-                      <Component id="TituloObra" min="-2" pref="363" max="-2" attributes="0"/>
-                  </Group>
-                  <EmptySpace max="-2" attributes="0"/>
-              </Group>
-              <Group type="102" alignment="0" attributes="0">
-                  <EmptySpace min="-2" pref="78" max="-2" attributes="0"/>
-                  <Component id="BotaoJanela8" min="-2" pref="246" max="-2" attributes="0"/>
-                  <EmptySpace max="32767" attributes="0"/>
-              </Group>
-          </Group>
-        </DimensionLayout>
-        <DimensionLayout dim="1">
-          <Group type="103" groupAlignment="0" attributes="0">
-              <Group type="102" alignment="0" attributes="0">
-                  <EmptySpace min="-2" pref="28" max="-2" attributes="0"/>
-                  <Component id="LabelJanela8" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                  <Component id="TituloObra" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace type="separate" max="-2" attributes="0"/>
-                  <Component id="BotaoJanela8" min="-2" pref="43" max="-2" attributes="0"/>
-                  <EmptySpace pref="161" max="32767" attributes="0"/>
-              </Group>
-          </Group>
-        </DimensionLayout>
-      </Layout>
-      <SubComponents>
-        <Component class="javax.swing.JLabel" name="LabelJanela8">
-          <Properties>
-            <Property name="text" type="java.lang.String" value="Titulo da Obra"/>
-          </Properties>
-        </Component>
-        <Component class="javax.swing.JTextField" name="TituloObra">
-        </Component>
-        <Component class="javax.swing.JButton" name="BotaoJanela8">
-          <Properties>
-            <Property name="text" type="java.lang.String" value="OK"/>
-          </Properties>
-          <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="BotaoJanela8ActionPerformed"/>
-          </Events>
         </Component>
       </SubComponents>
     </Container>
@@ -818,26 +818,26 @@
             </MenuItem>
             <MenuItem class="javax.swing.JMenuItem" name="XML3">
               <Properties>
-                <Property name="text" type="java.lang.String" value="XML &gt;&gt; XML3"/>
+                <Property name="text" type="java.lang.String" value="XML &gt;&gt; XML3 (autor da obra)"/>
               </Properties>
               <Events>
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="XML3ActionPerformed"/>
               </Events>
             </MenuItem>
-            <MenuItem class="javax.swing.JMenuItem" name="ultimoAutor">
+            <MenuItem class="javax.swing.JMenuItem" name="HTML3">
               <Properties>
-                <Property name="text" type="java.lang.String" value="XML &gt;&gt; Ultimo Autor"/>
+                <Property name="text" type="java.lang.String" value="XML &gt;&gt; HTML3 (ultimo autor)"/>
               </Properties>
               <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="ultimoAutorActionPerformed"/>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="HTML3ActionPerformed"/>
               </Events>
             </MenuItem>
-            <MenuItem class="javax.swing.JMenuItem" name="obraBarata">
+            <MenuItem class="javax.swing.JMenuItem" name="TXT2">
               <Properties>
-                <Property name="text" type="java.lang.String" value="XML &gt;&gt; Obra Barata"/>
+                <Property name="text" type="java.lang.String" value="XML &gt;&gt; TXT2 (obra barata)"/>
               </Properties>
               <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="obraBarataActionPerformed"/>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="TXT2ActionPerformed"/>
               </Events>
             </MenuItem>
           </SubComponents>

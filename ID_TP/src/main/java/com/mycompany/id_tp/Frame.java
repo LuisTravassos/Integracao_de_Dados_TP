@@ -75,16 +75,16 @@ public class Frame extends javax.swing.JFrame {
         BotaoJanela7 = new javax.swing.JButton();
         NomeEscritor3 = new javax.swing.JTextField();
         LabelJanela7 = new javax.swing.JLabel();
+        XQuery_XML3 = new javax.swing.JDialog();
+        LabelJanela8 = new javax.swing.JLabel();
+        TituloObra = new javax.swing.JTextField();
+        BotaoJanela8 = new javax.swing.JButton();
         Xpath_Obras_Valor_Editora = new javax.swing.JDialog();
         BotaoJanela9 = new javax.swing.JButton();
         NomeEditora = new javax.swing.JTextField();
         LabelJanela9 = new javax.swing.JLabel();
         ValorSuperiorA = new javax.swing.JTextField();
         LabelJanela10 = new javax.swing.JLabel();
-        XML_HTML3 = new javax.swing.JDialog();
-        LabelJanela8 = new javax.swing.JLabel();
-        TituloObra = new javax.swing.JTextField();
-        BotaoJanela8 = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
         XMLcodeArea = new javax.swing.JTextArea();
         jMenuBar1 = new javax.swing.JMenuBar();
@@ -114,8 +114,8 @@ public class Frame extends javax.swing.JFrame {
         HTML2 = new javax.swing.JMenuItem();
         XML2 = new javax.swing.JMenuItem();
         XML3 = new javax.swing.JMenuItem();
-        ultimoAutor = new javax.swing.JMenuItem();
-        obraBarata = new javax.swing.JMenuItem();
+        HTML3 = new javax.swing.JMenuItem();
+        TXT2 = new javax.swing.JMenuItem();
 
         LabelJanela1.setText("Nome do escritor a adicionar:");
 
@@ -438,6 +438,42 @@ public class Frame extends javax.swing.JFrame {
                 .addContainerGap(153, Short.MAX_VALUE))
         );
 
+        LabelJanela8.setText("Titulo da Obra");
+
+        BotaoJanela8.setText("OK");
+        BotaoJanela8.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BotaoJanela8ActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout XQuery_XML3Layout = new javax.swing.GroupLayout(XQuery_XML3.getContentPane());
+        XQuery_XML3.getContentPane().setLayout(XQuery_XML3Layout);
+        XQuery_XML3Layout.setHorizontalGroup(
+            XQuery_XML3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, XQuery_XML3Layout.createSequentialGroup()
+                .addGap(0, 31, Short.MAX_VALUE)
+                .addGroup(XQuery_XML3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(LabelJanela8, javax.swing.GroupLayout.PREFERRED_SIZE, 96, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(TituloObra, javax.swing.GroupLayout.PREFERRED_SIZE, 363, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap())
+            .addGroup(XQuery_XML3Layout.createSequentialGroup()
+                .addGap(78, 78, 78)
+                .addComponent(BotaoJanela8, javax.swing.GroupLayout.PREFERRED_SIZE, 246, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+        XQuery_XML3Layout.setVerticalGroup(
+            XQuery_XML3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(XQuery_XML3Layout.createSequentialGroup()
+                .addGap(28, 28, 28)
+                .addComponent(LabelJanela8)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(TituloObra, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(BotaoJanela8, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(161, Short.MAX_VALUE))
+        );
+
         BotaoJanela9.setText("OK");
         BotaoJanela9.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -479,42 +515,6 @@ public class Frame extends javax.swing.JFrame {
                 .addGap(26, 26, 26)
                 .addComponent(BotaoJanela9, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(111, Short.MAX_VALUE))
-        );
-
-        LabelJanela8.setText("Titulo da Obra");
-
-        BotaoJanela8.setText("OK");
-        BotaoJanela8.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                BotaoJanela8ActionPerformed(evt);
-            }
-        });
-
-        javax.swing.GroupLayout XML_HTML3Layout = new javax.swing.GroupLayout(XML_HTML3.getContentPane());
-        XML_HTML3.getContentPane().setLayout(XML_HTML3Layout);
-        XML_HTML3Layout.setHorizontalGroup(
-            XML_HTML3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, XML_HTML3Layout.createSequentialGroup()
-                .addGap(0, 31, Short.MAX_VALUE)
-                .addGroup(XML_HTML3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(LabelJanela8, javax.swing.GroupLayout.PREFERRED_SIZE, 96, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(TituloObra, javax.swing.GroupLayout.PREFERRED_SIZE, 363, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap())
-            .addGroup(XML_HTML3Layout.createSequentialGroup()
-                .addGap(78, 78, 78)
-                .addComponent(BotaoJanela8, javax.swing.GroupLayout.PREFERRED_SIZE, 246, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
-        XML_HTML3Layout.setVerticalGroup(
-            XML_HTML3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(XML_HTML3Layout.createSequentialGroup()
-                .addGap(28, 28, 28)
-                .addComponent(LabelJanela8)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(TituloObra, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(BotaoJanela8, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(161, Short.MAX_VALUE))
         );
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -701,7 +701,7 @@ public class Frame extends javax.swing.JFrame {
         });
         XSLT.add(XML2);
 
-        XML3.setText("XML >> XML3");
+        XML3.setText("XML >> XML3 (autor da obra)");
         XML3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 XML3ActionPerformed(evt);
@@ -709,21 +709,21 @@ public class Frame extends javax.swing.JFrame {
         });
         XSLT.add(XML3);
 
-        ultimoAutor.setText("XML >> Ultimo Autor");
-        ultimoAutor.addActionListener(new java.awt.event.ActionListener() {
+        HTML3.setText("XML >> HTML3 (ultimo autor)");
+        HTML3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                ultimoAutorActionPerformed(evt);
+                HTML3ActionPerformed(evt);
             }
         });
-        XSLT.add(ultimoAutor);
+        XSLT.add(HTML3);
 
-        obraBarata.setText("XML >> Obra Barata");
-        obraBarata.addActionListener(new java.awt.event.ActionListener() {
+        TXT2.setText("XML >> TXT2 (obra barata)");
+        TXT2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                obraBarataActionPerformed(evt);
+                TXT2ActionPerformed(evt);
             }
         });
-        XSLT.add(obraBarata);
+        XSLT.add(TXT2);
 
         jMenuBar1.add(XSLT);
 
@@ -821,9 +821,9 @@ public class Frame extends javax.swing.JFrame {
                             "Numero de livros nao atingido",
                             "Erro",
                             JOptionPane.ERROR_MESSAGE);
-                    
+
                 } else {
-                    
+
                     for (int i = 0; i < liv.size(); i++) {
                         //------------------Obras-------------------//
                         doc = XMLJDomFunctions.lerDocumentoXML("obras.xml");
@@ -838,19 +838,19 @@ public class Frame extends javax.swing.JFrame {
                     }
 
                     doc = XMLJDomFunctions.lerDocumentoXML("escritores.xml");
-                doc = ModeloXML.adicionaAutor(aut, doc);
-                if (doc != null) {
-                    XMLJDomFunctions.escreverDocumentoParaFicheiro(doc, "escritores.xml");
-                } else {
-                    System.out.println("Erro com documento Escritores");
-                }
+                    doc = ModeloXML.adicionaAutor(aut, doc);
+                    if (doc != null) {
+                        XMLJDomFunctions.escreverDocumentoParaFicheiro(doc, "escritores.xml");
+                    } else {
+                        System.out.println("Erro com documento Escritores");
+                    }
 
-                AdicionarEscritorJanela.setVisible(false);
-                JOptionPane.showMessageDialog(this,
-                        "Escritor e respetivas obras adicionadas com sucesso",
-                        "Informação",
-                        JOptionPane.INFORMATION_MESSAGE);
-                    
+                    AdicionarEscritorJanela.setVisible(false);
+                    JOptionPane.showMessageDialog(this,
+                            "Escritor e respetivas obras adicionadas com sucesso",
+                            "Informação",
+                            JOptionPane.INFORMATION_MESSAGE);
+
                 }
             }
 
@@ -1177,7 +1177,6 @@ public class Frame extends javax.swing.JFrame {
         Document novo = JDOMFunctions_XSLT.transformaDocumento(doc, "escritores.xml", "transf1.xsl");
         if (doc != null && novo != null) {
             XMLJDomFunctions.escreverDocumentoParaFicheiro(novo, "HTMLfile1.html");
-            doc = XMLJDomFunctions.lerDocumentoXML("HTMLfile1.html");
 
             String url = "HTMLfile1.html";
             File htmlFile = new File(url);
@@ -1458,23 +1457,21 @@ public class Frame extends javax.swing.JFrame {
 
     private void XML3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_XML3ActionPerformed
         // TODO add your handling code here:
-        XML_HTML3.setSize(400, 215);
-        XML_HTML3.setLocation(200, 200);
-        XML_HTML3.setVisible(true);
+        XQuery_XML3.setSize(400, 215);
+        XQuery_XML3.setLocation(200, 200);
+        XQuery_XML3.setVisible(true);
     }//GEN-LAST:event_XML3ActionPerformed
 
     private void BotaoJanela8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotaoJanela8ActionPerformed
-        // TODO add your handling code here:
         try {
             Element raiz = new Element("titulo");
             Document docV = new Document(raiz);
             raiz.addContent(TituloObra.getText());
             XMLJDomFunctions.escreverDocumentoParaFicheiro(docV, "titulo.xml");
 
-        
             SaxonFunctions_XQuery.xQueryToXml("XMLfile3.xml", "transf6.xql");
             Document doc = XMLJDomFunctions.lerDocumentoXML("XMLfile3.xml");
-            
+
             if (doc != null) {
                 String t = XMLJDomFunctions.escreverDocumentoString(doc);
                 XMLcodeArea.setText(t);
@@ -1491,49 +1488,46 @@ public class Frame extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_BotaoJanela8ActionPerformed
 
-    private void ultimoAutorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ultimoAutorActionPerformed
-        // TODO add your handling code here:
+    private void HTML3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_HTML3ActionPerformed
         try {
-            SaxonFunctions_XQuery.xQueryToXml("XMLfile4.xml", "transf7.xql");
-            Document doc = XMLJDomFunctions.lerDocumentoXML("XMLfile4.xml");
-            
-            if (doc != null) {
-                String t = XMLJDomFunctions.escreverDocumentoString(doc);
-                XMLcodeArea.setText(t);
-            } else {
-                JOptionPane.showMessageDialog(this,
-                        "Erro nos ficheiros",
-                        "Error",
-                        JOptionPane.ERROR_MESSAGE);
-            }
-        } catch (XPathException ex) {
-            Logger.getLogger(Frame.class.getName()).log(Level.SEVERE, null, ex);
-        } catch (IOException ex) {
-            Logger.getLogger(Frame.class.getName()).log(Level.SEVERE, null, ex);
-        }
-    }//GEN-LAST:event_ultimoAutorActionPerformed
+            SaxonFunctions_XQuery.xQueryToHtml("HTMLfile3.html", "transf7.xql");
 
-    private void obraBarataActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_obraBarataActionPerformed
-        // TODO add your handling code here:
-        try {
-            SaxonFunctions_XQuery.xQueryToXml("XMLfile5.xml", "transf8.xql");
-            Document doc = XMLJDomFunctions.lerDocumentoXML("XMLfile5.xml");
-            
-            if (doc != null) {
-                String t = XMLJDomFunctions.escreverDocumentoString(doc);
-                XMLcodeArea.setText(t);
-            } else {
-                JOptionPane.showMessageDialog(this,
-                        "Erro nos ficheiros",
-                        "Error",
-                        JOptionPane.ERROR_MESSAGE);
-            }
+            String url = "HTMLfile3.html";
+            File htmlFile = new File(url);
+
+            Desktop.getDesktop().browse(htmlFile.toURI());
+
         } catch (XPathException ex) {
             Logger.getLogger(Frame.class.getName()).log(Level.SEVERE, null, ex);
         } catch (IOException ex) {
             Logger.getLogger(Frame.class.getName()).log(Level.SEVERE, null, ex);
         }
-    }//GEN-LAST:event_obraBarataActionPerformed
+    }//GEN-LAST:event_HTML3ActionPerformed
+
+    private void TXT2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TXT2ActionPerformed
+        try {
+            SaxonFunctions_XQuery.xQueryToText("TXTfile2.txt", "transf8.xql");
+            Document doc = XMLJDomFunctions.lerDocumentoXML("TXTfile2.txt");
+            Scanner ler = null;
+
+            ler = new Scanner(new FileInputStream("TXTfile2.txt"));
+
+            StringBuilder texto = new StringBuilder();
+            String linha;
+
+            while (ler.hasNextLine()) {
+                linha = ler.nextLine();
+                texto = texto.append(linha).append("\n");
+            }
+
+            ler.close();
+            XMLcodeArea.setText(texto.toString());
+        } catch (XPathException ex ) {
+            Logger.getLogger(Frame.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (IOException ex) {
+            Logger.getLogger(Frame.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }//GEN-LAST:event_TXT2ActionPerformed
 
     public static void main(String args[]) {
 
@@ -1547,16 +1541,24 @@ public class Frame extends javax.swing.JFrame {
                 if ("Nimbus".equals(info.getName())) {
                     javax.swing.UIManager.setLookAndFeel(info.getClassName());
                     break;
+
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(Frame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Frame.class
+                    .getName()).log(java.util.logging.Level.SEVERE, null, ex);
+
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(Frame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Frame.class
+                    .getName()).log(java.util.logging.Level.SEVERE, null, ex);
+
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(Frame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Frame.class
+                    .getName()).log(java.util.logging.Level.SEVERE, null, ex);
+
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(Frame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Frame.class
+                    .getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
 
@@ -1588,6 +1590,7 @@ public class Frame extends javax.swing.JFrame {
     private javax.swing.JTextField EscritorModificarJanela3;
     private javax.swing.JMenuItem HTML1;
     private javax.swing.JMenuItem HTML2;
+    private javax.swing.JMenuItem HTML3;
     private javax.swing.JLabel LabelJanela1;
     private javax.swing.JLabel LabelJanela10;
     private javax.swing.JLabel LabelJanela1_2;
@@ -1619,6 +1622,7 @@ public class Frame extends javax.swing.JFrame {
     private javax.swing.JDialog RemoverEscritorJanela;
     private javax.swing.JMenuItem Sair;
     private javax.swing.JMenuItem TXT1;
+    private javax.swing.JMenuItem TXT2;
     private javax.swing.JTextField TituloObra;
     private javax.swing.JMenu Validar;
     private javax.swing.JTextField ValorModificarJanela3;
@@ -1630,9 +1634,9 @@ public class Frame extends javax.swing.JFrame {
     private javax.swing.JMenuItem XML2;
     private javax.swing.JMenuItem XML3;
     private javax.swing.JDialog XML_HTML2;
-    private javax.swing.JDialog XML_HTML3;
     private javax.swing.JTextArea XMLcodeArea;
     private javax.swing.JMenu XPath;
+    private javax.swing.JDialog XQuery_XML3;
     private javax.swing.JMenu XSLT;
     private javax.swing.JDialog Xpath_Escritor;
     private javax.swing.JDialog Xpath_Escritor_Nacionalidade;
@@ -1645,8 +1649,6 @@ public class Frame extends javax.swing.JFrame {
     private javax.swing.JComboBox<String> nCamposJanela3;
     private javax.swing.JComboBox<String> nModificacoesJanela3;
     private javax.swing.JComboBox<String> nObrasJanela1;
-    private javax.swing.JMenuItem obraBarata;
-    private javax.swing.JMenuItem ultimoAutor;
     private javax.swing.JMenuItem xsdEscritores;
     private javax.swing.JMenuItem xsdObras;
     // End of variables declaration//GEN-END:variables

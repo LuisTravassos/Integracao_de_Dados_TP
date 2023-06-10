@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<autores>
+<!DOCTYPE autores SYSTEM "escritoresValidacao.dtd">
+<autores xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="escritoresValidacao.xsd">
      <autor nome="José Saramago" id="1">
           <dataNascimento>16 de novembro de 1922</dataNascimento>
           <dataMorte>18 de junho de 2010</dataMorte>

@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<livros>
+<!DOCTYPE livros SYSTEM "obrasValidacao.dtd">
+<livros xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="obrasValidacao.xsd">
      <livro isbn="978-972-0-04671-0" idAutor="1">
           <nomesAutores>
                <nomeAutor>José Saramago</nomeAutor>

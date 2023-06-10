@@ -1,20 +1,2 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dadosAutor>
-   <autor nome="Eça de Queiroz" id="2">
-          <dataNascimento>25 de novembro de 1845</dataNascimento>
-          <dataMorte>16 de agosto de 1900</dataMorte>
-          <nacionalidade>Português</nacionalidade>
-          <fotografia>//upload.wikimedia.org/wikipedia/commons/thumb/d/d9/E%C3%A7a_de_Queir%C3%B3s_c._1882.jpg/200px-E%C3%A7a_de_Queir%C3%B3s_c._1882.jpg</fotografia>
-          <generosLiterarios>
-               <generoLiterario>Nao definido</generoLiterario>
-          </generosLiterarios>
-          <ocupacoes>
-               <ocupacao>diplomata</ocupacao>
-               <ocupacao>romancista</ocupacao>
-               <ocupacao>contista</ocupacao>
-          </ocupacoes>
-          <premios>
-               <premio>Nao definido</premio>
-          </premios>
-     </autor>
-</dadosAutor>
+<dadosAutor/>
