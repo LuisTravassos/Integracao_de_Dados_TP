@@ -1,37 +1,37 @@
-Projeto Integrador - Sistema de Integração de Dados em Java
+Integrative Project - Java Data Integration System
 
-Este repositório contém um projeto em Java desenvolvido para atender ao enunciado do trabalho proposto, que consiste na criação de um programa composto por Wrappers capazes de obter dados de fontes heterogêneas e autônomas. Além disso, o sistema permite ao usuário visualizar os dados de forma integrada, realizar pesquisas, adicionar informações conforme os esquemas estabelecidos e gerar arquivos com as informações selecionadas.
-Funcionalidades Principais
+This repository contains a Java project developed to meet the requirements of the proposed task, which involves creating a program composed of Wrappers capable of obtaining data from heterogeneous and autonomous sources. Additionally, the system allows the user to view the data in an integrated manner, perform searches, add information according to established schemas, and generate files with selected information.
+Key Features
 
-    Obtenção de Dados: Implementação de Wrappers para aquisição de dados de fontes distribuídas e autônomas.
-    Integração de Dados: Disponibilização de uma interface para visualização dos dados de forma integrada.
-    Pesquisas: Capacidade de realizar pesquisas nos dados obtidos.
-    Adição de Dados: Funcionalidade que permite ao usuário adicionar dados, seguindo os esquemas definidos.
-    Exportação de Informações: Possibilidade de gerar arquivos contendo informações selecionadas.
+    Data Acquisition: Implementation of Wrappers for obtaining data from distributed and autonomous sources.
+    Data Integration: Provision of an interface for integrated data visualization.
+    Searches: Ability to perform searches on the obtained data.
+    Data Addition: Functionality that enables the user to add data following the defined schemas.
+    Information Export: Ability to generate files containing selected information.
 
-Tecnologias Utilizadas
+Utilized Technologies
 
-    Linguagem Java: Utilizada como base para o desenvolvimento do projeto.
-    Expressões Regulares: Empregadas na manipulação e validação de padrões nos dados obtidos.
-    APIs JDOM2 e SAXON: Ferramentas essenciais para o processamento e manipulação de documentos XML.
+    Java Language: Used as the foundation for project development.
+    Regular Expressions: Employed in the manipulation and validation of patterns in the obtained data.
+    JDOM2 and SAXON APIs: Essential tools for processing and handling XML documents.
 
-Estrutura do Projeto
+Project Structure
 
-    /src: Contém o código-fonte do projeto.
-    /docs: Documentação adicional (se houver).
-    /data: Dados de exemplo ou necessários para o funcionamento do programa.
-    /tests: Casos de teste e arquivos relacionados.
+    /src: Contains the project's source code.
+    /docs: Additional documentation (if any).
+    /data: Example data or necessary files for program operation.
+    /tests: Test cases and related files.
 
-Como Usar
+How to Use
 
-    Faça o clone deste repositório.
-    Abra o projeto em um ambiente de desenvolvimento Java compatível.
-    Certifique-se de ter as dependências (JDOM2 e SAXON) configuradas corretamente.
-    Execute o programa principal e utilize a interface para interagir com as funcionalidades.
+    Clone this repository.
+    Open the project in a compatible Java development environment.
+    Ensure that dependencies (JDOM2 and SAXON) are properly configured.
+    Run the main program and use the interface to interact with the functionalities.
 
-Contribuições
+Contributions
 
-Contribuições são bem-vindas! Se você encontrar bugs, melhorias ou deseja adicionar novos recursos, sinta-se à vontade para abrir uma issue ou criar um pull request.
-Licença
+Contributions are welcome! If you come across bugs, have suggestions for improvements, or wish to add new features, feel free to open an issue or create a pull request.
+License
 
-Este projeto está sob a licença MIT.
+This project is under the MIT License.
